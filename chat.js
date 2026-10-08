@@ -65,7 +65,7 @@
   bouton.setAttribute('aria-controls', 'ac-panneau');
   bouton.innerHTML = icone + '<span>Une question&nbsp;?</span>';
 
-  var panneau = document.createElement('section');
+  var panneau = document.createElement('div');
   panneau.id = 'ac-panneau';
   panneau.className = 'ac-panneau';
   panneau.hidden = true;
