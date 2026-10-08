@@ -7,7 +7,7 @@
 
   var ADRESSE = 'https://n8n.assysteo.be/webhook/709a6543-9a79-5089-b3ce-e0975ebcad26/chat';
   var LONGUEUR_MAX = 1500;
-  var DELAI_MAX = 45000;
+  var DELAI_MAX = 90000;  // la 1re réponse après un redémarrage du serveur peut prendre ~40 s
   var ACCUEIL = [
     "Bonjour ! Je suis l'assistant virtuel d'Assysteo, une intelligence artificielle.",
     "Posez-moi vos questions sur l'assistant email, les tarifs ou l'audit gratuit. Si vous le souhaitez, je transmets aussi votre demande à Pierre."
