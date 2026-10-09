@@ -27,7 +27,9 @@
 <meta property="og:image:alt" content="Assysteo, automatisation des emails pour PME à Namur">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d4f73'/%3E%3Cpath d='M14 22h36v22H14z' fill='none' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M14 23l18 13 18-13' fill='none' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <!-- Données structurées (Google). Remplacez les textes entre crochets, voir README.md. -->
 <script type="application/ld+json">
@@ -38,6 +40,7 @@
   "description": "Automatisation des emails, des relances et de la collecte de documents pour les PME : agences immobilières, courtiers, installateurs en énergie, cabinets comptables.",
   "url": "https://assysteo.be/",
   "image": "https://assysteo.be/og-image.png",
+  "logo": "https://assysteo.be/logo-512.png",
   "email": "contact@assysteo.be",
   "telephone": "+32 472 99 14 85",
   "founder": { "@type": "Person", "name": "Pierre Warmoes" },
@@ -136,7 +139,9 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
 /* En-tête */
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
-.brand { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); line-height: 1.15; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); line-height: 1.15; }
+.brand img { flex: none; border-radius: 9px; }
+.brand .brand-texte { display: flex; flex-direction: column; font-size: inherit; color: inherit; }
 .brand strong { font-size: 1.08rem; }
 .brand span { font-size: .8rem; color: var(--muted); }
 .nav { display: flex; align-items: center; gap: 22px; }
@@ -271,7 +276,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 18px; }
 footer p { margin: 0 0 4px; }
 </style>
-<link rel="stylesheet" href="chat.css?v=5">
+<link rel="stylesheet" href="chat.css?v=6">
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -279,8 +284,11 @@ footer p { margin: 0 0 4px; }
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Assysteo, retour en haut de page">
-      <strong>Assysteo</strong>
-      <span>Pierre Warmoes, Namur</span>
+      <img src="favicon.svg" alt="" width="36" height="36">
+      <span class="brand-texte">
+        <strong>Assysteo</strong>
+        <span>Pierre Warmoes, Namur</span>
+      </span>
     </a>
     <nav class="nav" aria-label="Navigation principale">
       <ul>
@@ -643,6 +651,6 @@ footer p { margin: 0 0 4px; }
 </footer>
 
 <!-- Bulle de chat : assistant IA d'Assysteo (voir chat.js) -->
-<script src="chat.js?v=5" defer></script>
+<script src="chat.js?v=6" defer></script>
 </body>
 </html>

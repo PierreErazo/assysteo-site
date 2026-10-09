@@ -72,7 +72,7 @@
   panneau.setAttribute('role', 'dialog');
   panneau.setAttribute('aria-label', "Chat avec l'assistant IA d'Assysteo");
   panneau.innerHTML =
-    '<div class="ac-entete"><div class="ac-entete-texte">' +
+    '<div class="ac-entete"><img class="ac-logo" src="favicon.svg" alt="" width="34" height="34"><div class="ac-entete-texte">' +
       '<p class="ac-titre">Assistant Assysteo</p>' +
       '<p class="ac-sous-titre">Intelligence artificielle · peut se tromper</p></div>' +
       '<button type="button" class="ac-fermer" aria-label="Fermer le chat">×</button></div>' +
