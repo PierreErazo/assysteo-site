@@ -65,7 +65,8 @@
 .ac-saisie {
   flex: 1; resize: none; max-height: 120px; min-height: 42px; padding: 10px 12px;
   border: 1px solid var(--line, #e2e6eb); border-radius: 12px;
-  font: 14.5px/1.4 inherit; font-family: inherit; color: var(--ink, #15202b);
+  /* 16 px minimum : en dessous, Safari sur iPhone zoome la page quand on touche le champ */
+  font: 16px/1.4 inherit; font-family: inherit; color: var(--ink, #15202b);
 }
 .ac-saisie:focus { outline: none; border-color: var(--brand, #1d4f73); box-shadow: 0 0 0 3px var(--brand-soft, #e7eff6); }
 .ac-envoyer {
