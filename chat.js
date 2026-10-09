@@ -92,6 +92,34 @@
   var envoyer = panneau.querySelector('.ac-envoyer');
   var enCours = false;
 
+  // ── Téléphones ──
+  // iPhone : Safari zoome la page quand on touche un champ ; maximum-scale l'en empêche
+  // (le zoom à deux doigts reste possible sur iOS). Pas appliqué ailleurs : sur Android,
+  // ce réglage bloquerait aussi le zoom volontaire.
+  var petitEcran = window.matchMedia('(max-width: 520px)');
+  var iOS = /iP(hone|ad|od)/.test(navigator.platform || '') ||
+            (/Mac/.test(navigator.userAgent) && 'ontouchend' in document);
+  if (iOS) {
+    var vp = document.querySelector('meta[name="viewport"]');
+    if (vp && !/maximum-scale/.test(vp.content)) vp.content += ', maximum-scale=1';
+  }
+  // Quand le clavier s'ouvre, la zone visible rétrécit : le chat s'y cale au lieu d'être décalé.
+  function caler() {
+    var vv = window.visualViewport;
+    if (panneau.hidden || !petitEcran.matches || !vv) {
+      panneau.style.top = panneau.style.bottom = panneau.style.height = '';
+      return;
+    }
+    panneau.style.top = (vv.offsetTop + 12) + 'px';
+    panneau.style.bottom = 'auto';
+    panneau.style.height = Math.max(vv.height - 24, 220) + 'px';
+    zone.scrollTop = zone.scrollHeight;
+  }
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', caler);
+    window.visualViewport.addEventListener('scroll', caler);
+  }
+
   function ajouter(qui, texte, garder) {
     var div = document.createElement('div');
     div.className = 'ac-msg ' + (qui === 'moi' ? 'ac-moi' : qui === 'erreur' ? 'ac-erreur' : 'ac-bot');
@@ -114,12 +142,17 @@
     if (!zone.childNodes.length) afficherDebut();
     panneau.hidden = false;
     bouton.setAttribute('aria-expanded', 'true');
-    saisie.focus();
+    document.documentElement.classList.add('ac-ouvert');
+    caler();
+    // Sur téléphone, pas de clavier d'office : il s'ouvre quand on touche le champ.
+    if (!petitEcran.matches) saisie.focus();
     zone.scrollTop = zone.scrollHeight;
   }
   function fermer() {
     panneau.hidden = true;
     bouton.setAttribute('aria-expanded', 'false');
+    document.documentElement.classList.remove('ac-ouvert');
+    caler();
     bouton.focus();
   }
 
@@ -166,7 +199,7 @@
         if (attente.parentNode) attente.parentNode.removeChild(attente);
         enCours = false;
         envoyer.disabled = false;
-        saisie.focus();
+        if (!petitEcran.matches) saisie.focus();
       });
   }
 

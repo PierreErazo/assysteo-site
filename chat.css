@@ -81,6 +81,8 @@
 
 @media (max-width: 520px) {
   .ac-bouton { right: 16px; bottom: 16px; }
-  .ac-panneau { right: 16px; left: 16px; bottom: 16px; width: auto; height: calc(100dvh - 32px); }
+  .ac-panneau { right: 12px; left: 12px; bottom: 12px; width: auto; height: calc(100dvh - 24px); }
+  /* Chat ouvert : la page derrière ne défile plus */
+  html.ac-ouvert, html.ac-ouvert body { overflow: hidden; }
 }
 @media print { .ac-bouton, .ac-panneau { display: none !important; } }
