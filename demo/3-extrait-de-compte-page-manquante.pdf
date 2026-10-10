@@ -1,0 +1,71 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 1801 >>
+stream
+BT /F2 18 Tf 50 790 Td (EXTRAIT DE COMPTE) Tj ET
+BT /F1 10 Tf 50 770 Td (Banque Exemple, Namur \(banque fictive\)) Tj ET
+BT /F1 10 Tf 50 755 Td (Titulaire : Julie MARTIN    Période : 01/09/2026 au 30/09/2026) Tj ET
+BT /F1 10 Tf 50 740 Td (Compte : BE00 0000 0000 0000 \(numéro fictif\)) Tj ET
+0.6 G 0.8 w 50 728 m 545 728 l S
+BT /F2 10 Tf 50 710 Td (Date) Tj ET
+BT /F2 10 Tf 110 710 Td (Libellé) Tj ET
+BT /F2 10 Tf 450 710 Td (Montant \(EUR\)) Tj ET
+BT /F1 10 Tf 50 690 Td (03/09/2026) Tj ET
+BT /F1 10 Tf 110 690 Td (Virement salaire Boulangerie du Confluent) Tj ET
+BT /F1 10 Tf 450 690 Td (+ 2.067,30) Tj ET
+BT /F1 10 Tf 50 672 Td (05/09/2026) Tj ET
+BT /F1 10 Tf 110 672 Td (Loyer appartement) Tj ET
+BT /F1 10 Tf 450 672 Td (- 750,00) Tj ET
+BT /F1 10 Tf 50 654 Td (08/09/2026) Tj ET
+BT /F1 10 Tf 110 654 Td (Supermarché) Tj ET
+BT /F1 10 Tf 450 654 Td (- 86,40) Tj ET
+BT /F1 10 Tf 50 636 Td (12/09/2026) Tj ET
+BT /F1 10 Tf 110 636 Td (Assurance auto) Tj ET
+BT /F1 10 Tf 450 636 Td (- 64,90) Tj ET
+BT /F1 10 Tf 50 618 Td (15/09/2026) Tj ET
+BT /F1 10 Tf 110 618 Td (Électricité et gaz) Tj ET
+BT /F1 10 Tf 450 618 Td (- 118,00) Tj ET
+BT /F1 10 Tf 50 600 Td (19/09/2026) Tj ET
+BT /F1 10 Tf 110 600 Td (Pharmacie) Tj ET
+BT /F1 10 Tf 450 600 Td (- 23,15) Tj ET
+BT /F1 10 Tf 50 582 Td (22/09/2026) Tj ET
+BT /F1 10 Tf 110 582 Td (Restaurant) Tj ET
+BT /F1 10 Tf 450 582 Td (- 41,00) Tj ET
+BT /F1 10 Tf 50 564 Td (26/09/2026) Tj ET
+BT /F1 10 Tf 110 564 Td (Retrait distributeur) Tj ET
+BT /F1 10 Tf 450 564 Td (- 60,00) Tj ET
+BT /F2 10 Tf 50 536 Td (Suite des opérations et solde final : voir page 2) Tj ET
+0.6 G 0.8 w 50 70 m 545 70 l S
+BT /F1 8 Tf 50 52 Td (Exemple fictif pour la démonstration Assysteo \(assysteo.be\). Personnes, entreprises et numéros inventés.) Tj ET
+BT /F1 8 Tf 480 52 Td (Page 1/2) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000212 00000 n 
+0000000314 00000 n 
+0000002167 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2303
+%%EOF

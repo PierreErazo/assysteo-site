@@ -1,0 +1,51 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 1057 >>
+stream
+BT /F2 18 Tf 50 790 Td (CERTIFICAT PEB) Tj ET
+BT /F1 10 Tf 50 770 Td (Performance énergétique d'un bâtiment résidentiel existant \(Wallonie\)) Tj ET
+0.6 G 0.8 w 50 758 m 545 758 l S
+BT /F2 10 Tf 50 735 Td (Bâtiment) Tj ET
+BT /F1 10 Tf 50 720 Td (Maison unifamiliale, rue des Exemples 8, 5100 Jambes) Tj ET
+BT /F1 10 Tf 50 705 Td (Propriétaire : Marc DUBOIS) Tj ET
+BT /F2 10 Tf 50 680 Td (Classe énergétique) Tj ET
+BT /F2 30 Tf 50 652 Td (C) Tj ET
+BT /F1 10 Tf 100 660 Td (Consommation spécifique : 245 kWh/m².an) Tj ET
+BT /F1 10 Tf 100 645 Td (Consommation totale estimée : 32.400 kWh/an) Tj ET
+BT /F1 10 Tf 50 615 Td (Numéro du certificat : 00000000000000-0000 \(fictif\)    Établi le : 05/09/2025) Tj ET
+BT /F1 10 Tf 50 600 Td (Valable jusqu'au : 05/09/2035) Tj ET
+BT /F1 10 Tf 50 585 Td (Certificateur : Énergie Exemple SRL \(agréé, fictif\)) Tj ET
+0.6 G 0.8 w 50 70 m 545 70 l S
+BT /F1 8 Tf 50 52 Td (Exemple fictif pour la démonstration Assysteo \(assysteo.be\). Personnes, entreprises et numéros inventés.) Tj ET
+BT /F1 8 Tf 480 52 Td (Page 1/1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000212 00000 n 
+0000000314 00000 n 
+0000001423 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1559
+%%EOF

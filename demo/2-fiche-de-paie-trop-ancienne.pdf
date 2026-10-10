@@ -1,0 +1,61 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 1379 >>
+stream
+BT /F2 18 Tf 50 790 Td (FICHE DE PAIE) Tj ET
+BT /F1 11 Tf 50 770 Td (Période : du 01/03/2026 au 31/03/2026 \(mars 2026\)) Tj ET
+0.6 G 0.8 w 50 758 m 545 758 l S
+BT /F2 10 Tf 50 735 Td (Employeur) Tj ET
+BT /F1 10 Tf 50 720 Td (Boulangerie du Confluent SRL) Tj ET
+BT /F1 10 Tf 50 705 Td (Rue de l'Exemple 12, 5000 Namur) Tj ET
+BT /F1 10 Tf 50 690 Td (N° d'entreprise : 0000.000.000 \(fictif\)) Tj ET
+BT /F2 10 Tf 340 735 Td (Travailleur) Tj ET
+BT /F1 10 Tf 340 720 Td (Julie MARTIN) Tj ET
+BT /F1 10 Tf 340 705 Td (Fonction : vendeuse, temps plein) Tj ET
+0.6 G 0.8 w 50 678 m 545 678 l S
+BT /F2 10 Tf 50 665 Td (Rubrique) Tj ET
+BT /F2 10 Tf 420 665 Td (Montant) Tj ET
+BT /F1 10 Tf 50 645 Td (Salaire brut mensuel) Tj ET
+BT /F1 10 Tf 420 645 Td (2.850,00 EUR) Tj ET
+BT /F1 10 Tf 50 627 Td (Cotisations sociales personnelles \(13,07 %\)) Tj ET
+BT /F1 10 Tf 420 627 Td (- 372,50 EUR) Tj ET
+BT /F1 10 Tf 50 609 Td (Précompte professionnel) Tj ET
+BT /F1 10 Tf 420 609 Td (- 410,20 EUR) Tj ET
+0.6 G 0.8 w 50 595 m 545 595 l S
+BT /F2 11 Tf 50 575 Td (Salaire net à payer) Tj ET
+BT /F2 11 Tf 420 575 Td (2.067,30 EUR) Tj ET
+BT /F1 10 Tf 50 545 Td (Date de paiement : 31/03/2026) Tj ET
+0.6 G 0.8 w 50 70 m 545 70 l S
+BT /F1 8 Tf 50 52 Td (Exemple fictif pour la démonstration Assysteo \(assysteo.be\). Personnes, entreprises et numéros inventés.) Tj ET
+BT /F1 8 Tf 480 52 Td (Page 1/1) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000212 00000 n 
+0000000314 00000 n 
+0000001745 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1881
+%%EOF

@@ -314,6 +314,19 @@ section.ai .ai-badge { margin-bottom: 14px; background: rgba(255,255,255,.14); b
 .btn-ghost-light { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
 .btn-ghost-light:hover { background: rgba(255,255,255,.1); color: #fff; }
 .ai-foot { color: #aebfd1; font-size: .9rem; margin-top: 18px; }
+
+.ai-try { margin-top: 30px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); border-radius: 16px; padding: 24px; scroll-margin-top: 80px; }
+.ai-try h3 { color: #fff; margin: 0 0 6px; font-size: 1.25rem; }
+.ai-try p { color: #d3dde8; margin: 0 0 14px; }
+.ai-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 16px 0; }
+@media (max-width: 760px) { .ai-steps { grid-template-columns: 1fr; } }
+.ai-step { background: rgba(0,0,0,.18); border-radius: 12px; padding: 12px 14px; color: #d3dde8; font-size: .93rem; }
+.ai-step b { color: #fff; display: block; margin-bottom: 2px; }
+.docs { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 4px; }
+.doc-chip { display: inline-flex; align-items: center; gap: 6px; background: #fff; color: #153b57; text-decoration: none; font-size: .88rem; font-weight: 600;
+  padding: 8px 12px; border-radius: 999px; border: 1px solid #fff; }
+.doc-chip:hover { background: #efe9f8; }
+.doc-chip small { font-weight: 500; color: var(--muted); }
 </style>
 <link rel="stylesheet" href="chat.css?v=7">
 </head>
@@ -523,6 +536,24 @@ section.ai .ai-badge { margin-bottom: 14px; background: rgba(255,255,255,.14); b
           </div>
           <p class="ai-gain">→ Des dossiers complets avant de les traiter</p>
         </article>
+      </div>
+      <div class="ai-try" id="tester-documents">
+        <h3>Testez le contrôle des documents vous-même</h3>
+        <p>En 30 secondes, voyez ce que l'agent vérifie sur un document reçu. Utilisez nos documents d'exemple&nbsp;: n'envoyez jamais de vrais documents personnels dans cette démonstration.</p>
+        <div class="ai-steps">
+          <div class="ai-step"><b>1. Téléchargez un exemple</b>Quatre documents fictifs, du parfait au problématique.</div>
+          <div class="ai-step"><b>2. Déposez-le dans la démo</b>Choisissez le type de dossier, puis le fichier.</div>
+          <div class="ai-step"><b>3. Lisez le verdict</b>Bonne pièce, bon nom, assez récente, montants relevés, anomalies.</div>
+        </div>
+        <div class="docs">
+          <a class="doc-chip" href="demo/1-fiche-de-paie-recente.pdf" download>📄 Fiche de paie récente <small>✓ attendu</small></a>
+          <a class="doc-chip" href="demo/2-fiche-de-paie-trop-ancienne.pdf" download>📄 Fiche de paie trop ancienne <small>! attendu</small></a>
+          <a class="doc-chip" href="demo/3-extrait-de-compte-page-manquante.pdf" download>📄 Extrait de compte incomplet <small>! attendu</small></a>
+          <a class="doc-chip" href="demo/4-certificat-peb.pdf" download>📄 Certificat PEB <small>dossier « mise en vente »</small></a>
+        </div>
+        <div class="ai-cta" style="margin-top:18px">
+          <a class="btn btn-ai" href="https://n8n.assysteo.be/form/bf5906ae-5a53-52d1-bc58-230468a14867" target="_blank" rel="noopener">Ouvrir la démo du contrôle</a>
+        </div>
       </div>
       <div class="ai-cta">
         <a class="btn btn-ai" href="#" id="essayer-agent">Essayer l'agent maintenant</a>
