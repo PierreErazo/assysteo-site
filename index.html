@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Automatisation pour PME à Namur&nbsp;: emails, relances, documents</title>
-<meta name="description" content="Assysteo lit vos emails, prépare les réponses et relance les documents manquants. Pour PME à Namur et en Wallonie. Mode brouillon, instance hébergée dans l'UE.">
+<title>Automatisation et agents IA pour PME à Namur&nbsp;: emails, relances, documents</title>
+<meta name="description" content="Assysteo lit vos emails, prépare les réponses et relance les documents manquants. Agents IA en option : accueil des visiteurs, relance des devis et factures, contrôle des documents. Pour PME à Namur et en Wallonie. Mode brouillon, instance hébergée dans l'UE.">
 <meta name="keywords" content="automatisation PME, automatisation emails, assistant IA, Namur, Wallonie, agence immobilière, courtier, installateur, comptable, relances, collecte de documents">
 <meta name="author" content="Pierre Warmoes">
 <meta name="robots" content="index, follow">
@@ -275,8 +275,47 @@ footer a { color: #fff; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
 footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 18px; }
 footer p { margin: 0 0 4px; }
+
+/* ── Agents IA : section mise en avant ── */
+.ai-hero-strip { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 18px; padding: 12px 14px; border-radius: 12px;
+  background: linear-gradient(90deg, #efe9f8, #e7eff6); border: 1px solid #d9cdee; text-decoration: none; color: var(--ink); }
+.ai-hero-strip:hover { border-color: var(--violet); }
+.ai-badge { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
+  color: #fff; background: linear-gradient(90deg, #5b3f8f, #1d4f73); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+.ai-hero-strip span.txt { font-size: .95rem; }
+.ai-hero-strip span.go { font-weight: 700; color: var(--violet); margin-left: auto; white-space: nowrap; }
+.nav ul a.nav-ai { color: #fff; background: linear-gradient(90deg, #5b3f8f, #1d4f73); padding: 5px 12px; border-radius: 999px; font-weight: 600; }
+.nav ul a.nav-ai:hover { color: #fff; filter: brightness(1.12); }
+
+section.ai { background: radial-gradient(1200px 500px at 85% -10%, #5b3f8f 0%, transparent 60%), linear-gradient(160deg, #10263a 0%, #153b57 55%, #2b2350 100%);
+  color: #e8eef5; position: relative; overflow: hidden; }
+section.ai h2 { color: #fff; font-size: clamp(1.7rem, 3.8vw, 2.5rem); max-width: 18em; }
+section.ai .intro { color: #c6d3e1; font-size: 1.08rem; max-width: 44em; }
+section.ai .ai-badge { margin-bottom: 14px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); }
+.ai-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 34px; }
+@media (max-width: 920px) { .ai-grid { grid-template-columns: 1fr; } }
+.ai-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 16px; padding: 24px; display: flex; flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+.ai-card h3 { color: #fff; margin: 12px 0 8px; font-size: 1.2rem; }
+.ai-card p { color: #d3dde8; font-size: .97rem; }
+.ai-ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, #8b6fd1, #3d7fb3); }
+.ai-ico svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ai-gain { margin-top: auto; padding-top: 14px; font-weight: 700; color: #b9f0cf; font-size: .95rem; }
+.ai-demo { margin: 14px 0 4px; background: #fff; color: var(--text); border-radius: 12px; padding: 12px 14px; font-size: .86rem; line-height: 1.45; }
+.ai-demo .q { background: var(--brand-soft); border-radius: 10px 10px 10px 2px; padding: 6px 10px; margin-bottom: 6px; max-width: 92%; }
+.ai-demo .r { background: #f1ecfa; border-radius: 10px 10px 2px 10px; padding: 6px 10px; margin-left: auto; max-width: 92%; }
+.ai-demo .lbl { font-size: .72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 4px; }
+.ai-demo .ok { color: var(--ok); font-weight: 700; }
+.ai-demo .warn { color: var(--amber); font-weight: 700; }
+.ai-demo .fact { border-left: 3px solid var(--brand); padding-left: 8px; margin-top: 6px; color: var(--muted); }
+.ai-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; align-items: center; }
+.btn-ai { background: #fff; color: #153b57; border-color: #fff; }
+.btn-ai:hover { background: #efe9f8; border-color: #efe9f8; color: #153b57; }
+.btn-ghost-light { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.btn-ghost-light:hover { background: rgba(255,255,255,.1); color: #fff; }
+.ai-foot { color: #aebfd1; font-size: .9rem; margin-top: 18px; }
 </style>
-<link rel="stylesheet" href="chat.css?v=6">
+<link rel="stylesheet" href="chat.css?v=7">
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -295,7 +334,7 @@ footer p { margin: 0 0 4px; }
         <li><a href="#fonctionnement">Fonctionnement</a></li>
         <li><a href="#pour-qui">Pour qui</a></li>
         <li><a href="#confiance">Données</a></li>
-        <li><a href="#modules">Modules</a></li>
+        <li><a href="#agents-ia" class="nav-ai">✦ Agents IA</a></li>
         <li><a href="#tarifs">Tarifs</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -318,6 +357,11 @@ footer p { margin: 0 0 4px; }
           <a class="btn btn-ghost" href="#fonctionnement">Voir comment ça marche</a>
         </div>
         <p class="small">Audit de 30 minutes, en visio ou sur place. Sans engagement.</p>
+        <a class="ai-hero-strip" href="#agents-ia">
+          <span class="ai-badge">✦ Nouveau · Agents IA</span>
+          <span class="txt">Un agent qui accueille vos visiteurs, un autre qui relance vos devis et factures, un troisième qui vérifie les documents reçus.</span>
+          <span class="go">Découvrir →</span>
+        </a>
       </div>
 
       <figure style="margin:0">
@@ -439,27 +483,52 @@ footer p { margin: 0 0 4px; }
     </div>
   </section>
 
-  <!-- MODULES EN OPTION -->
-  <section id="modules">
+  <!-- AGENTS IA (modules en option) -->
+  <section class="ai" id="agents-ia">
     <div class="wrap">
-      <h2>Des modules en option, selon votre métier</h2>
-      <p class="intro">L'assistant email est le socle. Ces modules s'y ajoutent quand ils vous font gagner du temps ou de l'argent. Ils sont réglés pour votre entreprise, et rien ne part sans votre accord.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>Un agent d'accueil sur votre site</h3>
-          <p>Un chat qui répond à vos visiteurs, même le soir et le week-end, avec vos informations à vous&nbsp;: services, zone, horaires, documents à prévoir. Il pose les bonnes questions, vous transmet la demande et peut proposer un rendez-vous dans votre agenda. Il dit clairement qu'il est un assistant automatique et ne donne jamais de conseil réservé à votre métier.</p>
-          <p class="small">Vous pouvez l'essayer&nbsp;: la bulle en bas à droite de cette page en est un.</p>
-        </div>
-        <div class="card">
+      <span class="ai-badge">✦ Agents IA en option</span>
+      <h2>Trois agents IA qui travaillent pour vous, même quand vous n'êtes pas là</h2>
+      <p class="intro">L'assistant email est le socle. Ces agents s'y ajoutent selon votre métier&nbsp;: ils répondent, relancent et vérifient à votre place, avec vos informations à vous. Vous gardez la main&nbsp;: rien ne part sans votre accord.</p>
+      <div class="ai-grid">
+        <article class="ai-card">
+          <div class="ai-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
+          <h3>L'agent d'accueil de votre site</h3>
+          <p>Il répond à vos visiteurs le soir et le week-end, pose les bonnes questions, vous transmet la demande et peut proposer un rendez-vous dans votre agenda.</p>
+          <div class="ai-demo" aria-label="Exemple de conversation">
+            <div class="lbl">Exemple, samedi 21h40</div>
+            <div class="q">Bonjour, on a signé le compromis à Jambes, il nous faut un crédit avant fin novembre.</div>
+            <div class="r">Bonjour, bonne nouvelle&nbsp;! Pour avancer vite, je peux vous proposer un rendez-vous cette semaine. Quel email puis-je utiliser&nbsp;?</div>
+          </div>
+          <p class="ai-gain">→ Aucune demande perdue, même hors horaires</p>
+        </article>
+        <article class="ai-card">
+          <div class="ai-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 8h16"/><path d="M8 13h5M8 16h3"/><path d="M16 12l2 2-2 2"/></svg></div>
           <h3>La relance des devis et des factures</h3>
-          <p>Un devis sans réponse après quelques jours, une facture impayée après son échéance&nbsp;: l'assistant prépare une relance polie, adaptée au client et à la langue, avec le montant, l'échéance et vos coordonnées bancaires ajoutés automatiquement. Elle attend dans vos brouillons. Chaque matin, un résumé vous dit qui relancer, qui appeler et ce qui arrive à échéance.</p>
-        </div>
-        <div class="card">
+          <p>Devis sans réponse, facture impayée&nbsp;: il prépare une relance polie au bon moment, avec le montant et vos coordonnées bancaires ajoutés automatiquement. Chaque matin, il vous dit qui relancer et qui appeler.</p>
+          <div class="ai-demo" aria-label="Exemple de relance">
+            <div class="lbl">Brouillon prêt à envoyer</div>
+            Bonjour Monsieur Henrard, sauf erreur de notre part, la facture ci-dessous n'est pas encore réglée…
+            <div class="fact">Facture 2026-041 · 1&nbsp;250,00&nbsp;€ · échéance 30/09</div>
+          </div>
+          <p class="ai-gain">→ Plus aucun devis ni impayé oublié</p>
+        </article>
+        <article class="ai-card">
+          <div class="ai-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
           <h3>Le contrôle des documents reçus</h3>
-          <p>L'assistant ouvre vraiment les pièces jointes, PDF ou photos&nbsp;: est-ce bien la fiche de paie demandée, au bon nom, assez récente et lisible&nbsp;? Il en relève les montants et les dates, et vous signale ce qui cloche avant que vous perdiez du temps sur un dossier incomplet. Il ne recopie jamais un numéro national ni un numéro de compte complet.</p>
-        </div>
+          <p>Il ouvre vraiment les PDF et les photos&nbsp;: est-ce la bonne pièce, au bon nom, lisible et assez récente&nbsp;? Il relève montants et dates, et vous signale ce qui cloche.</p>
+          <div class="ai-demo" aria-label="Exemple de contrôle">
+            <div class="lbl">Dossier crédit · 2 documents reçus</div>
+            <div><span class="ok">✓</span> Fiche de paie septembre · au bon nom · net 2&nbsp;067&nbsp;€</div>
+            <div><span class="warn">!</span> Extrait de compte · page 2 manquante</div>
+          </div>
+          <p class="ai-gain">→ Des dossiers complets avant de les traiter</p>
+        </article>
       </div>
-      <p class="small" style="margin-top:18px">Également possibles, sur demande&nbsp;: demande d'avis Google après un dossier réussi, rappels d'entretien ou de renouvellement à vos clients, connexion à votre logiciel métier. On en parle pendant l'audit.</p>
+      <div class="ai-cta">
+        <a class="btn btn-ai" href="#" id="essayer-agent">Essayer l'agent maintenant</a>
+        <a class="btn btn-ghost-light" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Voir lesquels conviennent à mon entreprise</a>
+      </div>
+      <p class="ai-foot">L'agent d'accueil de ce site fonctionne exactement comme celui que vous auriez&nbsp;: posez-lui vos questions. Aussi possibles sur demande&nbsp;: demande d'avis Google après un dossier réussi, rappels d'entretien ou de renouvellement, connexion à votre logiciel métier. Exemples ci-dessus fictifs. Agents réglés pour votre entreprise, sur devis.</p>
     </div>
   </section>
 
@@ -677,6 +746,15 @@ footer p { margin: 0 0 4px; }
 </footer>
 
 <!-- Bulle de chat : assistant IA d'Assysteo (voir chat.js) -->
-<script src="chat.js?v=6" defer></script>
+<script src="chat.js?v=7" defer></script>
+<script>
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('#essayer-agent');
+    if (!a) return;
+    e.preventDefault();
+    if (window.assysteoOuvrirChat) window.assysteoOuvrirChat();
+    else { var b = document.querySelector('.ac-bouton'); if (b) b.click(); }
+  });
+</script>
 </body>
 </html>

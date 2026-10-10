@@ -204,6 +204,8 @@
   }
 
   bouton.addEventListener('click', ouvrir);
+  // Permet au bouton « Essayer l'agent maintenant » du site d'ouvrir la bulle
+  window.assysteoOuvrirChat = ouvrir;
   panneau.querySelector('.ac-fermer').addEventListener('click', fermer);
   panneau.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermer(); });
   saisie.addEventListener('input', ajusterHauteur);
