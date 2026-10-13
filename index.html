@@ -315,8 +315,63 @@ section.ai .ai-badge { margin-bottom: 14px; background: rgba(255,255,255,.14); b
 .btn-ghost-light:hover { background: rgba(255,255,255,.1); color: #fff; }
 .ai-foot { color: #aebfd1; font-size: .9rem; margin-top: 18px; }
 
+
+/* ── Bandeau chiffre clé ── */
+section.stat { background: linear-gradient(135deg, #1d4f73 0%, #153b57 60%, #2b2350 100%); color: #dbe6f1; padding: 64px 0; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; }
+@media (max-width: 860px) { .stat-grid { grid-template-columns: 1fr; gap: 28px; } }
+.stat-grid > * { min-width: 0; }
+.stat-num { font-size: clamp(4.2rem, 13vw, 7.5rem); font-weight: 800; line-height: .95; color: #fff; letter-spacing: -0.03em; margin: 0; }
+.stat-num small { font-size: .32em; font-weight: 700; letter-spacing: 0; color: #b9f0cf; display: block; margin-top: 10px; }
+.stat-calc { font-size: 1.2rem; color: #fff; font-weight: 600; margin: 18px 0 6px; }
+.stat .small { color: #aebfd1; }
+.stat h2 { color: #fff; font-size: clamp(1.3rem, 2.6vw, 1.7rem); }
+.pain-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; list-style: none; padding: 0; margin: 0; }
+@media (max-width: 340px) { .pain-chips { grid-template-columns: 1fr; } }
+.pain-chips li { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 14px 16px; font-size: .97rem; color: #eaf1f7; line-height: 1.4; }
+.pain-chips li svg { display: block; width: 26px; height: 26px; margin-bottom: 8px; stroke: #b9f0cf; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── Tuiles dépliables (assistant, métiers) ── */
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; align-items: start; }
+@media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .tiles { grid-template-columns: 1fr; gap: 10px; } }
+.tiles.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .tiles.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .tiles.four { grid-template-columns: 1fr; } }
+.tile { background: #fff; border: 1px solid var(--line); border-radius: 14px; transition: border-color .15s ease, box-shadow .15s ease; }
+.tile:hover { border-color: #b8c7d6; box-shadow: 0 6px 18px rgba(21,32,43,.06); }
+.tile summary { list-style: none; cursor: pointer; padding: 20px 44px 20px 20px; position: relative; display: flex; gap: 14px; align-items: flex-start; }
+.tile summary::-webkit-details-marker { display: none; }
+.tile summary::after { content: "+"; position: absolute; right: 16px; top: 16px; font-size: 1.4rem; color: var(--brand); line-height: 1; }
+.tile[open] summary::after { content: "\2212"; }
+.tile h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.tile .one { margin: 0; font-size: .95rem; color: var(--muted); line-height: 1.45; }
+.tile .more { padding: 0 20px 18px 82px; font-size: .95rem; }
+@media (max-width: 560px) { .tile .more { padding-left: 20px; } }
+.tile .more p:last-child { margin-bottom: 0; }
+.ico { flex: none; width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; background: var(--brand-soft); }
+.ico svg { width: 24px; height: 24px; stroke: var(--brand); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ico.v { background: var(--violet-soft); } .ico.v svg { stroke: var(--violet); }
+.ico.g { background: var(--ok-soft); } .ico.g svg { stroke: var(--ok); }
+.ico.a { background: var(--amber-soft); } .ico.a svg { stroke: var(--amber); }
+.tiles.four .tile summary { flex-direction: column; padding-right: 20px; }
+.tiles.four .tile summary::after { top: 20px; }
+.tiles.four .tile .more { padding-left: 20px; }
+@media (max-width: 560px) { .tiles.four .tile summary { flex-direction: row; padding-right: 44px; } }
+.tile-hint { font-size: .85rem; color: var(--muted); margin: 12px 0 0; }
+
+/* Rythme : fonds alternés */
+section.tint { background: linear-gradient(180deg, #eef3f9 0%, #f6f2fb 100%); }
+section.tint-green { background: #eef6f1; }
+.steps li { border-top: 4px solid var(--brand); }
+
+/* En-tête plus aéré sur mobile */
+@media (max-width: 520px) {
+  .brand > .brand-texte > span { display: none; }
+  .site-header .btn-small { white-space: nowrap; padding: 8px 12px; }
+}
 </style>
-<link rel="stylesheet" href="chat.css?v=7">
+<link rel="stylesheet" href="chat.css?v=8">
 </head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -397,23 +452,22 @@ section.ai .ai-badge { margin-bottom: 14px; background: rgba(255,255,255,.14); b
     </div>
   </section>
 
-  <!-- LE PROBLÈME -->
-  <section class="alt" id="probleme">
-    <div class="wrap pain">
+  <!-- LE PROBLÈME : chiffre clé -->
+  <section class="stat" id="probleme">
+    <div class="wrap stat-grid">
       <div>
-        <h2>Ce qui vous prend du temps chaque jour</h2>
-        <ul>
-          <li>Lire chaque email, comprendre ce que la personne veut et décider qui s'en occupe.</li>
-          <li>Répondre encore aux mêmes questions&nbsp;: horaires, documents à fournir, délais.</li>
-          <li>Réclamer pour la troisième fois la fiche de paie ou le certificat PEB qui manque.</li>
-          <li>Retrouver où en est un dossier quand le client appelle.</li>
-        </ul>
+        <p class="stat-num">2&nbsp;h<small>par jour, rien qu'en emails</small></p>
+        <p class="stat-calc">40 emails × 3 minutes = 2 heures. Soit une dizaine d'heures par semaine, sans compter les relances.</p>
+        <p class="small">Un exemple de calcul. Vos chiffres sont peut-être plus bas, ou plus hauts&nbsp;: l'audit gratuit sert à les mesurer.</p>
       </div>
-      <div class="example">
-        <p class="small" style="margin-bottom:.4em">Un exemple de calcul</p>
-        <p class="big">40 emails par jour × 3 minutes = 2 heures par jour.</p>
-        <p>Si vous recevez 40 emails par jour et que chacun vous demande 3 minutes (lire, répondre, classer), cela fait 2 heures par jour, soit une dizaine d'heures par semaine. Sans compter les relances.</p>
-        <p style="margin-bottom:0">Vos chiffres sont peut-être plus bas, ou plus hauts. L'audit gratuit sert justement à les mesurer.</p>
+      <div>
+        <h2>Ce qui vous prend ce temps</h2>
+        <ul class="pain-chips">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>Lire chaque email et décider qui s'en occupe</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Répondre encore aux mêmes questions</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M12 12v4M12 18h.01"/></svg>Réclamer pour la 3<sup>e</sup> fois la pièce qui manque</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>Retrouver où en est un dossier quand le client appelle</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -426,15 +480,15 @@ section.ai .ai-badge { margin-bottom: 14px; background: rgba(255,255,255,.14); b
       <ol class="steps">
         <li>
           <h3>Audit gratuit de 30 minutes</h3>
-          <p>On regarde ensemble les emails que vous recevez, les dossiers que vous suivez et les documents que vous réclamez. Je vous montre combien d'heures y passent. Vous gardez les conclusions, même si vous n'allez pas plus loin.</p>
+          <p>On regarde vos emails, vos dossiers et les documents que vous réclamez. Je vous montre combien d'heures y passent. Vous gardez les conclusions.</p>
         </li>
         <li>
           <h3>Installation à votre mesure</h3>
-          <p>Je crée votre instance, à votre nom, hébergée dans l'Union européenne. Avec vous, je règle les types de dossiers, la liste des pièces pour chacun, le ton des réponses et le délai entre deux relances. Ensuite, vous connectez votre boîte mail.</p>
+          <p>Votre instance, à votre nom, hébergée dans l'UE. On règle ensemble les dossiers, les pièces à réclamer, le ton des réponses et le rythme des relances.</p>
         </li>
         <li>
           <h3>Démarrage en mode brouillon</h3>
-          <p>L'assistant prépare, vous relisez, vous envoyez. Les premières semaines, on ajuste ensemble les consignes à partir de ce que vous avez dû corriger. L'envoi automatique reste possible plus tard, si vous le décidez.</p>
+          <p>L'assistant prépare, vous relisez, vous envoyez. On ajuste les consignes les premières semaines. L'envoi automatique, plus tard, seulement si vous le décidez.</p>
         </li>
       </ol>
     </div>
@@ -445,32 +499,33 @@ section.ai .ai-badge { margin-bottom: 14px; background: rgba(255,255,255,.14); b
     <div class="wrap">
       <h2>Ce que fait l'assistant</h2>
       <p class="intro">Vous gardez votre adresse email, votre agenda et vos habitudes. L'assistant s'y ajoute.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>Il lit et trie chaque email</h3>
-          <p>Nouvelle demande, question, prise de rendez-vous, envoi de documents, urgence ou réclamation&nbsp;: chaque message est reconnu, étiqueté et classé par priorité. Les notifications automatiques (noreply, newsletters) sont laissées de côté.</p>
-        </div>
-        <div class="card">
-          <h3>Il rédige la réponse dans la langue du client</h3>
-          <p>Français, néerlandais ou anglais&nbsp;: la réponse suit la langue du message reçu. Elle s'appuie sur vos informations (services, zone, horaires, réponses aux questions fréquentes), pas sur des généralités.</p>
-        </div>
-        <div class="card">
-          <h3>Il collecte les documents</h3>
-          <p>Chaque type de dossier a sa liste de pièces&nbsp;: crédit hypothécaire, mise en vente, panneaux solaires, clôture TVA, ou ce dont vous avez besoin. L'assistant coche les pièces reçues en pièce jointe et redemande celles qui manquent. Vous pouvez aussi ouvrir un dossier vous-même depuis un formulaire simple&nbsp;: le client reçoit alors la liste à fournir.</p>
-        </div>
-        <div class="card">
-          <h3>Il relance à votre place</h3>
-          <p>Les pièces manquantes sont redemandées à l'intervalle que vous fixez, par exemple tous les 3 jours. Après le nombre de relances prévu, c'est vous qu'il prévient&nbsp;: un coup de fil fera mieux qu'un quatrième email. Il peut aussi relancer une fois les demandes de devis restées sans suite.</p>
-        </div>
-        <div class="card">
-          <h3>Il vous tient au courant</h3>
-          <p>Quand quelqu'un doit être rappelé, un rappel apparaît dans votre agenda. Les urgences et les réclamations vous arrivent par email, avec un bouton qui ouvre directement la conversation. Et chaque matin, un résumé vous dit où en sont les dossiers.</p>
-        </div>
-        <div class="card">
-          <h3>Il fonctionne avec votre boîte mail</h3>
-          <p>Gmail et Google Workspace, Outlook et Microsoft 365, ou toute boîte mail professionnelle compatible IMAP (celle de votre hébergeur web, par exemple).</p>
-        </div>
+      <div class="tiles">
+        <details class="tile">
+          <summary><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></span><div><h3>Il lit et trie chaque email</h3><p class="one">Chaque message est reconnu, étiqueté et classé par priorité.</p></div></summary>
+          <div class="more"><p>Nouvelle demande, question, prise de rendez-vous, envoi de documents, urgence ou réclamation. Les notifications automatiques (noreply, newsletters) sont laissées de côté.</p></div>
+        </details>
+        <details class="tile">
+          <summary><span class="ico v" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><div><h3>Il rédige la réponse</h3><p class="one">Dans la langue du client, avec vos informations à vous.</p></div></summary>
+          <div class="more"><p>Français, néerlandais ou anglais&nbsp;: la réponse suit la langue du message reçu. Elle s'appuie sur vos services, votre zone, vos horaires et vos réponses aux questions fréquentes, pas sur des généralités.</p></div>
+        </details>
+        <details class="tile">
+          <summary><span class="ico a" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 15l2 2 4-4"/></svg></span><div><h3>Il collecte les documents</h3><p class="one">Il coche les pièces reçues et redemande celles qui manquent.</p></div></summary>
+          <div class="more"><p>Chaque type de dossier a sa liste de pièces&nbsp;: crédit hypothécaire, mise en vente, panneaux solaires, clôture TVA, ou ce dont vous avez besoin. Vous pouvez aussi ouvrir un dossier depuis un formulaire simple&nbsp;: le client reçoit alors la liste à fournir.</p></div>
+        </details>
+        <details class="tile">
+          <summary><span class="ico g" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span><div><h3>Il relance à votre place</h3><p class="one">Au rythme que vous fixez, puis il vous passe la main.</p></div></summary>
+          <div class="more"><p>Les pièces manquantes sont redemandées à l'intervalle choisi, par exemple tous les 3 jours. Après le nombre de relances prévu, c'est vous qu'il prévient&nbsp;: un coup de fil fera mieux qu'un quatrième email. Il peut aussi relancer une fois les demandes de devis restées sans suite.</p></div>
+        </details>
+        <details class="tile">
+          <summary><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span><div><h3>Il vous tient au courant</h3><p class="one">Rappels dans l'agenda, alertes urgentes, résumé chaque matin.</p></div></summary>
+          <div class="more"><p>Quand quelqu'un doit être rappelé, un rappel apparaît dans votre agenda. Les urgences et les réclamations vous arrivent par email, avec un bouton qui ouvre directement la conversation. Chaque matin, un résumé vous dit où en sont les dossiers.</p></div>
+        </details>
+        <details class="tile">
+          <summary><span class="ico v" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><div><h3>Avec votre boîte mail</h3><p class="one">Gmail, Outlook ou toute boîte professionnelle.</p></div></summary>
+          <div class="more"><p>Gmail et Google Workspace, Outlook et Microsoft 365, ou toute boîte mail professionnelle compatible IMAP (celle de votre hébergeur web, par exemple).</p></div>
+        </details>
       </div>
+      <p class="tile-hint">Touchez une tuile pour le détail.</p>
       <div class="label-strip">
         <p>Les étiquettes que vous verrez dans votre boîte mail&nbsp;:</p>
         <div class="tags">
@@ -534,37 +589,33 @@ section.ai .ai-badge { margin-bottom: 14px; background: rgba(255,255,255,.14); b
   </section>
 
   <!-- POUR QUI -->
-  <section id="pour-qui" class="who">
+  <section id="pour-qui" class="who tint">
     <div class="wrap">
       <h2>Pour qui&nbsp;?</h2>
       <p class="intro">Pour les petites entreprises qui reçoivent beaucoup de demandes par email et passent du temps à réunir des documents. En particulier ces quatre métiers.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Agences immobilières</h3>
-          <p class="kicker">Exemple</p>
-          <p>Un propriétaire vous confie la vente de sa maison. L'assistant lui envoie la liste des pièces&nbsp;: titre de propriété, certificat PEB, contrôle de l'installation électrique, attestation du sol. Il coche ce qui arrive et redemande le reste. Quand tout est là, la conversation passe en «&nbsp;Dossier complet&nbsp;».</p>
-        </article>
-        <article class="card">
-          <h3>Courtiers en crédit et en assurance</h3>
-          <p class="kicker">Exemple</p>
-          <p>Un couple prépare son crédit hypothécaire. Il manque encore le compromis de vente et le dernier avertissement-extrait de rôle. L'assistant les redemande à l'intervalle prévu. Si rien n'arrive, vous êtes prévenu pour les appeler.</p>
-        </article>
-        <article class="card">
-          <h3>Installateurs en énergie</h3>
-          <p class="kicker">Panneaux solaires, pompes à chaleur, isolation, toiture</p>
-          <p>Une demande de devis pour une pompe à chaleur arrive un dimanche soir, en néerlandais. Lundi matin, la réponse vous attend dans vos brouillons, en néerlandais, avec les informations à envoyer&nbsp;: photos de l'installation actuelle, surface à chauffer, dernière facture d'énergie. Le contact est marqué «&nbsp;Lead&nbsp;».</p>
-        </article>
-        <article class="card">
-          <h3>Cabinets comptables et conseillers</h3>
-          <p class="kicker">Exemple</p>
-          <p>Avant chaque déclaration TVA, il faut récupérer les factures d'achat, de vente et les extraits de compte de chaque client. L'assistant envoie la liste, note qui a tout envoyé et relance les retardataires. Dans le résumé du matin, vous voyez qui bloque encore.</p>
-        </article>
+      <div class="tiles four">
+        <details class="tile">
+          <summary><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span><div><h3>Agences immobilières</h3><p class="one">Les pièces de chaque mise en vente, réclamées et cochées.</p></div></summary>
+          <div class="more"><p>Un propriétaire vous confie la vente de sa maison. L'assistant lui envoie la liste&nbsp;: titre de propriété, certificat PEB, contrôle électrique, attestation du sol. Il coche ce qui arrive et redemande le reste. Quand tout est là, la conversation passe en «&nbsp;Dossier complet&nbsp;».</p></div>
+        </details>
+        <details class="tile">
+          <summary><span class="ico v" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h3>Courtiers crédit et assurance</h3><p class="one">Des dossiers de crédit complets sans courir après vos clients.</p></div></summary>
+          <div class="more"><p>Un couple prépare son crédit hypothécaire. Il manque le compromis et le dernier avertissement-extrait de rôle. L'assistant les redemande à l'intervalle prévu. Si rien n'arrive, vous êtes prévenu pour les appeler.</p></div>
+        </details>
+        <details class="tile">
+          <summary><span class="ico a" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span><div><h3>Installateurs en énergie</h3><p class="one">La demande de devis du dimanche soir traitée lundi à 8&nbsp;h.</p></div></summary>
+          <div class="more"><p>Panneaux solaires, pompes à chaleur, isolation, toiture. Une demande arrive un dimanche soir, en néerlandais. Lundi matin, la réponse vous attend dans vos brouillons, en néerlandais, avec les informations à envoyer&nbsp;: photos, surface à chauffer, dernière facture d'énergie. Le contact est marqué «&nbsp;Lead&nbsp;».</p></div>
+        </details>
+        <details class="tile">
+          <summary><span class="ico g" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18h.01M12 18h4"/></svg></span><div><h3>Cabinets comptables</h3><p class="one">Les pièces TVA de chaque client, relancées sans vous.</p></div></summary>
+          <div class="more"><p>Avant chaque déclaration TVA, il faut récupérer factures d'achat, de vente et extraits de compte. L'assistant envoie la liste, note qui a tout envoyé et relance les retardataires. Dans le résumé du matin, vous voyez qui bloque encore.</p></div>
+        </details>
       </div>
     </div>
   </section>
 
   <!-- CONFIANCE -->
-  <section class="alt" id="confiance">
+  <section class="tint-green" id="confiance">
     <div class="wrap">
       <h2>Confiance et données</h2>
       <p class="intro">Confier sa boîte mail, ce n'est pas rien. Voici comment c'est organisé.</p>

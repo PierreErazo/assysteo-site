@@ -81,7 +81,9 @@
 .ac-pied a { color: inherit; }
 
 @media (max-width: 520px) {
-  .ac-bouton { right: 16px; bottom: 16px; }
+  .ac-bouton { right: 16px; bottom: 16px; padding: 14px; }
+  /* Sur mobile : bulle ronde, icône seule (le texte reste lu par les lecteurs d'écran) */
+  .ac-bouton span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .ac-panneau { right: 12px; left: 12px; bottom: 12px; width: auto; height: calc(100dvh - 24px); }
   /* Chat ouvert : la page derrière ne défile plus */
   html.ac-ouvert, html.ac-ouvert body { overflow: hidden; }
