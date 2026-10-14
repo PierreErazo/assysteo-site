@@ -137,22 +137,46 @@
 
   /* ---------- 4. En-tête et barre de progression ---------- */
   var tete = document.querySelector('.site-header'), barre = document.querySelector('.progress');
+  var enAttente = false, max = 0, etatTete = null;
+  function mesure() { max = document.documentElement.scrollHeight - innerHeight; }
   function defile() {
-    var y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
-    if (tete) tete.classList.toggle('scrolled', y > 10);
-    if (barre) barre.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+    enAttente = false;
+    var y = window.scrollY, haut = y > 10;
+    if (tete && haut !== etatTete) { tete.classList.toggle('scrolled', haut); etatTete = haut; }
+    if (barre) barre.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
   }
-  addEventListener('scroll', defile, { passive: true }); defile();
+  // Une seule mise à jour par image affichée, quelle que soit la vitesse de défilement
+  addEventListener('scroll', function () { if (!enAttente) { enAttente = true; requestAnimationFrame(defile); } }, { passive: true });
+  addEventListener('resize', function () { mesure(); defile(); }, { passive: true });
+  addEventListener('load', mesure);
+  if ('ResizeObserver' in window) new ResizeObserver(mesure).observe(document.body);
+  mesure(); defile();
+
+  /* Animations en boucle mises en pause quand elles sortent de l'écran */
+  if ('IntersectionObserver' in window) {
+    var op = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { x.target.classList.toggle('hors-ecran', !x.isIntersecting); });
+    });
+    document.querySelectorAll('.hero, .marquee, section.ai').forEach(function (el) { op.observe(el); });
+  }
+  /* Onglet en arrière-plan : on arrête l'écriture de la boîte mail */
+  document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); });
 
   /* ---------- 5. Cartes IA : léger effet 3D au survol (souris uniquement) ---------- */
   if (!calme && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     document.querySelectorAll('.ai-card').forEach(function (c) {
-      c.addEventListener('mousemove', function (ev) {
-        var r = c.getBoundingClientRect(), x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5;
-        c.style.transform = 'perspective(900px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg) translateY(-4px)';
-        c.style.setProperty('--mx', (x + .5) * 100 + '%'); c.style.setProperty('--my', (y + .5) * 100 + '%');
+      var r, ev, prevu = false;
+      c.addEventListener('mouseenter', function () { r = c.getBoundingClientRect(); });
+      c.addEventListener('mousemove', function (e) {
+        ev = e; if (prevu) return; prevu = true;
+        requestAnimationFrame(function () {
+          prevu = false; if (!ev || !r) return;
+          var x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5;
+          c.style.transform = 'perspective(900px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg) translateY(-4px)';
+          c.style.setProperty('--mx', (x + .5) * 100 + '%'); c.style.setProperty('--my', (y + .5) * 100 + '%');
+        });
       });
-      c.addEventListener('mouseleave', function () { c.style.transform = ''; });
+      c.addEventListener('mouseleave', function () { ev = null; c.style.transform = ''; });
     });
   }
 })();
