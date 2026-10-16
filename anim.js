@@ -34,6 +34,7 @@
       { de: 'C. Renard', h: 'Lun.', obj: 'Courrier du SPF Finances reçu ce matin', tags: [['t-todo', 'À traiter']] }
     ]
   };
+  var telephone = window.matchMedia('(max-width: 640px)');
   var liste = document.querySelector('#inbox-anim .mail');
   var compteur = document.querySelector('#inbox-anim .inbox-count');
   var timers = [];
@@ -44,6 +45,7 @@
     if (!liste) return;
     stop();
     var mails = METIERS[cle] || METIERS.immo;
+    if (telephone.matches) mails = mails.slice(0, 3);   // page plus courte sur téléphone
     liste.innerHTML = '';
     if (compteur) compteur.textContent = '0 trié';
     mails.forEach(function (m, i) {
@@ -192,12 +194,17 @@
     function maj() {
       prevu = false;
       var pas = cartes[1].offsetLeft - cartes[0].offsetLeft || 1;
-      var k = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4 ? n - 1 : Math.min(n - 1, Math.round(rail.scrollLeft / pas));
+      var bout = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4;
+      var k = rail.scrollWidth <= rail.clientWidth + 4 ? 0 : bout ? n - 1 : Math.min(n - 1, Math.round(rail.scrollLeft / pas));
       if (k === actif) return;
       if (actif >= 0) points.children[actif].classList.remove('on');
       points.children[k].classList.add('on'); actif = k;
     }
-    rail.addEventListener('scroll', function () { if (!prevu) { prevu = true; requestAnimationFrame(maj); } }, { passive: true });
+    var demande = function () { if (!prevu) { prevu = true; requestAnimationFrame(maj); } };
+    rail.addEventListener('scroll', demande, { passive: true });
+    // Un carrousel peut apparaître après coup (tarifs détaillés ouverts depuis le menu)
+    addEventListener('hashchange', demande);
+    addEventListener('resize', demande, { passive: true });
     maj();
   });
 

@@ -500,7 +500,7 @@ section.ai .wrap { position: relative; z-index: 1; }
 
 /* ════════ Téléphone : page plus courte ════════ */
 /* Points de position des carrousels (ajoutés par anim.js, visibles sur téléphone seulement) */
-.dots { display: none; }
+.dots, .tarifs-detail { display: none; }
 @media (max-width: 640px) {
   .hors-mobile { display: none !important; }
   /* Parties rangées dans le menu ☰ : hors du défilement, affichées quand on les ouvre depuis le menu */
@@ -540,6 +540,21 @@ section.ai .wrap { position: relative; z-index: 1; }
   .tile[open] .one { display: block; }
   .tile .more, .tiles.four .tile .more { padding: 0 14px 14px; }
 
+  /* Boîte mail animée : 3 emails (anim.js), hauteur finale réservée dès le départ pour que la page ne saute pas */
+  .inbox .mail { min-height: 396px; }
+
+  /* Agents IA : titre, exemple et bénéfice suffisent */
+  .ai-card > p:not(.ai-gain) { display: none; }
+  /* Tarifs : les deux prix côte à côte ; le détail s'ouvre par le lien ou depuis le menu */
+  #tarifs:not(:target) .intro, #tarifs:not(:target) .checks, #tarifs:not(:target) .small, #tarifs:not(:target) .prices + .dots { display: none; }
+  #tarifs:not(:target) .prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0 0; padding: 0; overflow: visible; }
+  #tarifs:not(:target) .prices::after { display: none; }
+  #tarifs:not(:target) .price { padding: 16px 14px; }
+  #tarifs:not(:target) .price h3 { font-size: 1rem; margin-bottom: 4px; }
+  #tarifs:not(:target) .price .amount { font-size: 1.6rem; }
+  #tarifs:not(:target) .price .unit { margin: 0; font-size: .82rem; line-height: 1.35; }
+  #tarifs:not(:target) .tarifs-detail { display: block; margin: 14px 0 0; font-weight: 600; }
+
   /* Accroche, agents IA, pilotes, FAQ et contact plus compacts */
   .ai-hero-strip { margin-top: 14px; padding: 10px 12px; }
   .ai-grid { margin-top: 22px; }
@@ -554,6 +569,10 @@ section.ai .wrap { position: relative; z-index: 1; }
   .faq summary::after { top: 10px; }
   .cta-box { padding: 24px 18px; }
 }
+/* Écrans étroits : le brouillon tapé prend une ligne de plus */
+@media (max-width: 400px) { .inbox .mail { min-height: 418px; } }
+@media (max-width: 640px) { .inbox-top b, .inbox-count { white-space: nowrap; } }
+@media (max-width: 360px) { .inbox-top .dot { display: none; } }
 </style>
 <link rel="stylesheet" href="chat.css?v=9">
 </head>
@@ -604,7 +623,7 @@ section.ai .wrap { position: relative; z-index: 1; }
           <a class="btn btn-ghost hors-mobile" href="#fonctionnement">Voir comment ça marche</a>
         </div>
         <p class="small">Audit de 30 minutes, en visio ou sur place. Sans engagement.</p>
-        <a class="ai-hero-strip" href="#agents-ia">
+        <a class="ai-hero-strip hors-mobile" href="#agents-ia">
           <span class="ai-badge">✦ Nouveau · Agents IA</span>
           <span class="txt hors-mobile">Un agent qui accueille vos visiteurs, un autre qui relance vos devis et factures, un troisième qui vérifie les documents reçus.</span>
           <span class="go">Découvrir →</span>
@@ -645,13 +664,13 @@ section.ai .wrap { position: relative; z-index: 1; }
             </li>
           </ul>
         </div>
-        <figcaption class="caption">Exemple animé avec des noms fictifs. Les étiquettes s'affichent dans votre boîte mail habituelle.</figcaption>
+        <figcaption class="caption">Exemple animé avec des noms fictifs.<span class="hors-mobile"> Les étiquettes s'affichent dans votre boîte mail habituelle.</span></figcaption>
       </figure>
     </div>
   </section>
 
   <!-- BANDEAU DÉFILANT -->
-  <div class="marquee" aria-label="Compatible avec Gmail, Google Workspace, Outlook, Microsoft 365, toute boîte IMAP, Google Agenda et Outlook Agenda, en français, néerlandais et anglais">
+  <div class="marquee hors-mobile" aria-label="Compatible avec Gmail, Google Workspace, Outlook, Microsoft 365, toute boîte IMAP, Google Agenda et Outlook Agenda, en français, néerlandais et anglais">
     <div class="marquee-track" aria-hidden="true">
       <span>Gmail</span><span>Google Workspace</span><span>Outlook</span><span>Microsoft 365</span><span>Boîtes IMAP</span><span>Google Agenda</span><span>Agenda Outlook</span><span>Français</span><span>Nederlands</span><span>English</span><span>Hébergé dans l'UE</span><span>Mode brouillon</span>
       <span>Gmail</span><span>Google Workspace</span><span>Outlook</span><span>Microsoft 365</span><span>Boîtes IMAP</span><span>Google Agenda</span><span>Agenda Outlook</span><span>Français</span><span>Nederlands</span><span>English</span><span>Hébergé dans l'UE</span><span>Mode brouillon</span>
@@ -673,7 +692,7 @@ section.ai .wrap { position: relative; z-index: 1; }
         </div>
         <p class="small">Estimation sur 5 jours par semaine et 46 semaines par an, sans compter les relances. L'audit gratuit mesure vos vrais chiffres.</p>
       </div>
-      <div>
+      <div class="hors-mobile">
         <h2>Ce qui vous prend ce temps</h2>
         <ul class="pain-chips">
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>Lire chaque email et décider qui s'en occupe</li>
@@ -711,7 +730,7 @@ section.ai .wrap { position: relative; z-index: 1; }
   <section class="alt" id="assistant">
     <div class="wrap">
       <h2>Ce que fait l'assistant</h2>
-      <p class="intro">Vous gardez votre adresse email, votre agenda et vos habitudes. L'assistant s'y ajoute.</p>
+      <p class="intro hors-mobile">Vous gardez votre adresse email, votre agenda et vos habitudes. L'assistant s'y ajoute.</p>
       <div class="tiles">
         <details class="tile">
           <summary><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></span><div><h3>Il lit et trie chaque email</h3><p class="one">Chaque message est reconnu, étiqueté et classé par priorité.</p></div></summary>
@@ -756,7 +775,7 @@ section.ai .wrap { position: relative; z-index: 1; }
   <section class="ai" id="agents-ia">
     <div class="wrap">
       <span class="ai-badge">✦ Agents IA en option</span>
-      <h2>Trois agents IA qui travaillent pour vous, même quand vous n'êtes pas là</h2>
+      <h2>Trois agents IA qui travaillent pour vous<span class="hors-mobile">, même quand vous n'êtes pas là</span></h2>
       <p class="intro hors-mobile">L'assistant email est le socle. Ces agents s'y ajoutent selon votre métier&nbsp;: ils répondent, relancent et vérifient à votre place, avec vos informations à vous. Vous gardez la main&nbsp;: rien ne part sans votre accord.</p>
       <div class="ai-grid swipe">
         <article class="ai-card">
@@ -795,7 +814,7 @@ section.ai .wrap { position: relative; z-index: 1; }
       </div>
       <div class="ai-cta">
         <a class="btn btn-ai" href="#" id="essayer-agent">Essayer l'agent maintenant</a>
-        <a class="btn btn-ghost-light" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Voir lesquels conviennent à mon entreprise</a>
+        <a class="btn btn-ghost-light hors-mobile" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Voir lesquels conviennent à mon entreprise</a>
       </div>
       <p class="ai-foot"><span class="hors-mobile">L'agent d'accueil de ce site fonctionne exactement comme celui que vous auriez&nbsp;: posez-lui vos questions. Aussi possibles sur demande&nbsp;: demande d'avis Google après un dossier réussi, rappels d'entretien ou de renouvellement, connexion à votre logiciel métier. </span>Exemples ci-dessus fictifs. Agents réglés pour votre entreprise, sur devis.</p>
     </div>
@@ -885,6 +904,7 @@ section.ai .wrap { position: relative; z-index: 1; }
           </ul>
         </div>
       </div>
+      <p class="tarifs-detail"><a href="#tarifs">Ce qui est compris et frais techniques →</a></p>
       <p class="small" style="margin-top:18px">Frais techniques en plus, payés directement par vous à vos fournisseurs, sur vos propres comptes : l'hébergement de votre instance n8n (de 5 à 25&nbsp;€ par mois environ selon la formule) et le service d'IA (quelques euros par mois pour un volume courant). Vous restez propriétaire de tout. Prix hors TVA.</p>
       <p class="small">Modules en option (agent d'accueil du site, relance des devis et factures, contrôle des documents)&nbsp;: sur devis, selon votre volume.</p>
     </div>
@@ -896,8 +916,8 @@ section.ai .wrap { position: relative; z-index: 1; }
       <div class="pilot">
         <div>
           <h2>Programme clients pilotes</h2>
-          <p>L'assistant Assysteo démarre. Pour les trois premiers clients, l'installation est offerte. En échange, je vous demande un retour d'expérience honnête après quelques semaines d'utilisation&nbsp;: ce qui vous fait gagner du temps, ce qui coince, ce qui manque.</p>
-          <p>Seule l'installation est offerte, la maintenance mensuelle et vos frais techniques s'appliquent normalement. Votre retour ne sera cité sur ce site qu'avec votre accord écrit.</p>
+          <p>L'assistant Assysteo démarre. Pour les trois premiers clients, l'installation est offerte. En échange, je vous demande un retour d'expérience honnête après quelques semaines d'utilisation<span class="hors-mobile">&nbsp;: ce qui vous fait gagner du temps, ce qui coince, ce qui manque</span>.</p>
+          <p>Seule l'installation est offerte, la maintenance mensuelle et vos frais techniques s'appliquent normalement.<span class="hors-mobile"> Votre retour ne sera cité sur ce site qu'avec votre accord écrit.</span></p>
           <a class="btn" href="mailto:contact@assysteo.be?subject=Programme%20clients%20pilotes">Proposer mon entreprise</a>
         </div>
         <div class="seats">
@@ -973,7 +993,7 @@ section.ai .wrap { position: relative; z-index: 1; }
       <div class="cta-box">
         <div>
           <h2>Audit gratuit de 30 minutes</h2>
-          <p class="lead">Je vous montre combien d'heures vous perdez en emails, relances et collecte de documents. Avec vos chiffres, pas avec des moyennes.</p>
+          <p class="lead hors-mobile">Je vous montre combien d'heures vous perdez en emails, relances et collecte de documents. Avec vos chiffres, pas avec des moyennes.</p>
           <p>Je m'appelle Pierre Warmoes et je suis basé à Namur. J'installe et je suis moi-même chaque assistant. Vous avez un seul interlocuteur, qui connaît votre configuration.</p>
           <div class="btn-row">
             <a class="btn btn-primary" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Choisir un créneau</a>
@@ -1012,7 +1032,7 @@ section.ai .wrap { position: relative; z-index: 1; }
 
 <!-- Bulle de chat : assistant IA d'Assysteo (voir chat.js) -->
 <script src="chat.js?v=8" defer></script>
-<script src="anim.js?v=4" defer></script>
+<script src="anim.js?v=5" defer></script>
 <script>
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('#essayer-agent');
