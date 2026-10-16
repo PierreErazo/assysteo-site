@@ -63,7 +63,7 @@
   bouton.className = 'ac-bouton';
   bouton.setAttribute('aria-expanded', 'false');
   bouton.setAttribute('aria-controls', 'ac-panneau');
-  bouton.innerHTML = icone + '<span>Une question&nbsp;?</span>';
+  bouton.innerHTML = icone + '<span>Demandez à l\'IA</span><i class="ac-enligne" aria-hidden="true"></i>';
 
   var panneau = document.createElement('div');
   panneau.id = 'ac-panneau';
@@ -84,7 +84,16 @@
     '</form>' +
     '<p class="ac-pied">Réponses générées par une IA (OpenAI). N\'indiquez pas de données sensibles. <a href="confidentialite.html#chat">Confidentialité</a></p>';
 
+  // Invitation : petite bulle au-dessus du bouton, une seule fois par visite
+  var invitation = document.createElement('div');
+  invitation.className = 'ac-invitation';
+  invitation.hidden = true;
+  invitation.innerHTML =
+    '<button type="button" class="ac-invitation-texte"><b>Une question&nbsp;?</b> Testez l\'agent IA d\'Assysteo&nbsp;: il vous répond tout de suite.</button>' +
+    '<button type="button" class="ac-invitation-fermer" aria-label="Masquer l\'invitation">×</button>';
+
   document.body.appendChild(bouton);
+  document.body.appendChild(invitation);
   document.body.appendChild(panneau);
   var zone = panneau.querySelector('.ac-messages');
   var formulaire = panneau.querySelector('.ac-formulaire');
@@ -139,6 +148,8 @@
   }
 
   function ouvrir() {
+    invitation.hidden = true;
+    ecrire('assysteo-chat-invite', '1');
     if (!zone.childNodes.length) afficherDebut();
     panneau.hidden = false;
     bouton.setAttribute('aria-expanded', 'true');
@@ -204,6 +215,22 @@
   }
 
   bouton.addEventListener('click', ouvrir);
+  invitation.querySelector('.ac-invitation-texte').addEventListener('click', ouvrir);
+  invitation.querySelector('.ac-invitation-fermer').addEventListener('click', function () { invitation.hidden = true; });
+  // L'invitation apparaît après un écran de défilement ou 12 s, sauf si le visiteur a déjà discuté
+  if (!lire('assysteo-chat-invite') && !historique.length) {
+    var montrerInvitation = function () {
+      removeEventListener('scroll', auDefilement);
+      clearTimeout(minuteurInvitation);
+      if (!panneau.hidden || lire('assysteo-chat-invite')) return;
+      ecrire('assysteo-chat-invite', '1');
+      invitation.hidden = false;
+      setTimeout(function () { invitation.hidden = true; }, 15000);
+    };
+    var auDefilement = function () { if (window.scrollY > window.innerHeight) montrerInvitation(); };
+    var minuteurInvitation = setTimeout(montrerInvitation, 12000);
+    addEventListener('scroll', auDefilement, { passive: true });
+  }
   // Permet au bouton « Essayer l'agent maintenant » du site d'ouvrir la bulle
   window.assysteoOuvrirChat = ouvrir;
   panneau.querySelector('.ac-fermer').addEventListener('click', fermer);

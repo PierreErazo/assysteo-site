@@ -2,13 +2,33 @@
 .ac-bouton {
   position: fixed; right: 20px; bottom: 20px; z-index: 60;
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 12px 18px 12px 14px; border: 0; border-radius: 999px;
-  background: var(--brand, #1d4f73); color: #fff;
-  font-family: inherit; font-size: 15px; font-weight: 600; line-height: 1.2; cursor: pointer;
-  box-shadow: 0 6px 20px rgba(21, 32, 43, .22);
-  transition: background .15s ease, transform .15s ease;
+  padding: 13px 20px 13px 15px; border: 0; border-radius: 999px;
+  background: linear-gradient(90deg, #7350b8, #2a6a9a); color: #fff;
+  font-family: inherit; font-size: 15.5px; font-weight: 700; line-height: 1.2; cursor: pointer;
+  /* Contour blanc : le bouton ressort aussi sur les sections sombres */
+  box-shadow: 0 0 0 2px #fff, 0 8px 24px rgba(21, 32, 43, .35);
+  transition: filter .15s ease, transform .15s ease;
 }
-.ac-bouton:hover { background: var(--brand-dark, #153b57); transform: translateY(-1px); }
+.ac-bouton:hover { filter: brightness(1.12); transform: translateY(-2px); }
+/* Onde lumineuse toutes les 3 s, pour que le bouton se remarque sans gêner la lecture */
+.ac-bouton::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; animation: ac-onde 3.2s ease-out 1.5s infinite; }
+@keyframes ac-onde { 0% { box-shadow: 0 0 0 0 rgba(139, 111, 209, .6); } 45%, 100% { box-shadow: 0 0 0 16px rgba(139, 111, 209, 0); } }
+/* Point vert : l'agent répond tout de suite */
+.ac-enligne { position: absolute; top: 1px; right: 3px; width: 12px; height: 12px; border-radius: 50%; background: #2fb67c; border: 2px solid #fff; }
+
+/* Invitation au-dessus du bouton (une fois par visite) */
+.ac-invitation {
+  position: fixed; right: 20px; bottom: 86px; z-index: 60;
+  display: flex; align-items: flex-start; gap: 2px; width: 270px; padding: 12px 6px 12px 14px;
+  background: #fff; color: var(--ink, #15202b); border: 1px solid #d9cdee; border-radius: 14px 14px 4px 14px;
+  box-shadow: 0 12px 32px rgba(21, 32, 43, .18); animation: ac-arrive .35s cubic-bezier(.2, .7, .2, 1);
+}
+.ac-invitation[hidden] { display: none; }
+.ac-invitation-texte { flex: 1; padding: 0; border: 0; background: none; text-align: left; font: inherit; font-size: 14.5px; line-height: 1.4; color: inherit; cursor: pointer; }
+.ac-invitation-texte b { color: var(--violet, #5b3f8f); }
+.ac-invitation-fermer { flex: none; width: 28px; height: 28px; margin-top: -4px; border: 0; border-radius: 8px; background: none; color: var(--muted, #5a6675); font-size: 20px; line-height: 1; cursor: pointer; }
+.ac-invitation-fermer:hover { background: var(--soft, #f4f6f8); }
+@keyframes ac-arrive { from { opacity: 0; transform: translateY(10px) scale(.96); } }
 .ac-bouton:focus-visible { outline: 3px solid #9cc3e0; outline-offset: 2px; }
 .ac-bouton svg { width: 22px; height: 22px; flex: none; }
 .ac-bouton[aria-expanded="true"] { display: none; }
@@ -60,7 +80,7 @@
 .ac-ecrit span:nth-child(2) { animation-delay: .2s; }
 .ac-ecrit span:nth-child(3) { animation-delay: .4s; }
 @keyframes ac-point { 0%, 60%, 100% { opacity: .25; } 30% { opacity: .9; } }
-@media (prefers-reduced-motion: reduce) { .ac-ecrit span { animation: none; } .ac-bouton { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .ac-ecrit span, .ac-bouton::before, .ac-invitation { animation: none; } .ac-bouton { transition: none; } }
 
 .ac-formulaire { display: flex; gap: 8px; align-items: flex-end; padding: 12px; border-top: 1px solid var(--line, #e2e6eb); background: #fff; }
 .ac-saisie {
@@ -81,11 +101,10 @@
 .ac-pied a { color: inherit; }
 
 @media (max-width: 520px) {
-  .ac-bouton { right: 16px; bottom: 16px; padding: 14px; }
-  /* Sur mobile : bulle ronde, icône seule (le texte reste lu par les lecteurs d'écran) */
-  .ac-bouton span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .ac-bouton { right: 16px; bottom: 16px; padding: 12px 17px 12px 13px; font-size: 15px; }
+  .ac-invitation { right: 16px; bottom: 76px; width: min(260px, calc(100vw - 32px)); }
   .ac-panneau { right: 12px; left: 12px; bottom: 12px; width: auto; height: calc(100dvh - 24px); }
   /* Chat ouvert : la page derrière ne défile plus */
   html.ac-ouvert, html.ac-ouvert body { overflow: hidden; }
 }
-@media print { .ac-bouton, .ac-panneau { display: none !important; } }
+@media print { .ac-bouton, .ac-invitation, .ac-panneau { display: none !important; } }
