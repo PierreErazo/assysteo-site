@@ -200,4 +200,20 @@
     rail.addEventListener('scroll', function () { if (!prevu) { prevu = true; requestAnimationFrame(maj); } }, { passive: true });
     maj();
   });
+
+  /* ---------- 7. Menu ☰ (téléphone et tablette) ---------- */
+  var boutonMenu = document.querySelector('.menu-btn');
+  if (boutonMenu && tete) {
+    var menu = function (ouvert) {
+      tete.classList.toggle('menu-ouvert', ouvert);
+      boutonMenu.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      boutonMenu.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+    };
+    boutonMenu.addEventListener('click', function () { menu(!tete.classList.contains('menu-ouvert')); });
+    tete.querySelectorAll('.nav ul a').forEach(function (a) { a.addEventListener('click', function () { menu(false); }); });
+    document.addEventListener('click', function (e) { if (!tete.contains(e.target)) menu(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && tete.classList.contains('menu-ouvert')) { menu(false); boutonMenu.focus(); }
+    });
+  }
 })();
