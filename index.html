@@ -472,6 +472,61 @@ section.ai .wrap { position: relative; z-index: 1; }
   .inbox .mail { min-height: 300px; }
   .metier-pill { padding: 6px 11px; font-size: .84rem; }
 }
+
+/* ════════ Téléphone : page plus courte ════════ */
+/* Points de position des carrousels (ajoutés par anim.js, visibles sur téléphone seulement) */
+.dots { display: none; }
+@media (max-width: 640px) {
+  .hors-mobile { display: none !important; }
+  section { padding: 40px 0; }
+  .hero { padding: 28px 0 40px; }
+  .hero-grid { gap: 28px; }
+  .btn-row { margin: 1.1em 0 .6em; }
+  section.stat { padding: 40px 0; }
+  .stat-grid { gap: 24px; }
+  .intro { margin-bottom: .6em; }
+
+  /* Cartes côte à côte, à faire glisser du doigt, au lieu d'une longue pile */
+  .swipe { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    margin: 20px -20px 0; padding: 4px 0 6px 20px; scroll-padding-left: 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .swipe::-webkit-scrollbar { display: none; }
+  .swipe::after { content: ""; flex: 0 0 8px; }
+  .swipe > * { flex: 0 0 86%; scroll-snap-align: start; }
+  .swipe > .reveal { opacity: 1; transform: none; transition-delay: 0s !important; }
+  .steps li, .card, .price, .ai-card { padding: 20px; }
+  .dots { display: flex; justify-content: center; gap: 6px; margin-top: 12px; }
+  .dots span { width: 7px; height: 7px; border-radius: 99px; background: #c8d0d8; transition: width .25s ease, background .25s ease; }
+  .dots span.on { width: 20px; background: var(--brand); }
+  section.ai .dots span { background: rgba(255,255,255,.3); }
+  section.ai .dots span.on { background: #fff; }
+
+  /* Tuiles en grille 2 × 2 : icône et titre, le détail s'ouvre en pleine largeur */
+  .tiles, .tiles.four { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; grid-auto-flow: dense; margin-top: 18px; }
+  .tiles .tile summary, .tiles.four .tile summary { flex-direction: column; gap: 10px; padding: 14px 30px 14px 14px; }
+  .tile summary::after, .tiles.four .tile summary::after { top: 12px; right: 12px; }
+  .tile h3 { font-size: .98rem; margin: 0; }
+  .tile .one { display: none; }
+  .tile .ico { width: 40px; height: 40px; border-radius: 10px; }
+  .tile[open] { grid-column: 1 / -1; }
+  .tiles .tile[open] summary { flex-direction: row; }
+  .tile[open] h3 { margin-bottom: 4px; }
+  .tile[open] .one { display: block; }
+  .tile .more, .tiles.four .tile .more { padding: 0 14px 14px; }
+
+  /* Accroche, agents IA, pilotes, FAQ et contact plus compacts */
+  .ai-hero-strip { margin-top: 14px; padding: 10px 12px; }
+  .ai-grid { margin-top: 22px; }
+  .ai-cta { margin-top: 20px; }
+  .checks li { padding: 4px 0 4px 28px; }
+  .checks li::before { top: 11px; }
+  .price .unit { margin-bottom: 10px; }
+  .pilot { gap: 14px; }
+  .seats { order: -1; justify-self: start; padding: 6px 14px; border-radius: 999px; }
+  .seats .n { font-size: 1.05rem; margin: 0; }
+  .faq summary { padding: 14px 36px 14px 0; }
+  .faq summary::after { top: 10px; }
+  .cta-box { padding: 24px 18px; }
+}
 </style>
 <link rel="stylesheet" href="chat.css?v=8">
 </head>
@@ -513,12 +568,12 @@ section.ai .wrap { position: relative; z-index: 1; }
         <p class="lead">L'assistant Assysteo lit chaque email reçu, prépare la réponse et réclame les documents qui manquent à vos dossiers. Par défaut, rien ne part sans votre relecture.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Réserver un audit gratuit</a>
-          <a class="btn btn-ghost" href="#fonctionnement">Voir comment ça marche</a>
+          <a class="btn btn-ghost hors-mobile" href="#fonctionnement">Voir comment ça marche</a>
         </div>
         <p class="small">Audit de 30 minutes, en visio ou sur place. Sans engagement.</p>
         <a class="ai-hero-strip" href="#agents-ia">
           <span class="ai-badge">✦ Nouveau · Agents IA</span>
-          <span class="txt">Un agent qui accueille vos visiteurs, un autre qui relance vos devis et factures, un troisième qui vérifie les documents reçus.</span>
+          <span class="txt hors-mobile">Un agent qui accueille vos visiteurs, un autre qui relance vos devis et factures, un troisième qui vérifie les documents reçus.</span>
           <span class="go">Découvrir →</span>
         </a>
       </div>
@@ -602,7 +657,7 @@ section.ai .wrap { position: relative; z-index: 1; }
     <div class="wrap">
       <h2>Comment ça marche</h2>
       <p class="intro">Pas de nouveau logiciel à apprendre. L'assistant travaille dans votre boîte mail et votre agenda.</p>
-      <ol class="steps">
+      <ol class="steps swipe">
         <li>
           <h3>Audit gratuit de 30 minutes</h3>
           <p>On regarde vos emails, vos dossiers et les documents que vous réclamez. Je vous montre combien d'heures y passent. Vous gardez les conclusions.</p>
@@ -651,7 +706,7 @@ section.ai .wrap { position: relative; z-index: 1; }
         </details>
       </div>
       <p class="tile-hint">Touchez une tuile pour le détail.</p>
-      <div class="label-strip">
+      <div class="label-strip hors-mobile">
         <p>Les étiquettes que vous verrez dans votre boîte mail&nbsp;:</p>
         <div class="tags">
           <span class="tag t-todo">À traiter</span>
@@ -669,8 +724,8 @@ section.ai .wrap { position: relative; z-index: 1; }
     <div class="wrap">
       <span class="ai-badge">✦ Agents IA en option</span>
       <h2>Trois agents IA qui travaillent pour vous, même quand vous n'êtes pas là</h2>
-      <p class="intro">L'assistant email est le socle. Ces agents s'y ajoutent selon votre métier&nbsp;: ils répondent, relancent et vérifient à votre place, avec vos informations à vous. Vous gardez la main&nbsp;: rien ne part sans votre accord.</p>
-      <div class="ai-grid">
+      <p class="intro hors-mobile">L'assistant email est le socle. Ces agents s'y ajoutent selon votre métier&nbsp;: ils répondent, relancent et vérifient à votre place, avec vos informations à vous. Vous gardez la main&nbsp;: rien ne part sans votre accord.</p>
+      <div class="ai-grid swipe">
         <article class="ai-card">
           <div class="ai-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
           <h3>L'agent d'accueil de votre site</h3>
@@ -709,7 +764,7 @@ section.ai .wrap { position: relative; z-index: 1; }
         <a class="btn btn-ai" href="#" id="essayer-agent">Essayer l'agent maintenant</a>
         <a class="btn btn-ghost-light" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Voir lesquels conviennent à mon entreprise</a>
       </div>
-      <p class="ai-foot">L'agent d'accueil de ce site fonctionne exactement comme celui que vous auriez&nbsp;: posez-lui vos questions. Aussi possibles sur demande&nbsp;: demande d'avis Google après un dossier réussi, rappels d'entretien ou de renouvellement, connexion à votre logiciel métier. Exemples ci-dessus fictifs. Agents réglés pour votre entreprise, sur devis.</p>
+      <p class="ai-foot"><span class="hors-mobile">L'agent d'accueil de ce site fonctionne exactement comme celui que vous auriez&nbsp;: posez-lui vos questions. Aussi possibles sur demande&nbsp;: demande d'avis Google après un dossier réussi, rappels d'entretien ou de renouvellement, connexion à votre logiciel métier. </span>Exemples ci-dessus fictifs. Agents réglés pour votre entreprise, sur devis.</p>
     </div>
   </section>
 
@@ -744,14 +799,14 @@ section.ai .wrap { position: relative; z-index: 1; }
     <div class="wrap">
       <h2>Confiance et données</h2>
       <p class="intro">Confier sa boîte mail, ce n'est pas rien. Voici comment c'est organisé.</p>
-      <div class="trust">
+      <div class="trust swipe">
         <div class="card">
           <h3>Mode brouillon par défaut</h3>
           <p>Aucune réponse ne part sans vous. Elle attend dans vos brouillons&nbsp;: vous la relisez, vous la modifiez si besoin, vous cliquez sur Envoyer. L'envoi automatique ne s'active que si vous le demandez.</p>
         </div>
         <div class="card">
           <h3>Données hébergées dans l'Union européenne</h3>
-          <p>Chaque client a sa propre instance, séparée des autres, sur un serveur situé dans l'Union européenne. Vos emails restent dans votre boîte mail. Pour l'analyse et la rédaction, le texte de l'email est transmis au service d'IA, sans le contenu des pièces jointes (sauf si vous activez le module de contrôle des documents). Les détails et les garanties sont dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+          <p>Chaque client a sa propre instance, séparée des autres, sur un serveur situé dans l'Union européenne. Vos emails restent dans votre boîte mail. <span class="hors-mobile">Pour l'analyse et la rédaction, le texte de l'email est transmis au service d'IA, sans le contenu des pièces jointes (sauf si vous activez le module de contrôle des documents). </span>Les détails et les garanties sont dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
         </div>
         <div class="card">
           <h3>Vous restez propriétaire</h3>
@@ -770,7 +825,7 @@ section.ai .wrap { position: relative; z-index: 1; }
     <div class="wrap">
       <h2>Tarifs indicatifs</h2>
       <p class="intro">Le prix exact dépend du nombre de boîtes mail et des types de dossiers à paramétrer. Vous recevez un devis écrit après l'audit.</p>
-      <div class="prices">
+      <div class="prices swipe">
         <div class="price">
           <h3>Installation</h3>
           <p class="from">à partir de</p>
@@ -815,7 +870,7 @@ section.ai .wrap { position: relative; z-index: 1; }
         <div class="seats">
           <!-- Mettez à jour ce nombre quand une place est prise -->
           <p class="n">3 places</p>
-          <p style="margin:.5em 0 0">Installation offerte (à partir de 490&nbsp;€ HTVA) pour les trois premières entreprises.</p>
+          <p class="hors-mobile" style="margin:.5em 0 0">Installation offerte (à partir de 490&nbsp;€ HTVA) pour les trois premières entreprises.</p>
         </div>
       </div>
     </div>
@@ -893,7 +948,7 @@ section.ai .wrap { position: relative; z-index: 1; }
             <a class="btn btn-ghost" href="mailto:contact@assysteo.be?subject=Audit%20gratuit">Écrire un email</a>
           </div>
         </div>
-        <ul class="contact-list">
+        <ul class="contact-list hors-mobile">
           <li><span>Email</span><a href="mailto:contact@assysteo.be">contact@assysteo.be</a></li>
           <li><span>Téléphone</span><a href="tel:+32472991485">0472 99 14 85</a></li>
           <li><span>Basé à</span>Namur</li>
@@ -924,7 +979,7 @@ section.ai .wrap { position: relative; z-index: 1; }
 
 <!-- Bulle de chat : assistant IA d'Assysteo (voir chat.js) -->
 <script src="chat.js?v=7" defer></script>
-<script src="anim.js?v=2" defer></script>
+<script src="anim.js?v=3" defer></script>
 <script>
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('#essayer-agent');

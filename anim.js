@@ -179,4 +179,25 @@
       c.addEventListener('mouseleave', function () { ev = null; c.style.transform = ''; });
     });
   }
+
+  /* ---------- 6. Carrousels sur téléphone : points de position ---------- */
+  document.querySelectorAll('.swipe').forEach(function (rail) {
+    var cartes = rail.children, n = cartes.length;
+    if (n < 2) return;
+    var points = document.createElement('div');
+    points.className = 'dots'; points.setAttribute('aria-hidden', 'true');
+    for (var i = 0; i < n; i++) points.appendChild(document.createElement('span'));
+    rail.parentNode.insertBefore(points, rail.nextSibling);
+    var actif = -1, prevu = false;
+    function maj() {
+      prevu = false;
+      var pas = cartes[1].offsetLeft - cartes[0].offsetLeft || 1;
+      var k = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4 ? n - 1 : Math.min(n - 1, Math.round(rail.scrollLeft / pas));
+      if (k === actif) return;
+      if (actif >= 0) points.children[actif].classList.remove('on');
+      points.children[k].classList.add('on'); actif = k;
+    }
+    rail.addEventListener('scroll', function () { if (!prevu) { prevu = true; requestAnimationFrame(maj); } }, { passive: true });
+    maj();
+  });
 })();
