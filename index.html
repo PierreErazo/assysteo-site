@@ -500,13 +500,20 @@ section.ai .wrap { position: relative; z-index: 1; }
 
 /* ════════ Téléphone : page plus courte ════════ */
 /* Points de position des carrousels (ajoutés par anim.js, visibles sur téléphone seulement) */
-.dots, .tarifs-detail { display: none; }
+.dots, .tarifs-detail, .tarifs-pilote { display: none; }
 @media (max-width: 640px) {
   .hors-mobile { display: none !important; }
-  /* Parties rangées dans le menu ☰ : hors du défilement, affichées quand on les ouvre depuis le menu */
-  #fonctionnement:not(:target), #pour-qui:not(:target), #confiance:not(:target), #faq:not(:target) { display: none; }
-  section { padding: 40px 0; }
-  .hero { padding: 28px 0 40px; }
+  /* Parties rangées dans le menu ☰ : hors du défilement, affichées quand on les ouvre depuis le menu.
+     Sur l'accueil restent l'accroche, les agents IA, les tarifs et le contact (4 écrans maximum). */
+  #probleme:not(:target), #fonctionnement:not(:target), #assistant:not(:target), #pour-qui:not(:target),
+  #confiance:not(:target), #pilotes:not(:target), #faq:not(:target) { display: none; }
+  section { padding: 32px 0; }
+  .hero { padding: 24px 0 32px; }
+  .hero .lead { font-size: 1.05rem; }
+  /* Choix du métier : une seule ligne, à faire glisser */
+  .metiers { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -20px 4px; padding: 2px 20px 10px; }
+  .metiers::-webkit-scrollbar { display: none; }
+  .metiers > * { flex: none; }
   .hero-grid { gap: 28px; }
   .btn-row { margin: 1.1em 0 .6em; }
   section.stat { padding: 40px 0; }
@@ -545,6 +552,8 @@ section.ai .wrap { position: relative; z-index: 1; }
 
   /* Agents IA : titre, exemple et bénéfice suffisent */
   .ai-card > p:not(.ai-gain) { display: none; }
+  section.ai h2 { font-size: 1.45rem; }
+  .ai-demo { font-size: .8rem; padding: 10px 12px; }
   /* Tarifs : les deux prix côte à côte ; le détail s'ouvre par le lien ou depuis le menu */
   #tarifs:not(:target) .intro, #tarifs:not(:target) .checks, #tarifs:not(:target) .small, #tarifs:not(:target) .prices + .dots { display: none; }
   #tarifs:not(:target) .prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0 0; padding: 0; overflow: visible; }
@@ -554,6 +563,10 @@ section.ai .wrap { position: relative; z-index: 1; }
   #tarifs:not(:target) .price .amount { font-size: 1.6rem; }
   #tarifs:not(:target) .price .unit { margin: 0; font-size: .82rem; line-height: 1.35; }
   #tarifs:not(:target) .tarifs-detail { display: block; margin: 14px 0 0; font-weight: 600; }
+  #tarifs:not(:target) .tarifs-pilote { display: block; margin: 14px 0 0; padding: 12px 14px; border-radius: 12px; background: var(--brand-soft); color: var(--ink); font-size: .95rem; line-height: 1.45; }
+  .tarifs-pilote a { font-weight: 600; white-space: nowrap; }
+  footer { padding: 26px 0; }
+  footer .wrap { gap: 10px; }
 
   /* Accroche, agents IA, pilotes, FAQ et contact plus compacts */
   .ai-hero-strip { margin-top: 14px; padding: 10px 12px; }
@@ -567,7 +580,7 @@ section.ai .wrap { position: relative; z-index: 1; }
   .seats .n { font-size: 1.05rem; margin: 0; }
   .faq summary { padding: 14px 36px 14px 0; }
   .faq summary::after { top: 10px; }
-  .cta-box { padding: 24px 18px; }
+  .cta-box { padding: 20px 16px; }
 }
 /* Écrans étroits : le brouillon tapé prend une ligne de plus */
 @media (max-width: 400px) { .inbox .mail { min-height: 418px; } }
@@ -591,13 +604,15 @@ section.ai .wrap { position: relative; z-index: 1; }
     </a>
     <nav class="nav" aria-label="Navigation principale">
       <ul id="menu-liens">
+        <li class="menu-seul"><a href="#assistant">Ce que fait l'assistant</a></li>
         <li><a href="#fonctionnement">Fonctionnement</a></li>
         <li><a href="#pour-qui">Pour qui</a></li>
         <li><a href="#confiance">Données</a></li>
         <li><a href="#agents-ia" class="nav-ai">✦ Agents IA</a></li>
+        <li class="menu-seul"><a href="#probleme">Calculez votre temps perdu</a></li>
         <li><a href="#tarifs">Tarifs</a></li>
-        <li><a href="#faq">FAQ</a></li>
         <li class="menu-seul"><a href="#pilotes">Clients pilotes</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li class="menu-seul"><a href="#audit">Contact</a></li>
       </ul>
       <a class="btn btn-primary btn-small" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64"><span class="cta-long">Réserver un audit</span><span class="cta-court">Audit gratuit</span></a>
@@ -905,6 +920,7 @@ section.ai .wrap { position: relative; z-index: 1; }
         </div>
       </div>
       <p class="tarifs-detail"><a href="#tarifs">Ce qui est compris et frais techniques →</a></p>
+      <p class="tarifs-pilote"><b>Programme pilote&nbsp;:</b> installation offerte aux trois premiers clients. <a href="#pilotes">En savoir plus →</a></p>
       <p class="small" style="margin-top:18px">Frais techniques en plus, payés directement par vous à vos fournisseurs, sur vos propres comptes : l'hébergement de votre instance n8n (de 5 à 25&nbsp;€ par mois environ selon la formule) et le service d'IA (quelques euros par mois pour un volume courant). Vous restez propriétaire de tout. Prix hors TVA.</p>
       <p class="small">Modules en option (agent d'accueil du site, relance des devis et factures, contrôle des documents)&nbsp;: sur devis, selon votre volume.</p>
     </div>
@@ -998,7 +1014,7 @@ section.ai .wrap { position: relative; z-index: 1; }
           <div class="btn-row">
             <a class="btn btn-primary" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Choisir un créneau</a>
             <a class="btn btn-ghost" href="tel:+32472991485">Appeler le 0472 99 14 85</a>
-            <a class="btn btn-ghost" href="mailto:contact@assysteo.be?subject=Audit%20gratuit">Écrire un email</a>
+            <a class="btn btn-ghost hors-mobile" href="mailto:contact@assysteo.be?subject=Audit%20gratuit">Écrire un email</a>
           </div>
         </div>
         <ul class="contact-list hors-mobile">
