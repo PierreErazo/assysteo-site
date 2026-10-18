@@ -692,6 +692,7 @@ dl.id dd { margin: 0; }
   .ev-objet { display: none; }
   .ev { gap: 2px 10px; }
   .journee-bilan { margin-top: 8px; font-size: .8rem; }
+  .journee-bilan span + span { display: none; }
   .legende { margin-top: 6px; font-size: .78rem; }
   /* Calculateur */
   .calc { padding: 10px 14px 6px; }
