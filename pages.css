@@ -1,0 +1,43 @@
+/* Feuille commune des pages métier et cas d'usage (agent SEO). Mêmes couleurs que l'accueil. */
+:root { --ink:#15202b; --text:#2a3542; --muted:#5a6675; --line:#e2e6eb; --soft:#f4f6f8; --brand:#1d4f73; --brand-dark:#153b57; --brand-soft:#e7eff6; --ok:#2b7350; --ok-soft:#e5f2ea; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin:0; background:#fff; color:var(--text); font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size:17px; line-height:1.65; overflow-wrap:break-word; }
+a { color:var(--brand); } a:hover { color:var(--brand-dark); }
+:focus-visible { outline:3px solid #f0a42b; outline-offset:2px; }
+.wrap { max-width:880px; margin:0 auto; padding:0 20px; }
+header.haut { border-bottom:1px solid var(--line); background:#fff; position:sticky; top:0; z-index:5; }
+header.haut .wrap { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:62px; }
+.brand { display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font-weight:700; }
+.brand img { border-radius:7px; }
+.btn { display:inline-block; background:var(--brand); color:#fff; text-decoration:none; font-weight:700; padding:12px 20px; border-radius:10px; }
+.btn:hover { background:var(--brand-dark); color:#fff; }
+.btn.vert { background:#5fc08e; color:#0f2a1d; } .btn.vert:hover { background:#4fae7d; color:#0f2a1d; }
+.btn.petit { padding:9px 14px; font-size:.95rem; }
+.hero { background:var(--brand); color:#fff; padding:56px 0 48px; }
+.hero .eti { color:#5fc08e; font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:.85rem; }
+.hero h1 { font-size:clamp(1.9rem,5vw,2.9rem); line-height:1.12; margin:.35em 0 .4em; color:#fff; }
+.hero p { font-size:1.15rem; color:#e7eff6; max-width:42em; }
+.hero .actions { margin-top:26px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.hero .actions span { color:#c9d9e6; font-size:.95rem; }
+main section { padding:44px 0; border-bottom:1px solid var(--line); }
+h2 { color:var(--ink); font-size:clamp(1.4rem,3.2vw,1.85rem); line-height:1.2; margin:0 0 .6em; }
+h3 { color:var(--ink); font-size:1.15rem; margin:1.2em 0 .3em; }
+.grille { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:18px; }
+.carte { background:var(--soft); border-radius:14px; padding:20px 22px; }
+.carte b { display:block; color:var(--ink); font-size:1.05rem; margin-bottom:4px; }
+.frise { list-style:none; padding:0; margin:18px 0 0; }
+.frise li { position:relative; padding:0 0 18px 34px; }
+.frise li::before { content:""; position:absolute; left:4px; top:7px; width:14px; height:14px; border-radius:50%; background:var(--brand); }
+.frise li.alerte::before { background:#b3261e; }
+.frise li b { color:var(--ink); }
+.mail { border:1px solid var(--line); border-radius:14px; padding:20px 22px; box-shadow:0 10px 30px rgba(21,32,43,.07); max-width:560px; background:#fff; }
+.tag { display:inline-block; font-size:.8rem; font-weight:700; padding:3px 10px; border-radius:999px; background:var(--ok-soft); color:var(--ok); margin-right:6px; }
+.tag.b { background:var(--brand-soft); color:var(--brand); }
+.note { color:var(--muted); font-size:.92rem; }
+details { border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin-bottom:10px; }
+summary { cursor:pointer; font-weight:700; color:var(--ink); }
+.cta { background:var(--brand); color:#fff; border-radius:18px; padding:32px 28px; margin:44px 0; }
+.cta h2 { color:#fff; } .cta p { color:#e7eff6; }
+footer { background:var(--ink); color:#c5cdd6; padding:28px 0; font-size:.9rem; }
+footer a { color:#fff; } footer ul { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:18px; }
