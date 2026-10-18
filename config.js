@@ -19,7 +19,7 @@ var PLACES_PILOTE_TOTAL = 3;
    Adresse du webhook n8n qui reçoit les réponses en POST (JSON).
    Vide : le bouton « Envoyer à Pierre » ouvre un email prérempli vers contact@assysteo.be.
    Le webhook doit accepter l'origine https://assysteo.be (option « Allowed Origins »). */
-var WEBHOOK_DIAGNOSTIC = '';
+var WEBHOOK_DIAGNOSTIC = 'https://n8n.assysteo.be/webhook/f6bbb9f9-7220-5df5-b93d-f8198ab0f372';   // workflow n8n « 🧭 Diagnostic du site »
 
 /* ── Démo du contrôle des documents ───────────────────────────────────────
    Formulaire de démo n8n. Vide : le bouton « Tester la démo » est masqué. */
