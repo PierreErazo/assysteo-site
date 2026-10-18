@@ -109,7 +109,7 @@ html:not(.js) .avec-js { display: none !important; }
 .clair .pastille, .pastille.claire { border-color: var(--ligne); background: #fff; color: var(--texte); }
 .clair .pastille:hover, .pastille.claire:hover { border-color: var(--marine); color: var(--marine); }
 .clair .pastille[aria-pressed="true"], .pastille.claire[aria-pressed="true"] { background: var(--marine); border-color: var(--marine); color: #fff; }
-.defile { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 2px; }
+.defile { position: relative; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding: 2px; }
 .defile::-webkit-scrollbar { display: none; }
 
 .badge {
@@ -283,7 +283,6 @@ html.tiroir-ouvert { overflow: hidden; }
   .barre-ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .barre-ico:hover { color: #fff; background: rgba(255, 255, 255, .15); }
   .js .barre-mobile.cachee { transform: translateY(115%); }
-  body.avec-barre { padding-bottom: 68px; }
   /* La bulle de chat est remplacée par le bouton de la barre ; son invitation se place au-dessus. */
   .ac-bouton { display: none !important; }
   .ac-invitation { bottom: 80px !important; }
@@ -292,11 +291,11 @@ html.tiroir-ouvert { overflow: hidden; }
 /* ════════ 8. Accueil : hero et journée animée ════════ */
 .hero { padding: clamp(26px, 5vw, 76px) 0 0; }
 .hero-grille { display: grid; gap: 26px; align-items: center; }
-.hero h1 { color: #fff; margin-bottom: .32em; }
+.hero h1 { color: #fff; margin-bottom: .32em; font-size: clamp(2.3rem, 1.05rem + 4.6vw, 4.2rem); }
 .hero h1 .chaud { color: var(--accent); }
 .hero-sous { font-size: clamp(1.05rem, .97rem + .55vw, 1.32rem); color: var(--gris-clair); max-width: 31em; margin: 0; }
 .hero .actions { margin-top: 22px; }
-@media (min-width: 960px) { .hero-grille { grid-template-columns: 1.05fr 1fr; gap: 56px; } .hero { padding-bottom: 8px; } }
+@media (min-width: 960px) { .hero-grille { grid-template-columns: 1.05fr 1fr; gap: 56px; } .hero { padding-bottom: 8px; } .journee-metiers { flex-wrap: wrap; overflow: visible; } }
 .confiance {
   list-style: none; margin: clamp(22px, 4vw, 44px) auto 0; padding: 15px var(--gouttiere) 18px; max-width: var(--largeur);
   display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; border-top: 1px solid rgba(255, 255, 255, .09);
@@ -384,9 +383,9 @@ html.tiroir-ouvert { overflow: hidden; }
 /* ════════ 9. Calculateur ════════ */
 .calc-grille { display: grid; gap: 18px; }
 @media (min-width: 960px) { .calc-grille { grid-template-columns: 1.05fr 1fr; gap: 28px; align-items: stretch; } }
-.calc { display: grid; gap: 2px; margin: 0; padding: 16px 18px 10px; border: 1px solid var(--ligne); border-radius: var(--rayon); background: #fff; box-shadow: 0 20px 50px rgba(21, 32, 43, .06); }
-.curseur { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0 12px; padding: 4px 0; }
-.curseur label { font-size: .92rem; font-weight: 650; color: var(--encre); line-height: 1.3; }
+.calc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 18px; align-content: space-evenly; margin: 0; padding: 16px 18px 10px; border: 1px solid var(--ligne); border-radius: var(--rayon); background: #fff; box-shadow: 0 20px 50px rgba(21, 32, 43, .06); }
+.curseur { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; align-content: center; gap: 0 12px; padding: 4px 0; }
+.curseur label { font-size: .92rem; font-weight: 650; color: var(--encre); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .curseur output { min-width: 4.5ch; text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--marine); }
 .curseur input { grid-column: 1 / -1; }
 input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 34px; margin: 0; background: transparent; cursor: pointer; touch-action: pan-y; }
@@ -412,6 +411,8 @@ input[type="range"]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px var(
 .res-ligne i::after { content: ""; display: block; width: var(--w, 50%); height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--violet-clair), var(--accent)); transition: width .4s var(--ease); }
 .resultat .btn { margin-top: auto; }
 .formule { margin: 12px 0 0; font-size: .76rem; line-height: 1.45; color: var(--gris-sombre); }
+.formule summary { display: inline-flex; align-items: center; min-height: 40px; cursor: pointer; font-weight: 700; color: var(--gris-clair); }
+.formule p { margin: 4px 0 0; }
 
 /* ════════ 10. Les 4 piliers ════════ */
 .onglets { display: flex; gap: 6px; margin: 0 0 12px; padding: 5px; border: 1px solid var(--ligne); border-radius: 18px; background: #fff; }
@@ -442,7 +443,7 @@ html:not(.js) .onglets { display: none; }
 .js .module.actif { display: grid; animation: apparait var(--moyen) var(--ease); }
 @media (min-width: 900px) { .module { grid-template-columns: 1fr 1.1fr; align-items: center; gap: 34px; padding: 30px; } }
 .module-tete { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-bottom: 12px; }
-.module h3 { margin: 0; font-size: clamp(1.2rem, 1.1rem + .5vw, 1.5rem); }
+.module h4 { margin: 0; color: var(--encre); font-weight: 800; letter-spacing: -.015em; line-height: 1.2; font-size: clamp(1.2rem, 1.1rem + .5vw, 1.5rem); }
 .pas { display: grid; gap: 10px; margin: 0; }
 .pas > div { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 2px 12px; align-items: baseline; }
 .pas dt { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -485,7 +486,9 @@ html:not(.js) .onglets { display: none; }
 .js .module.actif .v-barre i { animation: remplit .9s var(--ease) both; animation-delay: calc(var(--i, 0) * 170ms + 200ms); }
 .js .module.actif .v-creneaux .choisi { animation: choisit 1.6s var(--ease) both .8s; }
 .tape { white-space: normal; }
-.js .tape.ecrit::after { content: ""; display: inline-block; width: 2px; height: 1em; margin-left: 1px; vertical-align: -2px; background: var(--marine); animation: clignote .8s steps(1) infinite; }
+.tape-reste { color: transparent; }
+.js .tape.ecrit .tape-vu::after { content: ""; display: inline-block; width: 2px; height: 1em; margin-left: 1px; vertical-align: -2px; background: var(--marine); animation: clignote .8s steps(1) infinite; }
+.scene.rejoue .frise li { animation: monte .4s var(--ease) both; animation-delay: calc(var(--i, 0) * 110ms); }
 
 /* ════════ 11. Bande « Assysteo tourne avec ses propres agents » et fin de page ════════ */
 .agents-bande { margin-bottom: clamp(30px, 5vw, 56px); }
@@ -534,7 +537,9 @@ html:not(.js) .onglets { display: none; }
 .offres-notes { margin: 16px 0 0; font-size: .86rem; color: var(--gris-sombre); max-width: 60em; }
 .rappel-cout { margin: 18px 0 0; padding: 12px 16px; border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; background: rgba(255, 159, 67, .1); color: #fff; }
 .temoignages { display: grid; gap: 12px; margin: 22px 0 0; }
-.temoignages blockquote { margin: 0; padding: 16px 18px; border-radius: 16px; background: rgba(255, 255, 255, .06); }
+.temoignages figure { margin: 0; padding: 16px 18px; border-radius: 16px; background: rgba(255, 255, 255, .06); }
+.temoignages blockquote { margin: 0; }
+.temoignages blockquote p { margin: 0; color: #fff; }
 .temoignages figcaption { margin-top: 8px; font-size: .86rem; color: var(--gris-sombre); }
 .fin-grille { display: grid; gap: 22px; align-items: end; margin-top: 26px; }
 @media (min-width: 900px) { .fin-grille { grid-template-columns: 1fr auto; } }
@@ -584,6 +589,7 @@ html:not(.js) .onglets { display: none; }
 .consent input { flex: none; width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--marine); }
 .erreur-msg { margin: 0; color: #a3260d; font-size: .86rem; font-weight: 700; }
 .deux-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 340px) { .calc { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .deux-col { grid-template-columns: 1fr; } .quiz { padding: 16px; } .quiz-opt { min-height: 60px; padding: 10px 12px; font-size: .93rem; } }
 
 /* ════════ 13. Pages métier ════════ */
@@ -639,7 +645,85 @@ dl.id dd { margin: 0; }
 .en { margin-top: 2.5em; padding: 4px 22px 10px; border-radius: 14px; background: var(--doux); }
 .en h2 { margin-top: 1em; border-top: 0; }
 
-/* ════════ 15. Mouvement ════════ */
+
+/* ════════ 15. Téléphone : l'accueil tient en 5 écrans ════════ */
+@media (max-width: 640px) {
+  .bloc { padding: 30px 0; }
+  .hors-mobile { display: none !important; }
+  .surtitre { display: none; }
+  .agents-bande .surtitre { display: inline-flex; margin-bottom: 8px; letter-spacing: .07em; }
+  .agents-bande .surtitre::before { display: none; }
+  h2 { font-size: 1.6rem; }
+  .chapo { font-size: 1rem; }
+  .entete-bloc { margin-bottom: 14px; }
+  /* Bouton secondaire : un simple lien souligné */
+  .actions { gap: 4px; }
+  .actions .btn-secondaire { width: auto; min-height: 44px; padding: 0 4px; margin: 0 auto; border: 0; background: none; box-shadow: none; text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+  .actions .btn-secondaire:hover { background: none; transform: none; }
+  /* Hero */
+  .hero { padding-top: 22px; }
+  .hero-sous { font-size: 1rem; }
+  .hero .actions { margin-top: 16px; }
+  .hero-grille { gap: 16px; }
+  .journee-metiers { margin-bottom: 8px; }
+  .journee-metiers .pastille { min-height: 40px; padding: 6px 13px; font-size: .86rem; }
+  .journee-tete { margin-bottom: 8px; }
+  .flux .ev:nth-child(n+4) { display: none; }
+  .ev-objet { display: none; }
+  .ev { gap: 2px 10px; }
+  .journee-bilan { margin-top: 8px; font-size: .8rem; }
+  .legende { margin-top: 6px; font-size: .78rem; }
+  /* Calculateur */
+  .calc { padding: 10px 14px 6px; }
+  .curseur { padding: 0; }
+  .calc { gap: 0 14px; }
+  .curseur { gap: 0 6px; }
+  .curseur label { font-size: .8rem; }
+  .curseur output { font-size: .9rem; min-width: 0; }
+  .v-barre { display: none; }
+  input[type="range"] { height: 30px; }
+  .resultat { padding: 16px; }
+  .res-an { margin: 4px 0 10px; }
+  .res-lignes { gap: 6px; margin-bottom: 12px; }
+  .res-ligne { font-size: .82rem; }
+  /* Piliers */
+  .onglet { min-height: 46px; padding: 6px 12px; font-size: .9rem; }
+  .puces .pastille { min-height: 40px; padding: 6px 12px; font-size: .86rem; }
+  .module { padding: 14px; gap: 12px; }
+  .module-tete { margin-bottom: 8px; }
+  .pas { gap: 6px; }
+  .pas > div { display: block; }
+  .pas dt { display: inline; margin-right: 6px; }
+  .pas dd { display: inline; font-size: .93rem; }
+  .module .actions { margin-top: 10px; }
+  .visuel { min-height: 0; padding: 8px; font-size: .8rem; }
+  .v-fen { padding: 8px 10px; }
+  .v-l { padding: 4px 0; }
+  /* Diagnostic */
+  .quiz { min-height: 430px; }
+  /* Fin de page */
+  .agents-bande { margin-bottom: 18px; }
+  .pilote { padding: 10px 14px; margin-bottom: 4px; gap: 8px 12px; }
+  .places i { width: 18px; height: 18px; }
+  .pilote-texte { font-size: .88rem; }
+  .offres { margin-top: 10px; }
+  .offre .liste-coches { display: none; }
+  .offre-pour { margin-bottom: 4px; }
+  .prix-sous { margin-bottom: 0; }
+  .offres-notes { font-size: .8rem; margin-top: 10px; }
+  .fin-grille { margin-top: 16px; gap: 12px; }
+  .portrait { width: 48px; height: 48px; font-size: 1rem; }
+  /* Pied de page compact */
+  .pied-grille { grid-template-columns: 1fr; gap: 14px; }
+  .pied ul { display: flex; flex-wrap: wrap; gap: 0 16px; }
+  .pied li a { min-height: 40px; }
+  .pied-titre { margin-bottom: 0; }
+  .pied-marque p { display: none; }
+  .pied { padding-top: 24px; }
+  .pied-bas { margin-top: 10px; padding-top: 10px; }
+}
+
+/* ════════ 16. Mouvement ════════ */
 @keyframes apparait { from { opacity: 0; transform: translateY(8px); } }
 @keyframes monte { from { opacity: 0; transform: translateY(14px); } }
 @keyframes glisse { from { opacity: 0; transform: translateX(48px); } }

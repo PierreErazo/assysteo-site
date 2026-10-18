@@ -3,1060 +3,759 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Automatisation et agents IA pour PME à Namur&nbsp;: emails, relances, documents</title>
-<meta name="description" content="Assysteo lit vos emails, prépare les réponses et relance les documents manquants. Agents IA en option : accueil des visiteurs, relance des devis et factures, contrôle des documents. Pour PME à Namur et en Wallonie. Mode brouillon, instance hébergée dans l'UE.">
-<meta name="keywords" content="automatisation PME, automatisation emails, assistant IA, Namur, Wallonie, agence immobilière, courtier, installateur, comptable, relances, collecte de documents">
+<title>Agents IA pour les PME de Namur : répondre, relancer, trier | Assysteo</title>
+<meta name="description" content="Des agents IA qui répondent à vos clients, relancent devis et factures et trient vos emails. Pour les PME de Namur et de Wallonie. Rien ne part sans vous, données dans l'UE.">
 <meta name="author" content="Pierre Warmoes">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="BE-WNA">
 <meta name="geo.placename" content="Namur">
 <link rel="canonical" href="https://assysteo.be/">
-<meta name="theme-color" content="#1d4f73">
-<meta name="color-scheme" content="light">
-
-<!-- Open Graph (aperçu quand le lien est partagé sur LinkedIn, WhatsApp, Facebook...) -->
+<!-- Versions linguistiques à venir : décommenter quand les pages existent.
+<link rel="alternate" hreflang="fr-BE" href="https://assysteo.be/">
+<link rel="alternate" hreflang="nl-BE" href="https://assysteo.be/nl/">
+<link rel="alternate" hreflang="en" href="https://assysteo.be/en/">
+<link rel="alternate" hreflang="x-default" href="https://assysteo.be/">
+-->
+<meta name="theme-color" content="#0d1b2a">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_BE">
 <meta property="og:site_name" content="Assysteo">
-<meta property="og:title" content="Assysteo : moins d'heures perdues en emails, relances et documents">
-<meta property="og:description" content="Un assistant qui lit vos emails, prépare les réponses et réclame les documents manquants. Vous relisez, vous envoyez. Basé à Namur.">
+<meta property="og:title" content="Pendant que vous travaillez, vos clients signent ailleurs.">
+<meta property="og:description" content="Assysteo installe des agents IA qui répondent, relancent et trient pour les PME de Namur. Vous gardez la main.">
 <meta property="og:url" content="https://assysteo.be/">
 <meta property="og:image" content="https://assysteo.be/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Assysteo, automatisation des emails pour PME à Namur">
+<meta property="og:image:alt" content="Assysteo, agents IA pour les PME de Namur">
 <meta name="twitter:card" content="summary_large_image">
-
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<!-- Données structurées (Google). Remplacez les textes entre crochets, voir README.md. -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="/site.css?v=1">
+<link rel="stylesheet" href="/chat.css?v=9">
+<!-- Données structurées : prix à garder identiques à config.js (python3 outils/verifier_site.py) -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Assysteo, Pierre Warmoes",
-  "description": "Automatisation des emails, des relances et de la collecte de documents pour les PME : agences immobilières, courtiers, installateurs en énergie, cabinets comptables.",
-  "url": "https://assysteo.be/",
-  "image": "https://assysteo.be/og-image.png",
-  "logo": "https://assysteo.be/logo-512.png",
-  "email": "contact@assysteo.be",
-  "telephone": "+32 472 99 14 85",
-  "founder": { "@type": "Person", "name": "Pierre Warmoes" },
-  "address": {
-    "@type": "PostalAddress",
-    "postalCode": "5000",
-    "addressLocality": "Namur",
-    "addressRegion": "Wallonie",
-    "addressCountry": "BE"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Namur" },
-    { "@type": "AdministrativeArea", "name": "Wallonie" }
+{"@context":"https://schema.org","@graph":[
+ {"@type":"ProfessionalService","@id":"https://assysteo.be/#entreprise","name":"Assysteo","description":"Agence IA de proximité des PME namuroises : agents IA et automatisations pour trouver des clients, répondre plus vite, alléger l'administratif et mieux piloter.","url":"https://assysteo.be/","logo":"https://assysteo.be/logo-512.png","image":"https://assysteo.be/og-image.png","email":"contact@assysteo.be","telephone":"+32 472 99 14 85","founder":{"@type":"Person","name":"Pierre Warmoes"},"address":{"@type":"PostalAddress","addressLocality":"Namur","postalCode":"5000","addressRegion":"Wallonie","addressCountry":"BE"},"areaServed":[{"@type":"City","name":"Namur"},{"@type":"AdministrativeArea","name":"Province de Namur"},{"@type":"AdministrativeArea","name":"Wallonie"}],"availableLanguage":["fr","nl","en"],"priceRange":"À partir de 490 € HTVA, puis 79 € HTVA par mois",
+  "makesOffer":[
+   {"@type":"Offer","name":"Découverte de 30 minutes","price":"0","priceCurrency":"EUR"},
+   {"@type":"Offer","name":"Diagnostic écrit","priceSpecification":{"@type":"PriceSpecification","price":"290","priceCurrency":"EUR","valueAddedTaxIncluded":false}},
+   {"@type":"Offer","name":"Essentiel : 1 module","priceSpecification":[{"@type":"PriceSpecification","minPrice":"490","priceCurrency":"EUR","valueAddedTaxIncluded":false},{"@type":"UnitPriceSpecification","minPrice":"79","priceCurrency":"EUR","unitText":"mois","valueAddedTaxIncluded":false}]},
+   {"@type":"Offer","name":"Croissance : 3 modules et le résumé du matin","priceSpecification":[{"@type":"PriceSpecification","minPrice":"1900","priceCurrency":"EUR","valueAddedTaxIncluded":false},{"@type":"UnitPriceSpecification","minPrice":"190","priceCurrency":"EUR","unitText":"mois","valueAddedTaxIncluded":false}]}
   ],
-  "availableLanguage": ["fr", "nl", "en"],
-  "priceRange": "À partir de 79 € HTVA / mois",
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "name": "Audit gratuit de 30 minutes",
-      "price": "0",
-      "priceCurrency": "EUR"
-    },
-    {
-      "@type": "Offer",
-      "name": "Installation de l'assistant Assysteo",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "minPrice": "490",
-        "priceCurrency": "EUR",
-        "valueAddedTaxIncluded": false
-      }
-    },
-    {
-      "@type": "Offer",
-      "name": "Maintenance mensuelle (surveillance, mises à jour, support)",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "minPrice": "79",
-        "priceCurrency": "EUR",
-        "unitText": "mois",
-        "valueAddedTaxIncluded": false
-      }
-    }
-  ]
-}
+  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Les 4 piliers","itemListElement":[
+   {"@type":"Offer","itemOffered":{"@id":"https://assysteo.be/#trouver-des-clients"}},
+   {"@type":"Offer","itemOffered":{"@id":"https://assysteo.be/#repondre-plus-vite"}},
+   {"@type":"Offer","itemOffered":{"@id":"https://assysteo.be/#alleger-l-administratif"}},
+   {"@type":"Offer","itemOffered":{"@id":"https://assysteo.be/#piloter"}}]}},
+ {"@type":"Service","@id":"https://assysteo.be/#trouver-des-clients","name":"Trouver des clients","serviceType":"Prospection locale automatisée et publication LinkedIn assistée","provider":{"@id":"https://assysteo.be/#entreprise"},"areaServed":{"@type":"AdministrativeArea","name":"Province de Namur"},"url":"https://assysteo.be/#trouver"},
+ {"@type":"Service","@id":"https://assysteo.be/#repondre-plus-vite","name":"Répondre plus vite","serviceType":"Assistant email, agent d'accueil du site et prise de rendez-vous automatique","provider":{"@id":"https://assysteo.be/#entreprise"},"areaServed":{"@type":"AdministrativeArea","name":"Province de Namur"},"url":"https://assysteo.be/#repondre"},
+ {"@type":"Service","@id":"https://assysteo.be/#alleger-l-administratif","name":"Alléger l'administratif","serviceType":"Relance des devis et des factures, contrôle des documents reçus","provider":{"@id":"https://assysteo.be/#entreprise"},"areaServed":{"@type":"AdministrativeArea","name":"Province de Namur"},"url":"https://assysteo.be/#alleger"},
+ {"@type":"Service","@id":"https://assysteo.be/#piloter","name":"Piloter et faire grandir","serviceType":"Résumé du matin, tableau de bord du dirigeant et infogérance","provider":{"@id":"https://assysteo.be/#entreprise"},"areaServed":{"@type":"AdministrativeArea","name":"Province de Namur"},"url":"https://assysteo.be/#piloter"},
+ {"@type":"WebSite","@id":"https://assysteo.be/#site","url":"https://assysteo.be/","name":"Assysteo","inLanguage":"fr-BE","publisher":{"@id":"https://assysteo.be/#entreprise"}},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"L'IA va répondre n'importe quoi ?","acceptedAnswer":{"@type":"Answer","text":"Elle peut se tromper : c'est pour ça qu'elle travaille en brouillon. Vous relisez avant l'envoi. Un message sensible, comme une réclamation ou une urgence, vous est signalé au lieu d'être traité seul. Les premières semaines, on ajuste ses consignes à partir de vos corrections."}},
+  {"@type":"Question","name":"Je ne suis pas à l'aise avec la technique.","acceptedAnswer":{"@type":"Answer","text":"Vous n'avez rien à installer ni à apprendre. Vous continuez dans votre boîte mail et votre agenda habituels. L'installation, les réglages et le suivi sont faits pour vous. Il vous faut surtout un rendez-vous d'environ une heure pour valider le ton des réponses et les listes de documents."}},
+  {"@type":"Question","name":"Combien ça coûte vraiment par mois ?","acceptedAnswer":{"@type":"Answer","text":"Formule Essentiel : 79 euros HTVA par mois de maintenance. Formule Croissance : 190 euros HTVA par mois. S'ajoutent vos frais techniques, payés directement à vos fournisseurs : hébergement de 5 à 25 euros par mois et service d'IA, quelques euros par mois pour un volume courant. L'installation se paie une seule fois, et elle est offerte aux 3 entreprises du programme pilote."}},
+  {"@type":"Question","name":"Et mes données, le RGPD ?","acceptedAnswer":{"@type":"Answer","text":"Votre instance est à votre nom, hébergée dans l'Union européenne. Vos emails restent dans votre boîte mail. Un contrat de sous-traitance RGPD vous est remis avant la mise en route. Personne ne lit vos emails, sauf à votre demande pour régler un problème."}},
+  {"@type":"Question","name":"Et si Assysteo s'arrête ?","acceptedAnswer":{"@type":"Answer","text":"Vous êtes propriétaire de l'instance et des comptes d'hébergement et d'IA. Tout continue de fonctionner, et un autre prestataire n8n peut reprendre la maintenance. Vos données ne sont jamais bloquées chez Assysteo."}},
+  {"@type":"Question","name":"Ça marche avec Outlook ?","acceptedAnswer":{"@type":"Answer","text":"Oui : Gmail, Google Workspace, Outlook, Microsoft 365 et toute boîte mail professionnelle compatible IMAP. Certaines fonctions, comme les rappels dans l'agenda, dépendent de votre agenda : on le vérifie pendant le diagnostic."}},
+  {"@type":"Question","name":"Et en néerlandais ?","acceptedAnswer":{"@type":"Answer","text":"La réponse suit la langue du message reçu : français, néerlandais ou anglais."}},
+  {"@type":"Question","name":"Je peux arrêter quand je veux ?","acceptedAnswer":{"@type":"Answer","text":"Oui. La maintenance est mensuelle, sans engagement, avec un préavis d'un mois. Si vous arrêtez, vos données restent à vous : elles sont exportées ou supprimées, comme vous préférez."}}]}
+]}
 </script>
-
-<style>
-:root {
-  --ink: #15202b;
-  --text: #2a3542;
-  --muted: #5a6675;
-  --line: #e2e6eb;
-  --bg: #ffffff;
-  --soft: #f4f6f8;
-  --brand: #1d4f73;
-  --brand-dark: #153b57;
-  --brand-soft: #e7eff6;
-  --ok: #2b7350;
-  --ok-soft: #e5f2ea;
-  --amber: #8a5300;
-  --amber-soft: #fcefd9;
-  --violet: #5b3f8f;
-  --violet-soft: #efe9f8;
-  --grey-soft: #eceff2;
-  --radius: 12px;
-  --wrap: 1080px;
-}
-*, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
-  overflow-wrap: break-word;
-}
-img, svg { max-width: 100%; height: auto; }
-a { color: var(--brand); }
-a:hover { color: var(--brand-dark); }
-h1, h2, h3 { color: var(--ink); line-height: 1.2; margin: 0 0 .6em; }
-h1 { font-size: clamp(1.9rem, 4.6vw, 3rem); letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.5rem, 3.2vw, 2.1rem); letter-spacing: -0.01em; }
-h3 { font-size: 1.12rem; }
-p { margin: 0 0 1em; }
-ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
-.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
-.skip { position: absolute; left: -9999px; top: 0; background: var(--ink); color: #fff; padding: 8px 12px; z-index: 100; }
-.skip:focus { left: 8px; top: 8px; }
-:focus-visible { outline: 3px solid #f0a42b; outline-offset: 2px; }
-
-/* En-tête */
-.site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
-.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); line-height: 1.15; }
-.brand img { flex: none; border-radius: 9px; }
-.brand .brand-texte { display: flex; flex-direction: column; font-size: inherit; color: inherit; }
-.brand strong { font-size: 1.08rem; }
-.brand span { font-size: .8rem; color: var(--muted); }
-.nav { display: flex; align-items: center; gap: 22px; }
-.nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-.nav ul a { color: var(--text); text-decoration: none; font-size: .95rem; }
-.nav ul a:hover { color: var(--brand); }
-@media (max-width: 820px) { .nav ul { display: none; } }
-
-/* Boutons */
-.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; font-weight: 600; text-decoration: none; text-align: center; border: 2px solid var(--brand); line-height: 1.3; }
-.btn-primary { background: var(--brand); color: #fff; }
-.btn-primary:hover { background: var(--brand-dark); border-color: var(--brand-dark); color: #fff; }
-.btn-ghost { background: transparent; color: var(--brand); }
-.btn-ghost:hover { background: var(--brand-soft); }
-.btn-small { padding: 8px 14px; font-size: .9rem; }
-.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 1.4em 0 .8em; }
-@media (max-width: 480px) { .btn-row .btn { width: 100%; } }
-
-/* Sections */
-section { padding: 72px 0; scroll-margin-top: 64px; }
-section.alt { background: var(--soft); }
-.eyebrow { display: inline-block; font-size: .85rem; font-weight: 600; color: var(--brand); background: var(--brand-soft); padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
-.lead { font-size: 1.15rem; color: var(--text); max-width: 40em; }
-.intro { max-width: 46em; color: var(--muted); }
-.small { font-size: .9rem; color: var(--muted); }
-@media (max-width: 600px) { section { padding: 52px 0; } }
-
-/* Accroche */
-.hero { padding: 56px 0 64px; }
-.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
-@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 36px; } }
-/* Empêche un contenu large de faire déborder une grille sur petit écran */
-.hero-grid > *, .pain > *, .steps > *, .cards > *, .trust > *, .prices > *, .pilot > *, .cta-box > * { min-width: 0; }
-
-/* Boîte mail illustrative */
-.inbox { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 10px 30px rgba(21,32,43,.08); overflow: hidden; }
-.inbox-top { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--soft); font-size: .88rem; color: var(--muted); }
-.inbox-top b { color: var(--ink); }
-.dot { width: 10px; height: 10px; border-radius: 50%; background: #d5dbe1; flex: none; }
-.mail { list-style: none; margin: 0; padding: 0; }
-.mail li { padding: 12px 16px; border-bottom: 1px solid var(--line); }
-.mail li:last-child { border-bottom: 0; }
-.mail-head { display: flex; justify-content: space-between; gap: 10px; font-size: .92rem; }
-.mail-head b { color: var(--ink); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.mail-head time { color: var(--muted); flex: none; font-size: .82rem; }
-.mail-subj { font-size: .9rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 2px 0 6px; }
-.draft { background: var(--soft); border-left: 3px solid var(--brand); padding: 8px 10px; border-radius: 6px; font-size: .86rem; color: var(--text); margin-top: 6px; }
-.caption { font-size: .82rem; color: var(--muted); margin-top: 10px; }
-
-/* Étiquettes */
-.tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.tag { display: inline-block; font-size: .76rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
-.t-todo { background: var(--brand-soft); color: var(--brand-dark); }
-.t-docs { background: var(--amber-soft); color: var(--amber); }
-.t-done { background: var(--ok-soft); color: var(--ok); }
-.t-lead { background: var(--violet-soft); color: var(--violet); }
-.t-draft { background: var(--grey-soft); color: #3d4855; }
-
-/* Problème */
-.pain { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-@media (max-width: 860px) { .pain { grid-template-columns: 1fr; gap: 24px; } }
-.pain ul { padding-left: 0; list-style: none; }
-.pain li { padding: 12px 0 12px 30px; border-bottom: 1px solid var(--line); position: relative; }
-.pain li::before { content: ""; position: absolute; left: 4px; top: 21px; width: 12px; height: 2px; background: var(--brand); }
-.example { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
-.example .big { font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1.3; margin-bottom: .4em; }
-
-/* Étapes */
-.steps { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: step; }
-@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
-.steps li { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; counter-increment: step; }
-.steps li::before { content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; margin-bottom: 12px; }
-
-/* Cartes */
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; margin-top: 28px; }
-.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
-.card p:last-child { margin-bottom: 0; }
-.label-strip { margin-top: 28px; padding: 18px 20px; border: 1px dashed #c8d0d8; border-radius: var(--radius); background: #fff; }
-.label-strip p { margin: 0 0 10px; font-size: .92rem; color: var(--muted); }
-
-/* Pour qui */
-.who .card h3 { margin-bottom: .3em; }
-.who .card .kicker { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 14px 0 6px; }
-
-/* Confiance */
-.trust { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 28px; }
-@media (max-width: 760px) { .trust { grid-template-columns: 1fr; } }
-.trust .card { border-top: 4px solid var(--ok); }
-
-/* Tarifs */
-.prices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 28px; max-width: 860px; }
-@media (max-width: 760px) { .prices { grid-template-columns: 1fr; } }
-.price { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
-.price .from { font-size: .9rem; color: var(--muted); margin: 0; }
-.price .amount { font-size: 2.1rem; font-weight: 700; color: var(--ink); line-height: 1.2; margin: 2px 0 2px; }
-.price .unit { font-size: .95rem; color: var(--muted); margin-bottom: 16px; }
-.checks { list-style: none; padding: 0; margin: 0; }
-.checks li { padding: 6px 0 6px 28px; position: relative; }
-.checks li::before { content: ""; position: absolute; left: 4px; top: 13px; width: 12px; height: 7px; border-left: 2px solid var(--ok); border-bottom: 2px solid var(--ok); transform: rotate(-45deg); }
-
-/* Pilotes */
-.pilot { background: var(--brand); color: #eaf1f7; border-radius: 16px; padding: 40px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; }
-.pilot h2 { color: #fff; }
-.pilot a.btn { background: #fff; color: var(--brand-dark); border-color: #fff; }
-.pilot a.btn:hover { background: var(--brand-soft); }
-.seats { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); border-radius: var(--radius); padding: 22px; }
-.seats .n { font-size: 2.4rem; font-weight: 700; color: #fff; line-height: 1; }
-@media (max-width: 820px) { .pilot { grid-template-columns: 1fr; padding: 28px 22px; } }
-
-/* FAQ */
-.faq { max-width: 820px; margin-top: 24px; }
-.faq details { border-bottom: 1px solid var(--line); }
-.faq summary { cursor: pointer; padding: 18px 36px 18px 0; font-weight: 600; color: var(--ink); list-style: none; position: relative; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; position: absolute; right: 6px; top: 14px; font-size: 1.4rem; font-weight: 400; color: var(--brand); }
-.faq details[open] summary::after { content: "\2212"; }
-.faq details > div { padding: 0 0 18px; }
-
-/* Appel à l'action final */
-.cta { text-align: left; }
-.cta-box { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 40px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; }
-@media (max-width: 820px) { .cta-box { grid-template-columns: 1fr; padding: 28px 22px; } }
-.contact-list { list-style: none; padding: 0; margin: 0; }
-.contact-list li { padding: 8px 0; border-bottom: 1px solid var(--line); }
-.contact-list li:last-child { border-bottom: 0; }
-.contact-list span { display: block; font-size: .8rem; color: var(--muted); }
-
-/* Pied de page */
-footer { background: var(--ink); color: #c5cdd6; padding: 36px 0; font-size: .9rem; }
-footer a { color: #fff; }
-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
-footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 18px; }
-footer p { margin: 0 0 4px; }
-
-/* ── Agents IA : section mise en avant ── */
-.ai-hero-strip { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 18px; padding: 12px 14px; border-radius: 12px;
-  background: linear-gradient(90deg, #efe9f8, #e7eff6); border: 1px solid #d9cdee; text-decoration: none; color: var(--ink); }
-.ai-hero-strip:hover { border-color: var(--violet); }
-.ai-badge { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
-  color: #fff; background: linear-gradient(90deg, #5b3f8f, #1d4f73); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
-.ai-hero-strip span.txt { font-size: .95rem; }
-.ai-hero-strip span.go { font-weight: 700; color: var(--violet); margin-left: auto; white-space: nowrap; }
-.nav ul a.nav-ai { color: #fff; background: linear-gradient(90deg, #5b3f8f, #1d4f73); padding: 5px 12px; border-radius: 999px; font-weight: 600; }
-.nav ul a.nav-ai:hover { color: #fff; filter: brightness(1.12); }
-
-section.ai { background: radial-gradient(1200px 500px at 85% -10%, #5b3f8f 0%, transparent 60%), linear-gradient(160deg, #10263a 0%, #153b57 55%, #2b2350 100%);
-  color: #e8eef5; position: relative; overflow: hidden; }
-section.ai h2 { color: #fff; font-size: clamp(1.7rem, 3.8vw, 2.5rem); max-width: 18em; }
-section.ai .intro { color: #c6d3e1; font-size: 1.08rem; max-width: 44em; }
-section.ai .ai-badge { margin-bottom: 14px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); }
-.ai-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 34px; }
-@media (max-width: 920px) { .ai-grid { grid-template-columns: 1fr; } }
-.ai-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 16px; padding: 24px; display: flex; flex-direction: column;
-  box-shadow: 0 10px 30px rgba(0,0,0,.18); }
-.ai-card h3 { color: #fff; margin: 12px 0 8px; font-size: 1.2rem; }
-.ai-card p { color: #d3dde8; font-size: .97rem; }
-.ai-ico { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, #8b6fd1, #3d7fb3); }
-.ai-ico svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.ai-gain { margin-top: auto; padding-top: 14px; font-weight: 700; color: #b9f0cf; font-size: .95rem; }
-.ai-demo { margin: 14px 0 4px; background: #fff; color: var(--text); border-radius: 12px; padding: 12px 14px; font-size: .86rem; line-height: 1.45; }
-.ai-demo .q { background: var(--brand-soft); border-radius: 10px 10px 10px 2px; padding: 6px 10px; margin-bottom: 6px; max-width: 92%; }
-.ai-demo .r { background: #f1ecfa; border-radius: 10px 10px 2px 10px; padding: 6px 10px; margin-left: auto; max-width: 92%; }
-.ai-demo .lbl { font-size: .72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; margin-bottom: 4px; }
-.ai-demo .ok { color: var(--ok); font-weight: 700; }
-.ai-demo .warn { color: var(--amber); font-weight: 700; }
-.ai-demo .fact { border-left: 3px solid var(--brand); padding-left: 8px; margin-top: 6px; color: var(--muted); }
-.ai-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; align-items: center; }
-.btn-ai { background: #fff; color: #153b57; border-color: #fff; }
-.btn-ai:hover { background: #efe9f8; border-color: #efe9f8; color: #153b57; }
-.btn-ghost-light { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
-.btn-ghost-light:hover { background: rgba(255,255,255,.1); color: #fff; }
-.ai-foot { color: #aebfd1; font-size: .9rem; margin-top: 18px; }
-
-
-/* ── Bandeau chiffre clé ── */
-section.stat { background: linear-gradient(135deg, #1d4f73 0%, #153b57 60%, #2b2350 100%); color: #dbe6f1; padding: 64px 0; }
-.stat-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; }
-@media (max-width: 860px) { .stat-grid { grid-template-columns: 1fr; gap: 28px; } }
-.stat-grid > * { min-width: 0; }
-.stat-num { font-size: clamp(4.2rem, 13vw, 7.5rem); font-weight: 800; line-height: .95; color: #fff; letter-spacing: -0.03em; margin: 0; }
-.stat-num small { font-size: .32em; font-weight: 700; letter-spacing: 0; color: #b9f0cf; display: block; margin-top: 10px; }
-.stat-calc { font-size: 1.2rem; color: #fff; font-weight: 600; margin: 18px 0 6px; }
-.stat .small { color: #aebfd1; }
-.stat h2 { color: #fff; font-size: clamp(1.3rem, 2.6vw, 1.7rem); }
-.pain-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; list-style: none; padding: 0; margin: 0; }
-@media (max-width: 340px) { .pain-chips { grid-template-columns: 1fr; } }
-.pain-chips li { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 14px 16px; font-size: .97rem; color: #eaf1f7; line-height: 1.4; }
-.pain-chips li svg { display: block; width: 26px; height: 26px; margin-bottom: 8px; stroke: #b9f0cf; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-
-/* ── Tuiles dépliables (assistant, métiers) ── */
-.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; align-items: start; }
-@media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .tiles { grid-template-columns: 1fr; gap: 10px; } }
-.tiles.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-@media (max-width: 1000px) { .tiles.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .tiles.four { grid-template-columns: 1fr; } }
-.tile { background: #fff; border: 1px solid var(--line); border-radius: 14px; transition: border-color .15s ease, box-shadow .15s ease; }
-.tile:hover { border-color: #b8c7d6; box-shadow: 0 6px 18px rgba(21,32,43,.06); }
-.tile summary { list-style: none; cursor: pointer; padding: 20px 44px 20px 20px; position: relative; display: flex; gap: 14px; align-items: flex-start; }
-.tile summary::-webkit-details-marker { display: none; }
-.tile summary::after { content: "+"; position: absolute; right: 16px; top: 16px; font-size: 1.4rem; color: var(--brand); line-height: 1; }
-.tile[open] summary::after { content: "\2212"; }
-.tile h3 { margin: 0 0 4px; font-size: 1.05rem; }
-.tile .one { margin: 0; font-size: .95rem; color: var(--muted); line-height: 1.45; }
-.tile .more { padding: 0 20px 18px 82px; font-size: .95rem; }
-@media (max-width: 560px) { .tile .more { padding-left: 20px; } }
-.tile .more p:last-child { margin-bottom: 0; }
-.ico { flex: none; width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; background: var(--brand-soft); }
-.ico svg { width: 24px; height: 24px; stroke: var(--brand); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.ico.v { background: var(--violet-soft); } .ico.v svg { stroke: var(--violet); }
-.ico.g { background: var(--ok-soft); } .ico.g svg { stroke: var(--ok); }
-.ico.a { background: var(--amber-soft); } .ico.a svg { stroke: var(--amber); }
-.tiles.four .tile summary { flex-direction: column; padding-right: 20px; }
-.tiles.four .tile summary::after { top: 20px; }
-.tiles.four .tile .more { padding-left: 20px; }
-@media (max-width: 560px) { .tiles.four .tile summary { flex-direction: row; padding-right: 44px; } }
-.tile-hint { font-size: .85rem; color: var(--muted); margin: 12px 0 0; }
-
-/* Rythme : fonds alternés */
-section.tint { background: linear-gradient(180deg, #eef3f9 0%, #f6f2fb 100%); }
-section.tint-green { background: #eef6f1; }
-.steps li { border-top: 4px solid var(--brand); }
-
-/* En-tête plus aéré sur mobile */
-@media (max-width: 520px) {
-  .brand > .brand-texte > span { display: none; }
-  .site-header .btn-small { white-space: nowrap; padding: 8px 12px; }
-}
-
-/* ════════ Animations et interactions ════════ */
-.progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: linear-gradient(90deg, #5b3f8f, #3d7fb3, #2fb67c); transform-origin: 0 50%; transform: scaleX(0); }
-.site-header { transition: box-shadow .25s ease; }
-.site-header.scrolled { box-shadow: 0 6px 24px rgba(21,32,43,.08); }
-@media (hover: hover) and (pointer: fine) and (min-width: 900px) { .site-header.scrolled { background: rgba(255,255,255,.88); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); } }
-
-/* Haut de page : halo animé */
-.hero { position: relative; overflow: hidden; isolation: isolate; }
-.hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; z-index: -1; will-change: transform; }
-.hero::before { width: 720px; height: 720px; background: radial-gradient(circle, rgba(217,205,238,.75), rgba(217,205,238,0) 65%); top: -180px; right: -120px; animation: flotte 14s ease-in-out infinite alternate; }
-.hero::after { width: 620px; height: 620px; background: radial-gradient(circle, rgba(207,227,243,.8), rgba(207,227,243,0) 65%); bottom: -200px; left: -140px; animation: flotte 18s ease-in-out infinite alternate-reverse; }
-@keyframes flotte { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-60px, 50px, 0) scale(1.12); } }
-.hero h1 { background: linear-gradient(90deg, #15202b 0%, #1d4f73 50%, #5b3f8f 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.js .hero-grid > div > * { animation: monte .7s cubic-bezier(.2,.7,.2,1) both; }
-.js .hero-grid > div > *:nth-child(2) { animation-delay: .08s; } .js .hero-grid > div > *:nth-child(3) { animation-delay: .16s; }
-.js .hero-grid > div > *:nth-child(4) { animation-delay: .24s; } .js .hero-grid > div > *:nth-child(5) { animation-delay: .32s; } .js .hero-grid > div > *:nth-child(6) { animation-delay: .4s; }
-.js #inbox-anim { animation: monte .8s .2s cubic-bezier(.2,.7,.2,1) both; }
-@keyframes monte { from { opacity: 0; transform: translateY(22px); } }
-
-/* Choix du métier */
-.metiers { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 14px; }
-.metiers-lbl { font-size: .88rem; font-weight: 600; color: var(--muted); margin-right: 2px; }
-.metier-pill { font: inherit; font-size: .88rem; font-weight: 600; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--text); cursor: pointer; transition: all .2s ease; }
-.metier-pill:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-1px); }
-.metier-pill[aria-pressed="true"] { background: linear-gradient(90deg, #5b3f8f, #1d4f73); color: #fff; border-color: transparent; box-shadow: 0 6px 16px rgba(91,63,143,.28); }
-
-/* Boîte mail animée */
-.inbox { transition: transform .3s ease, box-shadow .3s ease; }
-.inbox:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(21,32,43,.12); }
-.inbox .mail { min-height: 318px; }
-.inbox-count { margin-left: auto; font-size: .78rem; font-weight: 700; color: var(--ok); }
-.inbox-replay { border: 0; background: none; font-size: 1.05rem; color: var(--muted); cursor: pointer; padding: 0 2px; line-height: 1; transition: transform .4s ease; }
-.inbox-replay:hover { color: var(--brand); transform: rotate(-180deg); }
-.mail li.arrive { opacity: 0; transform: translateX(26px); transition: opacity .45s ease, transform .45s cubic-bezier(.2,.7,.2,1), background .8s ease; background: #f3f0fb; }
-.mail li.arrive.in { opacity: 1; transform: none; background: #fff; }
-.tag.pop { animation: pop .35s cubic-bezier(.3,1.6,.5,1) both; }
-@keyframes pop { from { opacity: 0; transform: scale(.4); } }
-.caret { display: inline-block; width: 2px; height: 1em; background: var(--brand); vertical-align: -2px; margin-left: 1px; animation: clignote .8s steps(1) infinite; }
-@keyframes clignote { 50% { opacity: 0; } }
-.tags { min-height: 22px; }
-
-/* Bandeau défilant */
-.marquee { overflow: hidden; border-block: 1px solid var(--line); background: #fff; padding: 14px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.marquee-track { display: flex; gap: 44px; width: max-content; animation: defile 38s linear infinite; will-change: transform; }
-.marquee:hover .marquee-track { animation-play-state: paused; }
-.marquee span { font-weight: 700; color: #8592a1; white-space: nowrap; font-size: .98rem; letter-spacing: .01em; display: inline-flex; align-items: center; gap: 44px; }
-.marquee span::after { content: "✦"; color: #c4b6e3; font-size: .8rem; }
-@keyframes defile { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
-
-/* Calculateur */
-.stat-kicker { font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #b9f0cf; margin: 0 0 8px; }
-.stat-sub { font-size: 1.15rem; color: #fff; margin: 14px 0 22px; }
-.stat-sub b { color: #b9f0cf; }
-.calc { display: grid; gap: 6px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 18px 18px 14px; margin-bottom: 14px; }
-.calc label { display: flex; justify-content: space-between; gap: 10px; font-size: .93rem; color: #dbe6f1; margin-top: 4px; }
-.calc output { font-weight: 800; color: #fff; font-size: 1.05rem; min-width: 2.5ch; text-align: right; }
-.calc input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 8px; border-radius: 99px; margin: 6px 0 8px; cursor: pointer;
-  background: linear-gradient(90deg, #8b6fd1 0, #2fb67c var(--p, 30%), rgba(255,255,255,.2) var(--p, 30%)); }
-.calc input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 0; box-shadow: 0 2px 10px rgba(0,0,0,.35); transition: transform .15s ease; }
-.calc input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
-.calc input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 0; box-shadow: 0 2px 10px rgba(0,0,0,.35); }
-#calc-h, #calc-j { font-variant-numeric: tabular-nums; }
-.pain-chips li { transition: transform .25s ease, background .25s ease; }
-.pain-chips li:hover { transform: translateY(-3px); background: rgba(255,255,255,.13); }
-
-/* Apparition au défilement */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
-.reveal.vu { opacity: 1; transform: none; }
-.tile.reveal.vu:hover, .price:hover, .trust .card:hover { transform: translateY(-4px); }
-.price, .trust .card, .steps li { transition: transform .25s ease, box-shadow .25s ease, opacity .7s ease; }
-.price:hover, .trust .card:hover, .steps li:hover { box-shadow: 0 14px 34px rgba(21,32,43,.09); }
-.tile .ico { transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
-.tile:hover .ico { transform: scale(1.1) rotate(-6deg); }
-.tile[open] { border-color: var(--brand); box-shadow: 0 10px 28px rgba(29,79,115,.1); }
-.tile .more { animation: deplie .35s ease; }
-@keyframes deplie { from { opacity: 0; transform: translateY(-6px); } }
-.btn { transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(29,79,115,.28); }
-
-/* Agents IA : lueur qui suit la souris */
-.ai-card { position: relative; transition: transform .2s ease, border-color .3s ease, opacity .7s ease; }
-.ai-card:hover { will-change: transform; }
-.ai-card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s ease;
-  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(185,160,240,.22), transparent 60%); }
-.ai-card:hover::before { opacity: 1; }
-.ai-card:hover { border-color: rgba(255,255,255,.35); }
-section.ai::after { content: ""; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(139,111,209,.35), transparent 65%); bottom: -300px; left: -200px; animation: flotte 16s ease-in-out infinite alternate; pointer-events: none; will-change: transform; }
-section.ai .wrap { position: relative; z-index: 1; }
-.steps li::before { transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
-.steps li:hover::before { transform: scale(1.15); }
-
-.hors-ecran, .hors-ecran *, .hors-ecran::before, .hors-ecran::after { animation-play-state: paused !important; }
-#faq, #audit, #confiance { content-visibility: auto; contain-intrinsic-size: auto 900px; }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; }
-}
-@media (max-width: 560px) {
-  .inbox .mail { min-height: 300px; }
-  .metier-pill { padding: 6px 11px; font-size: .84rem; }
-}
-
-/* ════════ Menu ☰ (téléphone et tablette) ════════ */
-.menu-btn, .nav li.menu-seul { display: none; }
-@media (max-width: 820px) {
-  .nav { gap: 10px; }
-  .menu-btn { display: inline-grid; place-items: center; flex: none; width: 42px; height: 42px; padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--soft); color: var(--ink); cursor: pointer; }
-  .menu-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
-  .menu-btn .x, .menu-btn[aria-expanded="true"] .barres { display: none; }
-  .menu-btn[aria-expanded="true"] .x { display: block; }
-  .site-header.menu-ouvert .nav ul { display: block; position: absolute; top: 100%; left: 0; right: 0; max-height: calc(100vh - 64px); overflow-y: auto;
-    background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px rgba(21,32,43,.14); padding: 4px 0 8px; animation: deplie .25s ease; }
-  .site-header.menu-ouvert .nav li.menu-seul { display: block; }
-  .site-header.menu-ouvert .nav li + li { border-top: 1px solid var(--line); }
-  .site-header.menu-ouvert .nav ul a { display: block; padding: 14px 20px; font-size: 1.05rem; color: var(--ink); }
-  .site-header.menu-ouvert .nav ul a:hover { background: var(--brand-soft); color: var(--brand); }
-  .site-header.menu-ouvert .nav ul a.nav-ai { background: none; color: var(--violet); border-radius: 0; font-weight: 700; }
-}
-.cta-court { display: none; }
-@media (max-width: 400px) {
-  .site-header .wrap { gap: 10px; }
-  .nav { gap: 8px; }
-  .site-header .btn-small { padding: 8px 10px; font-size: .86rem; }
-  .cta-long { display: none; } .cta-court { display: inline; }
-}
-@media (max-width: 340px) { .brand .brand-texte { display: none; } }
-
-/* ════════ Téléphone : page plus courte ════════ */
-/* Points de position des carrousels (ajoutés par anim.js, visibles sur téléphone seulement) */
-.dots, .tarifs-detail, .tarifs-pilote { display: none; }
-@media (max-width: 640px) {
-  .hors-mobile { display: none !important; }
-  /* Parties rangées dans le menu ☰ : hors du défilement, affichées quand on les ouvre depuis le menu.
-     Sur l'accueil restent l'accroche, les agents IA, les tarifs et le contact (4 écrans maximum). */
-  #probleme:not(:target), #fonctionnement:not(:target), #assistant:not(:target), #pour-qui:not(:target),
-  #confiance:not(:target), #pilotes:not(:target), #faq:not(:target) { display: none; }
-  section { padding: 32px 0; }
-  .hero { padding: 24px 0 32px; }
-  .hero .lead { font-size: 1.05rem; }
-  /* Choix du métier : une seule ligne, à faire glisser */
-  .metiers { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -20px 4px; padding: 2px 20px 10px; }
-  .metiers::-webkit-scrollbar { display: none; }
-  .metiers > * { flex: none; }
-  .hero-grid { gap: 28px; }
-  .btn-row { margin: 1.1em 0 .6em; }
-  section.stat { padding: 40px 0; }
-  .stat-grid { gap: 24px; }
-  .intro { margin-bottom: .6em; }
-
-  /* Cartes côte à côte, à faire glisser du doigt, au lieu d'une longue pile */
-  .swipe { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
-    margin: 20px -20px 0; padding: 4px 0 6px 20px; scroll-padding-left: 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-  .swipe::-webkit-scrollbar { display: none; }
-  .swipe::after { content: ""; flex: 0 0 8px; }
-  .swipe > * { flex: 0 0 86%; scroll-snap-align: start; }
-  .swipe > .reveal { opacity: 1; transform: none; transition-delay: 0s !important; }
-  .steps li, .card, .price, .ai-card { padding: 20px; }
-  .dots { display: flex; justify-content: center; gap: 6px; margin-top: 12px; }
-  .dots span { width: 7px; height: 7px; border-radius: 99px; background: #c8d0d8; transition: width .25s ease, background .25s ease; }
-  .dots span.on { width: 20px; background: var(--brand); }
-  section.ai .dots span { background: rgba(255,255,255,.3); }
-  section.ai .dots span.on { background: #fff; }
-
-  /* Tuiles en grille 2 × 2 : icône et titre, le détail s'ouvre en pleine largeur */
-  .tiles, .tiles.four { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; grid-auto-flow: dense; margin-top: 18px; }
-  .tiles .tile summary, .tiles.four .tile summary { flex-direction: column; gap: 10px; padding: 14px 30px 14px 14px; }
-  .tile summary::after, .tiles.four .tile summary::after { top: 12px; right: 12px; }
-  .tile h3 { font-size: .98rem; margin: 0; }
-  .tile .one { display: none; }
-  .tile .ico { width: 40px; height: 40px; border-radius: 10px; }
-  .tile[open] { grid-column: 1 / -1; }
-  .tiles .tile[open] summary { flex-direction: row; }
-  .tile[open] h3 { margin-bottom: 4px; }
-  .tile[open] .one { display: block; }
-  .tile .more, .tiles.four .tile .more { padding: 0 14px 14px; }
-
-  /* Boîte mail animée : 3 emails (anim.js), hauteur finale réservée dès le départ pour que la page ne saute pas */
-  .inbox .mail { min-height: 396px; }
-
-  /* Agents IA : titre, exemple et bénéfice suffisent */
-  .ai-card > p:not(.ai-gain) { display: none; }
-  section.ai h2 { font-size: 1.45rem; }
-  .ai-demo { font-size: .8rem; padding: 10px 12px; }
-  /* Tarifs : les deux prix côte à côte ; le détail s'ouvre par le lien ou depuis le menu */
-  #tarifs:not(:target) .intro, #tarifs:not(:target) .checks, #tarifs:not(:target) .small, #tarifs:not(:target) .prices + .dots { display: none; }
-  #tarifs:not(:target) .prices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0 0; padding: 0; overflow: visible; }
-  #tarifs:not(:target) .prices::after { display: none; }
-  #tarifs:not(:target) .price { padding: 16px 14px; }
-  #tarifs:not(:target) .price h3 { font-size: 1rem; margin-bottom: 4px; }
-  #tarifs:not(:target) .price .amount { font-size: 1.6rem; }
-  #tarifs:not(:target) .price .unit { margin: 0; font-size: .82rem; line-height: 1.35; }
-  #tarifs:not(:target) .tarifs-detail { display: block; margin: 14px 0 0; font-weight: 600; }
-  #tarifs:not(:target) .tarifs-pilote { display: block; margin: 14px 0 0; padding: 12px 14px; border-radius: 12px; background: var(--brand-soft); color: var(--ink); font-size: .95rem; line-height: 1.45; }
-  .tarifs-pilote a { font-weight: 600; white-space: nowrap; }
-  footer { padding: 26px 0; }
-  footer .wrap { gap: 10px; }
-
-  /* Accroche, agents IA, pilotes, FAQ et contact plus compacts */
-  .ai-hero-strip { margin-top: 14px; padding: 10px 12px; }
-  .ai-grid { margin-top: 22px; }
-  .ai-cta { margin-top: 20px; }
-  .checks li { padding: 4px 0 4px 28px; }
-  .checks li::before { top: 11px; }
-  .price .unit { margin-bottom: 10px; }
-  .pilot { gap: 14px; }
-  .seats { order: -1; justify-self: start; padding: 6px 14px; border-radius: 999px; }
-  .seats .n { font-size: 1.05rem; margin: 0; }
-  .faq summary { padding: 14px 36px 14px 0; }
-  .faq summary::after { top: 10px; }
-  .cta-box { padding: 20px 16px; }
-}
-/* Écrans étroits : le brouillon tapé prend une ligne de plus */
-@media (max-width: 400px) { .inbox .mail { min-height: 418px; } }
-@media (max-width: 640px) { .inbox-top b, .inbox-count { white-space: nowrap; } }
-@media (max-width: 360px) { .inbox-top .dot { display: none; } }
-</style>
-<link rel="stylesheet" href="chat.css?v=9">
 </head>
-<body>
-<a class="skip" href="#contenu">Aller au contenu</a>
+<body class="avec-barre">
+<a class="saut" href="#contenu">Aller au contenu</a>
 
-<header class="site-header">
-  <div class="progress" aria-hidden="true"></div>
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Assysteo, retour en haut de page">
-      <img src="favicon.svg" alt="" width="36" height="36">
-      <span class="brand-texte">
-        <strong>Assysteo</strong>
-        <span>Pierre Warmoes, Namur</span>
-      </span>
-    </a>
+<header class="tete">
+  <div class="wrap tete-in">
+    <a class="marque" href="/" aria-label="Assysteo, accueil"><img src="/favicon.svg" alt="" width="34" height="34">Assysteo</a>
     <nav class="nav" aria-label="Navigation principale">
-      <ul id="menu-liens">
-        <li class="menu-seul"><a href="#assistant">Ce que fait l'assistant</a></li>
-        <li><a href="#fonctionnement">Fonctionnement</a></li>
-        <li><a href="#pour-qui">Pour qui</a></li>
-        <li><a href="#confiance">Données</a></li>
-        <li><a href="#agents-ia" class="nav-ai">✦ Agents IA</a></li>
-        <li class="menu-seul"><a href="#probleme">Calculez votre temps perdu</a></li>
-        <li><a href="#tarifs">Tarifs</a></li>
-        <li class="menu-seul"><a href="#pilotes">Clients pilotes</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li class="menu-seul"><a href="#audit">Contact</a></li>
+      <ul>
+        <li class="deroule"><details><summary>Solutions</summary>
+          <ul class="sous">
+            <li><a href="/#trouver">Trouver des clients<small>Prospection locale, LinkedIn</small></a></li>
+            <li><a href="/#repondre">Répondre plus vite<small>Emails, chat du site, rendez-vous</small></a></li>
+            <li><a href="/#alleger">Alléger l'administratif<small>Relances, contrôle des documents</small></a></li>
+            <li><a href="/#piloter">Piloter et faire grandir<small>Résumé du matin, infogérance</small></a></li>
+          </ul></details></li>
+        <li class="deroule"><details><summary>Métiers</summary>
+          <ul class="sous">
+            <li><a href="/agences-immobilieres.html">Agences immobilières<small>Visites, pièces de vente, mandats</small></a></li>
+            <li><a href="/courtiers.html">Courtiers crédit et assurance<small>Dossiers complets, pièces vérifiées</small></a></li>
+            <li><a href="/installateurs-energie.html">Installateurs en énergie<small>Demandes de devis, relances</small></a></li>
+            <li><a href="/comptables.html">Cabinets comptables<small>Pièces TVA, retardataires</small></a></li>
+            <li><a href="/#diagnostic">Autre PME<small>Le diagnostic s'adapte à votre métier</small></a></li>
+          </ul></details></li>
+        <li><a href="/#info-methode">Comment ça marche</a></li>
+        <li><a href="/#tarifs">Tarifs</a></li>
+        <li><a href="/#info-pierre">À propos</a></li>
       </ul>
-      <a class="btn btn-primary btn-small" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64"><span class="cta-long">Réserver un audit</span><span class="cta-court">Audit gratuit</span></a>
-      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="menu-liens" aria-label="Ouvrir le menu">
-        <svg class="barres" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
-      </button>
     </nav>
+    <a class="btn btn-accent btn-petit tete-cta" href="/#diagnostic"><span class="long">Diagnostic gratuit</span><span class="court">Diagnostic</span></a>
+    <a class="menu-btn" href="#infos" aria-controls="infos" aria-label="Tout savoir : questions, tarifs, données"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="txt">Tout savoir</span></a>
   </div>
 </header>
 
 <main id="contenu">
 
-  <!-- ACCROCHE -->
-  <section class="hero" id="top">
-    <div class="wrap hero-grid">
+  <!-- 1. HERO : le choc du problème, et la journée qui se trie sous les yeux -->
+  <section class="hero sombre halo" id="top" aria-labelledby="titre">
+    <div class="wrap hero-grille">
       <div>
-        <span class="eyebrow">Automatisation des emails pour PME, à Namur</span>
-        <h1>Vos emails et vos relances vous prennent des heures&nbsp;?</h1>
-        <p class="lead">L'assistant Assysteo lit chaque email reçu, prépare la réponse et réclame les documents qui manquent à vos dossiers. Par défaut, rien ne part sans votre relecture.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Réserver un audit gratuit</a>
-          <a class="btn btn-ghost hors-mobile" href="#fonctionnement">Voir comment ça marche</a>
+        <p class="surtitre">Agence IA de proximité, à Namur</p>
+        <!-- H1, 3 variantes de moins de 10 mots. Variante 1 retenue par Pierre le 18/10/2026.
+             1. Pendant que vous travaillez, vos clients signent ailleurs.
+             2. Répondez avant vos concurrents, sans y passer vos soirées.
+             3. Un client écrit à 21 h 40. Qui lui répond ? -->
+        <h1 id="titre">Pendant que vous travaillez, vos clients <span class="chaud">signent ailleurs.</span></h1>
+        <p class="hero-sous">Assysteo installe des agents IA qui répondent, relancent et trient pour les PME de Namur. Vous gardez la main.</p>
+        <div class="actions" data-cta-principal>
+          <a class="btn btn-accent" href="#diagnostic">Faire mon diagnostic (2 min) <span class="fl" aria-hidden="true">→</span></a>
+          <a class="btn btn-contour btn-secondaire" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64" data-cfg-href="URL_RESERVATION">Réserver l'audit gratuit</a>
         </div>
-        <p class="small">Audit de 30 minutes, en visio ou sur place. Sans engagement.</p>
-        <a class="ai-hero-strip hors-mobile" href="#agents-ia">
-          <span class="ai-badge">✦ Nouveau · Agents IA</span>
-          <span class="txt hors-mobile">Un agent qui accueille vos visiteurs, un autre qui relance vos devis et factures, un troisième qui vérifie les documents reçus.</span>
-          <span class="go">Découvrir →</span>
-        </a>
       </div>
 
-      <figure style="margin:0" id="inbox-anim">
-        <div class="metiers" role="group" aria-label="Choisissez votre métier pour voir l'exemple">
-          <span class="metiers-lbl">Vous êtes&nbsp;:</span>
-          <button type="button" class="metier-pill" data-metier="immo" aria-pressed="true">Agence immo</button>
-          <button type="button" class="metier-pill" data-metier="courtier" aria-pressed="false">Courtier</button>
-          <button type="button" class="metier-pill" data-metier="energie" aria-pressed="false">Installateur</button>
-          <button type="button" class="metier-pill" data-metier="compta" aria-pressed="false">Comptable</button>
+      <figure class="journee" id="journee" data-metier="energie">
+        <div class="journee-metiers defile avec-js" role="group" aria-label="Choisissez votre métier">
+          <button type="button" class="pastille" data-metier="energie" aria-pressed="true">Installateur</button>
+          <button type="button" class="pastille" data-metier="immo" aria-pressed="false">Agence immobilière</button>
+          <button type="button" class="pastille" data-metier="courtier" aria-pressed="false">Courtier</button>
+          <button type="button" class="pastille" data-metier="compta" aria-pressed="false">Comptable</button>
+          <button type="button" class="pastille" data-metier="autre" aria-pressed="false">Autre PME</button>
         </div>
-        <div class="inbox" aria-label="Illustration d'une boîte mail triée par l'assistant">
-          <div class="inbox-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><b>Boîte de réception</b><span class="inbox-count" aria-live="polite"></span><button type="button" class="inbox-replay" aria-label="Rejouer l'animation">↻</button></div>
-          <ul class="mail">
-            <li>
-              <div class="mail-head"><b>Sophie M.</b><time>08:12</time></div>
-              <div class="mail-subj">Visite de la maison à Jambes, samedi possible&nbsp;?</div>
-              <div class="tags"><span class="tag t-lead">Lead</span><span class="tag t-draft">Brouillon à relire</span></div>
-              <div class="draft">Bonjour Madame, merci pour votre message. Des visites sont possibles samedi matin…</div>
-            </li>
-            <li>
-              <div class="mail-head"><b>Famille Lambert</b><time>Hier</time></div>
-              <div class="mail-subj">Re&nbsp;: dossier crédit hypothécaire, fiches de paie</div>
-              <div class="tags"><span class="tag t-docs">Documents en attente</span></div>
-            </li>
-            <li>
-              <div class="mail-head"><b>J. Peeters</b><time>Hier</time></div>
-              <div class="mail-subj">Documenten voor de verkoop van ons huis</div>
-              <div class="tags"><span class="tag t-done">Dossier complet</span></div>
-            </li>
-            <li>
-              <div class="mail-head"><b>M. Henrard</b><time>Lun.</time></div>
-              <div class="mail-subj">Problème avec l'onduleur installé le mois passé</div>
-              <div class="tags"><span class="tag t-todo">À traiter</span></div>
-            </li>
-          </ul>
+        <div class="journee-carte">
+          <div class="journee-tete">
+            <p class="horloge" aria-hidden="true">Votre journée<b>22:00</b></p>
+            <div class="bascule avec-js" role="group" aria-label="Comparer votre journée">
+              <button type="button" data-mode="sans" aria-pressed="false">Sans agents</button>
+              <button type="button" data-mode="avec" aria-pressed="true">Avec agents</button>
+            </div>
+          </div>
+          <div class="flux-zone">
+            <span class="noyau" aria-hidden="true"></span>
+            <ol class="flux" aria-label="Ce qui arrive pendant la journée">
+              <li class="ev traite" data-canal="email"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>07:12</time><b>B. De Smet</b></p><p class="ev-objet">Offerte warmtepomp voor ons huis</p></div><span class="ev-etat">Brouillon prêt, en néerlandais</span></li>
+              <li class="ev traite" data-canal="devis"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>09:15</time><b>Devis 2026-118</b></p><p class="ev-objet">Panneaux solaires, envoyé il y a 7 jours</p></div><span class="ev-etat">Relance prête</span></li>
+              <li class="ev traite" data-canal="facture"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>11:40</time><b>Facture 2026-041</b></p><p class="ev-objet">1 250 €, échue depuis 12 jours</p></div><span class="ev-etat">Rappel poli préparé</span></li>
+              <li class="ev traite" data-canal="doc"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="m9 15 2 2 4-4"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>16:05</time><b>Famille Collard</b></p><p class="ev-objet">Photos pour le dossier de prime</p></div><span class="ev-etat">1 pièce redemandée</span></li>
+              <li class="ev traite" data-canal="chat"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>21:40</time><b>Visiteur du site</b></p><p class="ev-objet">Une pompe à chaleur pour 140 m² ?</p></div><span class="ev-etat">Qualifié, rendez-vous proposé</span></li>
+            </ol>
+          </div>
+          <p class="journee-bilan" aria-live="polite"><span class="vert">Tout est traité, en brouillon.</span><span>Vous relisez, vous envoyez.</span></p>
         </div>
-        <figcaption class="caption">Exemple animé avec des noms fictifs.<span class="hors-mobile"> Les étiquettes s'affichent dans votre boîte mail habituelle.</span></figcaption>
+        <figcaption class="legende">Exemple animé, noms fictifs. <a class="lien-metier" href="/installateurs-energie.html">Tout pour les installateurs <span aria-hidden="true">→</span></a></figcaption>
       </figure>
     </div>
+
+    <ul class="confiance" aria-label="Nos engagements">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Pierre, à Namur</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Hébergé dans l'UE</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Rien ne part sans vous</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Sans engagement</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Sans cookie de pistage</li>
+    </ul>
   </section>
 
-  <!-- BANDEAU DÉFILANT -->
-  <div class="marquee hors-mobile" aria-label="Compatible avec Gmail, Google Workspace, Outlook, Microsoft 365, toute boîte IMAP, Google Agenda et Outlook Agenda, en français, néerlandais et anglais">
-    <div class="marquee-track" aria-hidden="true">
-      <span>Gmail</span><span>Google Workspace</span><span>Outlook</span><span>Microsoft 365</span><span>Boîtes IMAP</span><span>Google Agenda</span><span>Agenda Outlook</span><span>Français</span><span>Nederlands</span><span>English</span><span>Hébergé dans l'UE</span><span>Mode brouillon</span>
-      <span>Gmail</span><span>Google Workspace</span><span>Outlook</span><span>Microsoft 365</span><span>Boîtes IMAP</span><span>Google Agenda</span><span>Agenda Outlook</span><span>Français</span><span>Nederlands</span><span>English</span><span>Hébergé dans l'UE</span><span>Mode brouillon</span>
+  <!-- 2. LE COÛT DE L'ATTENTE : le prospect fait le calcul lui-même -->
+  <section class="bloc" id="cout" aria-labelledby="cout-titre">
+    <div class="wrap">
+      <div class="entete-bloc">
+        <p class="surtitre">Le coût de l'attente</p>
+        <h2 id="cout-titre">Combien vous coûte ce qui attend&nbsp;?</h2>
+        <p class="chapo">Bougez les curseurs. Le calcul se fait sous vos yeux, avec vos chiffres.</p>
+      </div>
+      <div class="calc-grille" data-calc>
+        <form class="calc" aria-label="Vos chiffres" data-calc-form>
+          <div class="curseur"><label for="c-emails">Emails par jour</label><output for="c-emails" data-sortie="emails">30</output>
+            <input type="range" id="c-emails" name="emails" min="5" max="150" step="5" value="30" data-unite=""></div>
+          <div class="curseur"><label for="c-minutes" title="Lire, répondre, classer">Min. par email</label><output for="c-minutes" data-sortie="minutes">3 min</output>
+            <input type="range" id="c-minutes" name="minutes" min="1" max="10" step="1" value="3" data-unite=" min"></div>
+          <div class="curseur"><label for="c-devis">Devis par mois</label><output for="c-devis" data-sortie="devis">20</output>
+            <input type="range" id="c-devis" name="devis" min="0" max="100" step="1" value="20" data-unite=""></div>
+          <div class="curseur"><label for="c-part">Jamais relancés</label><output for="c-part" data-sortie="part">40 %</output>
+            <input type="range" id="c-part" name="part" min="0" max="100" step="5" value="40" data-unite=" %"></div>
+          <div class="curseur"><label for="c-valeur">Valeur devis</label><output for="c-valeur" data-sortie="valeur">2 000 €</output>
+            <input type="range" id="c-valeur" name="valeur" min="200" max="20000" step="100" value="2000" data-unite=" €"></div>
+          <div class="curseur"><label for="c-taux">Votre heure vaut</label><output for="c-taux" data-sortie="taux">45 €</output>
+            <input type="range" id="c-taux" name="taux" min="20" max="150" step="5" value="45" data-unite=" €"></div>
+        </form>
+        <div class="resultat">
+          <p class="res-label">En jeu chaque mois</p>
+          <p class="res-gros"><span data-r="mois">2 894</span> €<small>par mois</small></p>
+          <p class="res-an">soit <b><span data-r="an">34 725</span> € par an</b></p>
+          <div class="res-lignes">
+            <div class="res-ligne" data-barre="temps"><span>Emails : <b><span data-r="heures">29</span> h par mois</b></span><b><span data-r="temps">1 294</span> €</b><i style="--w:45%"></i></div>
+            <div class="res-ligne" data-barre="devis"><span>Devis non relancés</span><b><span data-r="devis">1 600</span> €</b><i style="--w:55%"></i></div>
+          </div>
+          <a class="btn btn-accent" href="#diagnostic">Récupérer ce temps <span class="fl" aria-hidden="true">→</span></a>
+          <details class="formule" data-ouvert-bureau><summary>Comment c'est calculé</summary><p>Temps = emails par jour × minutes × 5 jours × 46 semaines ÷ 12 mois. Valeur du temps = heures × votre taux horaire. Devis en jeu = devis par mois × part non relancée × valeur moyenne × 10 %, en supposant qu'une relance fasse signer 1 devis oublié sur 10. Une estimation, pas une promesse : le diagnostic mesure vos vrais chiffres.</p></details>
+          <p class="sr" aria-live="polite" data-annonce></p>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- LE PROBLÈME : chiffre clé -->
-  <section class="stat" id="probleme">
-    <div class="wrap stat-grid">
+  <!-- 3. LA SOLUTION : 4 piliers, un agent par tâche -->
+  <section class="bloc teinte clair" id="solutions" aria-labelledby="sol-titre">
+    <div class="wrap">
+      <div class="entete-bloc">
+        <p class="surtitre">La solution</p>
+        <h2 id="sol-titre">Choisissez ce qui vous ferait le plus de bien.</h2>
+        <p class="chapo">Un agent par tâche. Touchez un module pour le voir travailler.</p>
+      </div>
+
+      <div class="onglets defile" data-onglets aria-label="Les 4 piliers">
+        <button type="button" class="onglet" data-cible="trouver"><span class="num" aria-hidden="true">01</span>Trouver des clients</button>
+        <button type="button" class="onglet" data-cible="repondre"><span class="num" aria-hidden="true">02</span>Répondre plus vite</button>
+        <button type="button" class="onglet" data-cible="alleger"><span class="num" aria-hidden="true">03</span>Alléger l'administratif</button>
+        <button type="button" class="onglet" data-cible="piloter"><span class="num" aria-hidden="true">04</span>Piloter et grandir</button>
+      </div>
+
+      <!-- Pilier 1 -->
+      <div class="pilier" id="trouver">
+        <h3 class="pilier-titre">Trouver des clients</h3>
+        <div class="modules">
+          <article class="module" id="m-prospection">
+            <div>
+              <div class="module-tete"><h4>Prospection locale</h4><span class="badge dispo">Disponible</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Vous n'avez pas le temps de chercher de nouveaux clients.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Repère des entreprises de la province, lit leur site, écrit un premier email personnalisé et relance.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Chaque matin, la liste des personnes à appeler.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre">Liste d'appels <span>mardi, 6 h 45</span></p>
+              <div class="v-l" style="--i:1">Menuiserie, Gembloux <span class="v-barre" style="--w:90%;--i:1"><i></i></span><span class="d v-tag at">À appeler</span></div>
+              <div class="v-l" style="--i:2">Agence immobilière, Jambes <span class="v-barre" style="--w:70%;--i:2"><i></i></span><span class="d v-tag vi">Email envoyé</span></div>
+              <div class="v-l" style="--i:3">Garage, Wépion <span class="v-barre" style="--w:55%;--i:3"><i></i></span><span class="d v-tag">Relance J+5</span></div>
+              <div class="v-l note" style="--i:4">Adresses générales seulement, désinscription respectée.</div>
+            </div></div>
+          </article>
+          <article class="module" id="m-linkedin">
+            <div>
+              <div class="module-tete"><h4>Publication LinkedIn assistée</h4><span class="badge dispo">Disponible</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Votre page LinkedIn dort depuis des mois.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Prépare des posts utiles à vos clients, les contrôle, puis les publie au bon rythme.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Une présence régulière, sans y penser.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">Votre page <span>LinkedIn</span></p>
+              <p class="v-txt" style="--i:1"><b>3 questions à poser avant un devis de pompe à chaleur</b><br>Surface, isolation, facture actuelle : ce qui change vraiment le prix…</p>
+              <div class="v-l" style="--i:2"><span class="v-tag ok v-pop" style="--i:2">Relu et contrôlé</span><span class="d v-tag vi v-pop" style="--i:3">Publié mardi, 8 h 30</span></div>
+            </div></div>
+          </article>
+          <article class="module sur-demande" id="m-avis">
+            <div>
+              <div class="module-tete"><h4>Avis Google</h4><span class="badge demande">Sur demande</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Vos clients satisfaits ne laissent pas d'avis.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Demande un avis après chaque dossier réussi et prépare la réponse aux avis reçus.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Plus d'avis, sans relancer à la main.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">Dossier terminé <span>Famille Collard</span></p>
+              <div class="v-l" style="--i:1">Demande d'avis envoyée <span class="d v-tag ok">J+2</span></div>
+              <div class="v-l" style="--i:2"><span style="color:#a3480a;letter-spacing:2px">★★★★★</span> <span class="d v-tag vi">Réponse prête</span></div>
+            </div><span class="v-cachet">Sur demande</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Pilier 2 -->
+      <div class="pilier" id="repondre">
+        <h3 class="pilier-titre">Répondre plus vite</h3>
+        <div class="modules">
+          <article class="module" id="m-email">
+            <div>
+              <div class="module-tete"><h4>Assistant email</h4><span class="badge dispo">Disponible</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Les demandes attendent pendant que vous êtes sur le terrain.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Lit, trie et étiquette chaque email, puis rédige la réponse dans la langue du client.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>La réponse vous attend en brouillon : vous relisez, vous envoyez.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">Sophie M. <span>08:12</span></p>
+              <p class="v-txt" style="--i:0">Visite de la maison à Jambes, samedi possible ?</p>
+              <div class="v-l" style="--i:1"><span class="v-tag vi v-pop" style="--i:1">Lead</span><span class="v-tag v-pop" style="--i:2">Brouillon à relire</span></div>
+              <p class="v-txt tape" style="--i:2;border-left:3px solid #1d4f73;padding-left:8px;margin:6px 0 0">Bonjour Madame, merci pour votre message. Des visites sont possibles samedi à 10 h ou à 11 h. Quel horaire vous convient ?</p>
+              <div class="v-l note" style="--i:3">Gmail, Outlook, IMAP · français, néerlandais, anglais</div>
+            </div></div>
+          </article>
+          <article class="module" id="m-accueil">
+            <div>
+              <div class="module-tete"><h4>Agent d'accueil du site</h4><span class="badge dispo">Disponible</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Un visiteur pose une question à 21 h 40, personne ne répond.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Répond le soir et le week-end, qualifie la demande, vous la transmet et propose un rendez-vous.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Aucune demande perdue hors des heures de bureau.</dd></div>
+              </dl>
+              <div class="actions avec-js"><button type="button" class="btn btn-nuit" data-ouvrir-chat>Essayez-le maintenant <span class="fl" aria-hidden="true">→</span></button></div>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-anim">
+              <div class="v-bulle" style="--i:0">Vous installez des pompes à chaleur près de Namur ?</div>
+              <div class="v-bulle ia" style="--i:1">Oui. Pour vous orienter : maison ou appartement, et quelle surface à chauffer ?</div>
+              <div class="v-bulle" style="--i:2">Maison, 140 m².</div>
+              <div class="v-bulle ia" style="--i:3">Merci. Je transmets à l'équipe et je vous propose un créneau pour la visite.</div>
+              <div class="v-l" style="--i:4"><span class="v-tag ok v-pop" style="--i:4">Demande transmise</span></div>
+            </div></div>
+          </article>
+          <article class="module" id="m-rdv">
+            <div>
+              <div class="module-tete"><h4>Prise de rendez-vous</h4><span class="badge dispo">Disponible</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Trois emails pour trouver un créneau.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Propose 3 créneaux libres de votre agenda. Le client clique sur celui qui lui va.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Le rendez-vous arrive dans votre agenda, tout seul.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">Choisissez un créneau <span>visite technique</span></p>
+              <div class="v-creneaux" style="--i:1"><span>Mar. 10:00</span><span class="choisi">Mer. 14:30</span><span>Jeu. 9:00</span></div>
+              <div class="v-l" style="--i:3"><span class="v-tag ok v-pop" style="--i:4">Ajouté à votre agenda</span></div>
+            </div></div>
+          </article>
+          <article class="module sur-demande" id="m-sms">
+            <div>
+              <div class="module-tete"><h4>Appel manqué, SMS envoyé</h4><span class="badge demande">Sur demande</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Sur chantier ou en rendez-vous, vous ratez des appels.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Envoie un SMS avec un lien pour choisir un moment de rappel.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>L'appelant ne file pas chez un concurrent.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-anim">
+              <div class="v-fen" style="--i:0"><p class="v-titre">Appel manqué <span>10:42</span></p></div>
+              <div class="v-bulle ia" style="--i:1">Désolé, nous sommes sur chantier. Choisissez un moment pour qu'on vous rappelle : lien</div>
+            </div><span class="v-cachet">Sur demande</span></div>
+          </article>
+          <article class="module sur-demande" id="m-whatsapp">
+            <div>
+              <div class="module-tete"><h4>Agent WhatsApp</h4><span class="badge demande">Sur demande</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Vos clients écrivent sur WhatsApp, à toute heure.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Répond aux questions simples sur WhatsApp et vous transmet le reste.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Une réponse rapide, là où vos clients écrivent.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-anim">
+              <div class="v-bulle" style="--i:0">Vous êtes ouverts samedi ?</div>
+              <div class="v-bulle ia" style="--i:1">Bonjour, oui, de 9 h à 12 h. Voulez-vous passer ?</div>
+            </div><span class="v-cachet">Sur demande</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Pilier 3 -->
+      <div class="pilier" id="alleger">
+        <h3 class="pilier-titre">Alléger l'administratif</h3>
+        <div class="modules">
+          <article class="module" id="m-relances">
+            <div>
+              <div class="module-tete"><h4>Relance des devis et des factures</h4><span class="badge dispo">Disponible</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Les devis partent, personne ne relance. Les factures attendent.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Prépare une relance polie au bon moment. Montant, échéance et IBAN sont ajoutés par le programme, jamais par l'IA.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Chaque matin : qui relancer, qui appeler.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">À relancer aujourd'hui <span>3</span></p>
+              <div class="v-l" style="--i:1">Devis 2026-118 · 4 200 € · il y a 7 j <span class="d v-tag ok v-pop" style="--i:1">Relance prête</span></div>
+              <div class="v-l" style="--i:2">Facture 2026-041 · 1 250 € · échue <span class="d v-tag ok v-pop" style="--i:2">Rappel prêt</span></div>
+              <div class="v-l" style="--i:3">Devis 2026-102 · 2 relances <span class="d v-tag at v-pop" style="--i:3">À appeler</span></div>
+              <div class="v-l note v-mono" style="--i:4">Montant, échéance, IBAN : copiés tels quels</div>
+            </div></div>
+          </article>
+          <article class="module" id="m-documents">
+            <div>
+              <div class="module-tete"><h4>Contrôle des documents reçus</h4><span class="badge dispo">Disponible</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>La fiche de paie reçue date d'il y a six mois. Vous le voyez trop tard.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Ouvre les PDF et les photos : bonne pièce, bon nom, lisible, assez récente. Il relève montants et dates.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Des dossiers complets avant de les traiter.</dd></div>
+              </dl>
+              <div class="actions"><a class="btn btn-nuit" href="https://n8n.assysteo.be/form/bf5906ae-5a53-52d1-bc58-230468a14867" data-demo-docs>Tester la démo <span class="fl" aria-hidden="true">→</span></a></div>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">Dossier crédit <span>3 documents reçus</span></p>
+              <div class="v-l" style="--i:1"><span class="v-ok">✓</span> Fiche de paie de septembre, au bon nom</div>
+              <div class="v-l" style="--i:2"><span class="v-ko">!</span> Extrait de compte : page 2 manquante</div>
+              <div class="v-l" style="--i:3"><span class="v-ko">✗</span> Fiche de paie de mars : trop ancienne</div>
+              <div class="v-l" style="--i:4"><span class="v-tag at v-pop" style="--i:4">2 pièces redemandées</span></div>
+            </div></div>
+          </article>
+          <article class="module sur-demande" id="m-predevis">
+            <div>
+              <div class="module-tete"><h4>Pré-devis automatique</h4><span class="badge demande">Sur demande</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Chiffrer chaque demande prend une soirée.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Prépare une première fourchette à partir de vos tarifs et des infos du client.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Vous validez, le client reçoit un ordre de prix rapidement.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">Pré-devis <span>maison, 140 m²</span></p>
+              <div class="v-l" style="--i:1">Pompe à chaleur air-eau <span class="d v-tag">fourchette prête</span></div>
+              <div class="v-l" style="--i:2"><span class="v-tag at">À valider par vous</span></div>
+            </div><span class="v-cachet">Sur demande</span></div>
+          </article>
+          <article class="module sur-demande" id="m-factures">
+            <div>
+              <div class="module-tete"><h4>Factures fournisseurs vers la comptabilité</h4><span class="badge demande">Sur demande</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Les factures d'achat s'entassent dans la boîte mail.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Repère chaque facture reçue, la classe et l'envoie à votre comptable.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Plus de chasse aux pièces en fin de trimestre.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">Facture reçue <span>grossiste</span></p>
+              <div class="v-l" style="--i:1">Classée : achats, octobre <span class="d v-tag ok">Envoyée au comptable</span></div>
+            </div><span class="v-cachet">Sur demande</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Pilier 4 -->
+      <div class="pilier" id="piloter">
+        <h3 class="pilier-titre">Piloter et faire grandir</h3>
+        <div class="modules">
+          <article class="module" id="m-resume">
+            <div>
+              <div class="module-tete"><h4>Résumé du matin</h4><span class="badge dispo">Disponible</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Vous découvrez les urgences trop tard.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Chaque matin, un tableau de bord : rendez-vous, devis ouverts, relances, personnes à appeler.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>La journée commence avec un plan.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">Votre journée <span>mardi, 7 h 30</span></p>
+              <div class="v-l" style="--i:1"><b>3</b> rendez-vous <span class="d v-tag">10 h, 14 h, 16 h 30</span></div>
+              <div class="v-l" style="--i:2"><b>4</b> devis ouverts <span class="d v-tag at">2 à relancer</span></div>
+              <div class="v-l" style="--i:3"><b>5</b> brouillons à relire <span class="d v-tag vi">prêts</span></div>
+              <div class="v-l" style="--i:4"><b>1</b> personne à rappeler <span class="d v-tag ok">M. Henrard</span></div>
+            </div></div>
+          </article>
+          <article class="module" id="m-infogerance">
+            <div>
+              <div class="module-tete"><h4>Infogérance</h4><span class="badge dispo">Disponible</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Et si tout tombe en panne un lundi matin&nbsp;?</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Sauvegarde chiffrée chaque nuit, test de restauration chaque semaine, mises à jour de sécurité, alerte immédiate en cas d'erreur.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Vous n'avez jamais à y penser.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim v-mono">
+              <div class="v-l" style="--i:0">03:15 sauvegarde de la nuit <span class="d v-ok">OK</span></div>
+              <div class="v-l" style="--i:1">04:00 copie chiffrée envoyée <span class="d v-ok">OK</span></div>
+              <div class="v-l" style="--i:2">dim. 05:00 restauration testée <span class="d v-ok">OK</span></div>
+              <div class="v-l" style="--i:3">mises à jour de sécurité <span class="d v-ok">OK</span></div>
+              <div class="v-l" style="--i:4">en cas d'erreur <span class="d v-tag at">alerte immédiate</span></div>
+            </div></div>
+          </article>
+          <article class="module sur-demande" id="m-interne">
+            <div>
+              <div class="module-tete"><h4>Assistant interne</h4><span class="badge demande">Sur demande</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Vos procédures sont dans la tête de deux personnes.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Un assistant qui répond à l'équipe à partir de vos propres procédures et documents.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Moins d'interruptions, des réponses identiques pour tous.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-anim">
+              <div class="v-bulle" style="--i:0">Quelle est notre procédure en cas de panne d'onduleur ?</div>
+              <div class="v-bulle ia" style="--i:1">D'après « Procédure SAV », étape 1 : demander le code erreur et une photo…</div>
+            </div><span class="v-cachet">Sur demande</span></div>
+          </article>
+          <article class="module sur-demande" id="m-atelier">
+            <div>
+              <div class="module-tete"><h4>Atelier IA pour l'équipe</h4><span class="badge demande">Sur demande</span></div>
+              <dl class="pas">
+                <div class="pb"><dt>Le problème</dt><dd>Votre équipe se méfie de l'IA, ou l'utilise mal.</dd></div>
+                <div class="ag"><dt>L'atelier</dt><dd>Une demi-journée dans vos locaux, sur vos propres tâches.</dd></div>
+                <div class="re"><dt>Résultat</dt><dd>Chacun repart avec ce qui lui fait gagner du temps.</dd></div>
+              </dl>
+            </div>
+            <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
+              <p class="v-titre" style="--i:0">Atelier IA <span>une demi-journée</span></p>
+              <div class="v-l" style="--i:1">Vos emails types, vos devis, vos procédures</div>
+            </div><span class="v-cachet">Sur demande</span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MINI-DIAGNOSTIC : le prospect découvre son besoin lui-même -->
+  <section class="bloc" id="diagnostic" aria-labelledby="diag-titre">
+    <div class="wrap diag-grille">
       <div>
-        <p class="stat-kicker">Calculez votre temps perdu</p>
-        <p class="stat-num"><span id="calc-h">10</span>&nbsp;h<small>par semaine, rien qu'en emails</small></p>
-        <p class="stat-sub">soit environ <b><span id="calc-j">58</span> jours de travail</b> par an</p>
-        <div class="calc">
-          <label for="calc-emails">Emails reçus par jour <output id="calc-emails-v">40</output></label>
-          <input type="range" id="calc-emails" min="5" max="150" step="5" value="40">
-          <label for="calc-minutes">Minutes par email (lire, répondre, classer) <output id="calc-minutes-v">3</output></label>
-          <input type="range" id="calc-minutes" min="1" max="10" step="1" value="3">
-        </div>
-        <p class="small">Estimation sur 5 jours par semaine et 46 semaines par an, sans compter les relances. L'audit gratuit mesure vos vrais chiffres.</p>
+        <p class="surtitre">Votre diagnostic</p>
+        <h2 id="diag-titre">2 minutes pour savoir par où commencer.</h2>
+        <p class="chapo">8 questions, un résultat immédiat : les agents qui vous feraient gagner le plus, et ce qu'ils représentent.</p>
       </div>
-      <div class="hors-mobile">
-        <h2>Ce qui vous prend ce temps</h2>
-        <ul class="pain-chips">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>Lire chaque email et décider qui s'en occupe</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Répondre encore aux mêmes questions</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M12 12v4M12 18h.01"/></svg>Réclamer pour la 3<sup>e</sup> fois la pièce qui manque</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>Retrouver où en est un dossier quand le client appelle</li>
+      <div class="quiz" id="quiz">
+        <div class="sans-js">
+          <h3>Le diagnostic interactif a besoin de JavaScript.</h3>
+          <p>Répondez au même questionnaire sur notre formulaire, ou réservez directement l'audit gratuit de 30 minutes.</p>
+          <div class="actions">
+            <a class="btn btn-accent" href="https://n8n.assysteo.be/form/41a3e6dd-3005-527a-b055-37d01f474d98">Remplir le questionnaire</a>
+            <a class="btn btn-contour" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64" data-cfg-href="URL_RESERVATION">Réserver l'audit gratuit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PREUVE, TARIFS ET URGENCE HONNÊTE -->
+  <section class="bloc sombre halo" id="tarifs" aria-labelledby="tarifs-titre">
+    <div class="wrap">
+      <div class="agents-bande" id="agents">
+        <p class="surtitre">Assysteo tourne avec ses propres agents</p>
+        <ul class="agents-liste">
+          <li><span class="quand"><i class="pouls" aria-hidden="true"></i>Toutes les 2 minutes</span><b>La secrétaire</b>trie les emails reçus et prépare les réponses.</li>
+          <li><span class="quand"><i class="pouls" aria-hidden="true"></i>Chaque matin, 6 h 15</span><b>Le prospecteur</b>étudie des entreprises de la province et prépare la liste d'appels.</li>
+          <li><span class="quand"><i class="pouls" aria-hidden="true"></i>Chaque matin, 7 h 30</span><b>Le résumé du matin</b>rendez-vous, relances et personnes à appeler.</li>
+          <li><span class="quand"><i class="pouls" aria-hidden="true"></i>Chaque nuit</span><b>La sauvegarde</b>chiffrée, avec un test de restauration chaque dimanche.</li>
         </ul>
+        <div class="stats" id="stats" hidden></div>
       </div>
-    </div>
-  </section>
 
-  <!-- COMMENT ÇA MARCHE -->
-  <section id="fonctionnement">
-    <div class="wrap">
-      <h2>Comment ça marche</h2>
-      <p class="intro">Pas de nouveau logiciel à apprendre. L'assistant travaille dans votre boîte mail et votre agenda.</p>
-      <ol class="steps swipe">
-        <li>
-          <h3>Audit gratuit de 30 minutes</h3>
-          <p>On regarde vos emails, vos dossiers et les documents que vous réclamez. Je vous montre combien d'heures y passent. Vous gardez les conclusions.</p>
-        </li>
-        <li>
-          <h3>Installation à votre mesure</h3>
-          <p>Votre instance, à votre nom, hébergée dans l'UE. On règle ensemble les dossiers, les pièces à réclamer, le ton des réponses et le rythme des relances.</p>
-        </li>
-        <li>
-          <h3>Démarrage en mode brouillon</h3>
-          <p>L'assistant prépare, vous relisez, vous envoyez. On ajuste les consignes les premières semaines. L'envoi automatique, plus tard, seulement si vous le décidez.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- CE QUE FAIT L'ASSISTANT -->
-  <section class="alt" id="assistant">
-    <div class="wrap">
-      <h2>Ce que fait l'assistant</h2>
-      <p class="intro hors-mobile">Vous gardez votre adresse email, votre agenda et vos habitudes. L'assistant s'y ajoute.</p>
-      <div class="tiles">
-        <details class="tile">
-          <summary><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></span><div><h3>Il lit et trie chaque email</h3><p class="one">Chaque message est reconnu, étiqueté et classé par priorité.</p></div></summary>
-          <div class="more"><p>Nouvelle demande, question, prise de rendez-vous, envoi de documents, urgence ou réclamation. Les notifications automatiques (noreply, newsletters) sont laissées de côté.</p></div>
-        </details>
-        <details class="tile">
-          <summary><span class="ico v" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><div><h3>Il rédige la réponse</h3><p class="one">Dans la langue du client, avec vos informations à vous.</p></div></summary>
-          <div class="more"><p>Français, néerlandais ou anglais&nbsp;: la réponse suit la langue du message reçu. Elle s'appuie sur vos services, votre zone, vos horaires et vos réponses aux questions fréquentes, pas sur des généralités.</p></div>
-        </details>
-        <details class="tile">
-          <summary><span class="ico a" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 15l2 2 4-4"/></svg></span><div><h3>Il collecte les documents</h3><p class="one">Il coche les pièces reçues et redemande celles qui manquent.</p></div></summary>
-          <div class="more"><p>Chaque type de dossier a sa liste de pièces&nbsp;: crédit hypothécaire, mise en vente, panneaux solaires, clôture TVA, ou ce dont vous avez besoin. Vous pouvez aussi ouvrir un dossier depuis un formulaire simple&nbsp;: le client reçoit alors la liste à fournir.</p></div>
-        </details>
-        <details class="tile">
-          <summary><span class="ico g" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span><div><h3>Il relance à votre place</h3><p class="one">Au rythme que vous fixez, puis il vous passe la main.</p></div></summary>
-          <div class="more"><p>Les pièces manquantes sont redemandées à l'intervalle choisi, par exemple tous les 3 jours. Après le nombre de relances prévu, c'est vous qu'il prévient&nbsp;: un coup de fil fera mieux qu'un quatrième email. Il peut aussi relancer une fois les demandes de devis restées sans suite.</p></div>
-        </details>
-        <details class="tile">
-          <summary><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span><div><h3>Il vous tient au courant</h3><p class="one">Rappels dans l'agenda, alertes urgentes, résumé chaque matin.</p></div></summary>
-          <div class="more"><p>Quand quelqu'un doit être rappelé, un rappel apparaît dans votre agenda. Les urgences et les réclamations vous arrivent par email, avec un bouton qui ouvre directement la conversation. Chaque matin, un résumé vous dit où en sont les dossiers.</p></div>
-        </details>
-        <details class="tile">
-          <summary><span class="ico v" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><div><h3>Avec votre boîte mail</h3><p class="one">Gmail, Outlook ou toute boîte professionnelle.</p></div></summary>
-          <div class="more"><p>Gmail et Google Workspace, Outlook et Microsoft 365, ou toute boîte mail professionnelle compatible IMAP (celle de votre hébergeur web, par exemple).</p></div>
-        </details>
+      <h2 id="tarifs-titre">Commencez petit, grandissez ensuite.</h2>
+      <div class="pilote" data-pilote>
+        <div class="places" aria-hidden="true"><i class="libre"></i><i class="libre"></i><i class="libre"></i></div>
+        <p class="pilote-texte"><b>3 places pilotes sur 3</b> : installation offerte, en échange d'un retour d'expérience honnête.</p>
       </div>
-      <p class="tile-hint">Touchez une tuile pour le détail.</p>
-      <div class="label-strip hors-mobile">
-        <p>Les étiquettes que vous verrez dans votre boîte mail&nbsp;:</p>
-        <div class="tags">
-          <span class="tag t-todo">À traiter</span>
-          <span class="tag t-docs">Documents en attente</span>
-          <span class="tag t-done">Dossier complet</span>
-          <span class="tag t-lead">Lead</span>
-          <span class="tag t-draft">Brouillon à relire</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- AGENTS IA (modules en option) -->
-  <section class="ai" id="agents-ia">
-    <div class="wrap">
-      <span class="ai-badge">✦ Agents IA en option</span>
-      <h2>Trois agents IA qui travaillent pour vous<span class="hors-mobile">, même quand vous n'êtes pas là</span></h2>
-      <p class="intro hors-mobile">L'assistant email est le socle. Ces agents s'y ajoutent selon votre métier&nbsp;: ils répondent, relancent et vérifient à votre place, avec vos informations à vous. Vous gardez la main&nbsp;: rien ne part sans votre accord.</p>
-      <div class="ai-grid swipe">
-        <article class="ai-card">
-          <div class="ai-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
-          <h3>L'agent d'accueil de votre site</h3>
-          <p>Il répond à vos visiteurs le soir et le week-end, pose les bonnes questions, vous transmet la demande et peut proposer un rendez-vous dans votre agenda.</p>
-          <div class="ai-demo" aria-label="Exemple de conversation">
-            <div class="lbl">Exemple, samedi 21h40</div>
-            <div class="q">Bonjour, on a signé le compromis à Jambes, il nous faut un crédit avant fin novembre.</div>
-            <div class="r">Bonjour, bonne nouvelle&nbsp;! Pour avancer vite, je peux vous proposer un rendez-vous cette semaine. Quel email puis-je utiliser&nbsp;?</div>
-          </div>
-          <p class="ai-gain">→ Aucune demande perdue, même hors horaires</p>
+      <div class="offres">
+        <article class="offre">
+          <h3>Essentiel</h3>
+          <p class="offre-pour">1 module, pour commencer</p>
+          <p class="prix"><span data-prix="essentiel_installation">490</span> €</p>
+          <p class="prix-sous">HTVA à l'installation, puis <b><span data-prix="essentiel_mois">79</span> € HTVA par mois</b></p>
+          <ul class="liste-coches"><li>Le module qui vous fait gagner le plus</li><li>Démarrage en mode brouillon</li><li>Sans engagement</li></ul>
         </article>
-        <article class="ai-card">
-          <div class="ai-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 8h16"/><path d="M8 13h5M8 16h3"/><path d="M16 12l2 2-2 2"/></svg></div>
-          <h3>La relance des devis et des factures</h3>
-          <p>Devis sans réponse, facture impayée&nbsp;: il prépare une relance polie au bon moment, avec le montant et vos coordonnées bancaires ajoutés automatiquement. Chaque matin, il vous dit qui relancer et qui appeler.</p>
-          <div class="ai-demo" aria-label="Exemple de relance">
-            <div class="lbl">Brouillon prêt à envoyer</div>
-            Bonjour Monsieur Henrard, sauf erreur de notre part, la facture ci-dessous n'est pas encore réglée…
-            <div class="fact">Facture 2026-041 · 1&nbsp;250,00&nbsp;€ · échéance 30/09</div>
-          </div>
-          <p class="ai-gain">→ Chaque devis et chaque facture suivis jusqu’au bout</p>
+        <article class="offre conseille">
+          <span class="offre-badge">Conseillé</span>
+          <h3>Croissance</h3>
+          <p class="offre-pour">3 modules et le résumé du matin</p>
+          <!-- À VALIDER : prix de la formule Croissance (config.js, PRIX) -->
+          <p class="prix"><span data-prix="croissance_installation">1 900</span> €</p>
+          <p class="prix-sous">HTVA à l'installation, puis <b><span data-prix="croissance_mois">190</span> € HTVA par mois</b></p>
+          <ul class="liste-coches"><li>3 agents choisis avec le diagnostic</li><li>Résumé du matin et tableau de bord</li><li>Un seul interlocuteur : Pierre</li></ul>
         </article>
-        <article class="ai-card">
-          <div class="ai-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
-          <h3>Le contrôle des documents reçus</h3>
-          <p>Il ouvre vraiment les PDF et les photos&nbsp;: est-ce la bonne pièce, au bon nom, lisible et assez récente&nbsp;? Il relève montants et dates, et vous signale ce qui cloche.</p>
-          <div class="ai-demo" aria-label="Exemple de contrôle">
-            <div class="lbl">Dossier crédit · 2 documents reçus</div>
-            <div><span class="ok">✓</span> Fiche de paie septembre · au bon nom · net 2&nbsp;067&nbsp;€</div>
-            <div><span class="warn">!</span> Extrait de compte · page 2 manquante</div>
-          </div>
-          <p class="ai-gain">→ Des dossiers complets avant de les traiter</p>
+        <article class="offre">
+          <h3>Sur mesure</h3>
+          <p class="offre-pour">Plusieurs boîtes, logiciel métier, modules sur demande</p>
+          <p class="prix">Sur devis</p>
+          <p class="prix-sous">après le diagnostic</p>
+          <ul class="liste-coches"><li>SMS, WhatsApp, pré-devis</li><li>Connexion à votre logiciel</li><li>Atelier IA pour l'équipe</li></ul>
         </article>
       </div>
-      <div class="ai-cta">
-        <a class="btn btn-ai" href="#" id="essayer-agent">Essayer l'agent maintenant</a>
-        <a class="btn btn-ghost-light hors-mobile" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Voir lesquels conviennent à mon entreprise</a>
-      </div>
-      <p class="ai-foot"><span class="hors-mobile">L'agent d'accueil de ce site fonctionne exactement comme celui que vous auriez&nbsp;: posez-lui vos questions. Aussi possibles sur demande&nbsp;: demande d'avis Google après un dossier réussi, rappels d'entretien ou de renouvellement, connexion à votre logiciel métier. </span>Exemples ci-dessus fictifs. Agents réglés pour votre entreprise, sur devis.</p>
-    </div>
-  </section>
+      <!-- À VALIDER : prix du diagnostic écrit (config.js, PRIX) -->
+      <p class="offres-notes">Découverte de 30 minutes gratuite. Diagnostic écrit : <span data-prix="diagnostic_ecrit">290</span> € HTVA, déduit si vous installez. Frais techniques en plus, payés directement à vos fournisseurs (hébergement et IA). <a href="#info-tarifs">Tout le détail</a></p>
+      <p class="rappel-cout" id="rappel-cout" hidden>Selon votre calcul, ce qui attend vous coûte environ <b><span data-rappel>0</span> € par mois</b>. Chaque mois d'attente compte.</p>
+      <div class="temoignages" id="temoignages" hidden></div>
 
-  <!-- POUR QUI -->
-  <section id="pour-qui" class="who tint">
-    <div class="wrap">
-      <h2>Pour qui&nbsp;?</h2>
-      <p class="intro">Pour les petites entreprises qui reçoivent beaucoup de demandes par email et passent du temps à réunir des documents. En particulier ces quatre métiers.</p>
-      <div class="tiles four">
-        <details class="tile">
-          <summary><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span><div><h3>Agences immobilières</h3><p class="one">Les pièces de chaque mise en vente, réclamées et cochées.</p></div></summary>
-          <div class="more"><p>Un propriétaire vous confie la vente de sa maison. L'assistant lui envoie la liste&nbsp;: titre de propriété, certificat PEB, contrôle électrique, attestation du sol. Il coche ce qui arrive et redemande le reste. Quand tout est là, la conversation passe en «&nbsp;Dossier complet&nbsp;».</p></div>
-        </details>
-        <details class="tile">
-          <summary><span class="ico v" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h3>Courtiers crédit et assurance</h3><p class="one">Des dossiers de crédit complets sans courir après vos clients.</p></div></summary>
-          <div class="more"><p>Un couple prépare son crédit hypothécaire. Il manque le compromis et le dernier avertissement-extrait de rôle. L'assistant les redemande à l'intervalle prévu. Si rien n'arrive, vous êtes prévenu pour les appeler.</p></div>
-        </details>
-        <details class="tile">
-          <summary><span class="ico a" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span><div><h3>Installateurs en énergie</h3><p class="one">La demande de devis du dimanche soir traitée lundi à 8&nbsp;h.</p></div></summary>
-          <div class="more"><p>Panneaux solaires, pompes à chaleur, isolation, toiture. Une demande arrive un dimanche soir, en néerlandais. Lundi matin, la réponse vous attend dans vos brouillons, en néerlandais, avec les informations à envoyer&nbsp;: photos, surface à chauffer, dernière facture d'énergie. Le contact est marqué «&nbsp;Lead&nbsp;». <a href="installateurs-energie.html">Tout savoir pour les installateurs&nbsp;→</a></p></div>
-        </details>
-        <details class="tile">
-          <summary><span class="ico g" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 18h.01M12 18h4"/></svg></span><div><h3>Cabinets comptables</h3><p class="one">Les pièces TVA de chaque client, relancées sans vous.</p></div></summary>
-          <div class="more"><p>Avant chaque déclaration TVA, il faut récupérer factures d'achat, de vente et extraits de compte. L'assistant envoie la liste, note qui a tout envoyé et relance les retardataires. Dans le résumé du matin, vous voyez qui bloque encore.</p></div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONFIANCE -->
-  <section class="tint-green" id="confiance">
-    <div class="wrap">
-      <h2>Confiance et données</h2>
-      <p class="intro">Confier sa boîte mail, ce n'est pas rien. Voici comment c'est organisé.</p>
-      <div class="trust swipe">
-        <div class="card">
-          <h3>Mode brouillon par défaut</h3>
-          <p>Aucune réponse ne part sans vous. Elle attend dans vos brouillons&nbsp;: vous la relisez, vous la modifiez si besoin, vous cliquez sur Envoyer. L'envoi automatique ne s'active que si vous le demandez.</p>
+      <div class="fin-grille">
+        <div class="pierre">
+          <!-- TODO photo : déposer img/pierre.webp (480 × 480) puis remplir PHOTO_PIERRE dans config.js -->
+          <span class="portrait" data-portrait aria-hidden="true">PW</span>
+          <p><b>Pierre Warmoes</b>, fondateur, à Namur.<br>Je réponds moi-même : <a href="tel:+32472991485">0472 99 14 85</a></p>
         </div>
-        <div class="card">
-          <h3>Données hébergées dans l'Union européenne</h3>
-          <p>Chaque client a sa propre instance, séparée des autres, sur un serveur situé dans l'Union européenne. Vos emails restent dans votre boîte mail. <span class="hors-mobile">Pour l'analyse et la rédaction, le texte de l'email est transmis au service d'IA, sans le contenu des pièces jointes (sauf si vous activez le module de contrôle des documents). </span>Les détails et les garanties sont dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+        <div class="actions">
+          <a class="btn btn-accent" href="#diagnostic">Faire mon diagnostic (2 min) <span class="fl" aria-hidden="true">→</span></a>
+          <a class="btn btn-contour btn-secondaire" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64" data-cfg-href="URL_RESERVATION">Réserver l'audit gratuit</a>
         </div>
-        <div class="card">
-          <h3>Vous restez propriétaire</h3>
-          <p>L'instance et ses données sont à votre nom. Si vous arrêtez, vous récupérez vos données ou vous les faites supprimer. Vous pouvez couper l'accès à votre boîte mail à tout moment, depuis votre compte Google ou Microsoft.</p>
-        </div>
-        <div class="card">
-          <h3>Conforme au RGPD, par écrit</h3>
-          <p>Vous êtes responsable du traitement, j'agis comme sous-traitant. Un contrat de sous-traitance vous est fourni avant la mise en route&nbsp;: quelles données, où, par qui, combien de temps. Personne ne lit vos emails, moi compris, sauf à votre demande pour résoudre un problème.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TARIFS : modifiez les montants ici (et dans le bloc "makesOffer" des données structurées en haut du fichier) -->
-  <section id="tarifs">
-    <div class="wrap">
-      <h2>Tarifs indicatifs</h2>
-      <p class="intro">Le prix exact dépend du nombre de boîtes mail et des types de dossiers à paramétrer. Vous recevez un devis écrit après l'audit.</p>
-      <div class="prices swipe">
-        <div class="price">
-          <h3>Installation</h3>
-          <p class="from">à partir de</p>
-          <p class="amount">490&nbsp;€</p>
-          <p class="unit">HTVA, payée une seule fois</p>
-          <ul class="checks">
-            <li>Création de votre instance dans l'UE, à votre nom</li>
-            <li>Types de dossiers et listes de pièces</li>
-            <li>Réponses adaptées à votre métier et à votre ton</li>
-            <li>Connexion de votre boîte mail et de votre agenda</li>
-            <li>Suivi des premières semaines en mode brouillon</li>
-          </ul>
-        </div>
-        <div class="price">
-          <h3>Maintenance</h3>
-          <p class="from">à partir de</p>
-          <p class="amount">79&nbsp;€ <small style="font-size:1rem;font-weight:600">/ mois</small></p>
-          <p class="unit">HTVA, sans engagement de durée</p>
-          <ul class="checks">
-            <li>Surveillance : je suis prévenu si quelque chose bloque</li>
-            <li>Mises à jour et réparations</li>
-            <li>Ajustements des réponses et des listes de pièces</li>
-            <li>Support par email et par téléphone</li>
-          </ul>
-        </div>
-      </div>
-      <p class="tarifs-detail"><a href="#tarifs">Ce qui est compris et frais techniques →</a></p>
-      <p class="tarifs-pilote"><b>Programme pilote&nbsp;:</b> installation offerte aux trois premiers clients. <a href="#pilotes">En savoir plus →</a></p>
-      <p class="small" style="margin-top:18px">Frais techniques en plus, payés directement par vous à vos fournisseurs, sur vos propres comptes : l'hébergement de votre instance n8n (de 5 à 25&nbsp;€ par mois environ selon la formule) et le service d'IA (quelques euros par mois pour un volume courant). Vous restez propriétaire de tout. Prix hors TVA.</p>
-      <p class="small">Modules en option (agent d'accueil du site, relance des devis et factures, contrôle des documents)&nbsp;: sur devis, selon votre volume.</p>
-    </div>
-  </section>
-
-  <!-- CLIENTS PILOTES -->
-  <section id="pilotes" style="padding-top:0">
-    <div class="wrap">
-      <div class="pilot">
-        <div>
-          <h2>Programme clients pilotes</h2>
-          <p>L'assistant Assysteo démarre. Pour les trois premiers clients, l'installation est offerte. En échange, je vous demande un retour d'expérience honnête après quelques semaines d'utilisation<span class="hors-mobile">&nbsp;: ce qui vous fait gagner du temps, ce qui coince, ce qui manque</span>.</p>
-          <p>Seule l'installation est offerte, la maintenance mensuelle et vos frais techniques s'appliquent normalement.<span class="hors-mobile"> Votre retour ne sera cité sur ce site qu'avec votre accord écrit.</span></p>
-          <a class="btn" href="mailto:contact@assysteo.be?subject=Programme%20clients%20pilotes">Proposer mon entreprise</a>
-        </div>
-        <div class="seats">
-          <!-- Mettez à jour ce nombre quand une place est prise -->
-          <p class="n">3 places</p>
-          <p class="hors-mobile" style="margin:.5em 0 0">Installation offerte (à partir de 490&nbsp;€ HTVA) pour les trois premières entreprises.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="alt" id="faq">
-    <div class="wrap">
-      <h2>Questions fréquentes</h2>
-      <div class="faq">
-        <details>
-          <summary>Et si l'IA se trompe&nbsp;?</summary>
-          <div>
-            <p>Elle se trompera parfois. C'est pour ça qu'elle travaille en brouillon&nbsp;: vous relisez avant l'envoi. Quand un message est sensible (une réclamation, une urgence, une demande inhabituelle), l'assistant ne cherche pas à régler l'affaire seul, il vous prévient. Les premières semaines, on ajuste ensemble ses consignes à partir des brouillons que vous avez dû corriger.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Où vont mes données&nbsp;? Qui peut les lire&nbsp;?</summary>
-          <div>
-            <p>Votre instance est hébergée dans l'Union européenne, à votre nom. Vos emails restent dans votre boîte mail. L'assistant garde une fiche par contact&nbsp;: nom, adresse email, type de dossier, pièces reçues, statut, dates des relances.</p>
-            <p>Pour analyser un email et rédiger la réponse, son texte est transmis au service d'IA par son interface professionnelle (API), sans le contenu des pièces jointes, sauf si vous activez le module optionnel de contrôle des documents. Personne ne lit vos emails, moi compris, sauf si vous me le demandez pour régler un problème. Tout est détaillé dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Je suis sur Outlook (ou une autre boîte mail). Ça fonctionne&nbsp;?</summary>
-          <div>
-            <p>Oui. L'assistant fonctionne avec Gmail et Google Workspace, Outlook et Microsoft 365, et avec toute boîte mail professionnelle compatible IMAP. Certaines fonctions, comme le rappel dans l'agenda, dépendent de l'agenda que vous utilisez. On le vérifie pendant l'audit.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Combien de temps faut-il pour l'installer&nbsp;?</summary>
-          <div>
-            <p>Prévoyez une à deux semaines entre l'audit et la mise en route. Le gros du travail est de mon côté. Du vôtre, il faut surtout un rendez-vous d'environ une heure pour valider les listes de documents et le ton des réponses, puis connecter votre boîte mail.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Y a-t-il un engagement&nbsp;?</summary>
-          <div>
-            <p>L'installation se paie une fois. La maintenance est mensuelle et se résilie avec un préavis de un mois. L'instance et le compte d'IA sont à votre nom : ils restent à vous. Si vous arrêtez, vos données restent à vous&nbsp;: on les exporte ou on les supprime, comme vous préférez.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Que se passe-t-il si l'assistant tombe en panne&nbsp;?</summary>
-          <div>
-            <p>Vos emails continuent d'arriver normalement&nbsp;: l'assistant ne se place pas entre vos clients et vous. Pendant une panne, vous n'avez simplement plus les étiquettes ni les brouillons, et vous travaillez comme avant. La surveillance et la remise en route sont comprises dans l'abonnement.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Est-ce que je dois changer ma façon de travailler&nbsp;?</summary>
-          <div>
-            <p>Non. Vous continuez à travailler dans votre boîte mail, avec votre signature habituelle. Ce qui change&nbsp;: des étiquettes sur les conversations, des brouillons prêts à relire, un rappel dans l'agenda quand il faut appeler quelqu'un et un résumé chaque matin. Vos clients, eux, peuvent toujours répondre STOP à une relance pour ne plus en recevoir.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Puis-je essayer avant de payer&nbsp;?</summary>
-          <div>
-            <p>L'audit est gratuit et sans engagement&nbsp;: vous voyez concrètement ce que l'assistant ferait de vos emails. Et pour les trois premiers clients, l'installation est offerte dans le cadre du <a href="#pilotes">programme pilote</a>.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- AUDIT GRATUIT -->
-  <section id="audit" class="cta">
-    <div class="wrap">
-      <div class="cta-box">
-        <div>
-          <h2>Audit gratuit de 30 minutes</h2>
-          <p class="lead hors-mobile">Je vous montre combien d'heures vous perdez en emails, relances et collecte de documents. Avec vos chiffres, pas avec des moyennes.</p>
-          <p>Je m'appelle Pierre Warmoes et je suis basé à Namur. J'installe et je suis moi-même chaque assistant. Vous avez un seul interlocuteur, qui connaît votre configuration.</p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64">Choisir un créneau</a>
-            <a class="btn btn-ghost" href="tel:+32472991485">Appeler le 0472 99 14 85</a>
-            <a class="btn btn-ghost hors-mobile" href="mailto:contact@assysteo.be?subject=Audit%20gratuit">Écrire un email</a>
-          </div>
-        </div>
-        <ul class="contact-list hors-mobile">
-          <li><span>Email</span><a href="mailto:contact@assysteo.be">contact@assysteo.be</a></li>
-          <li><span>Téléphone</span><a href="tel:+32472991485">0472 99 14 85</a></li>
-          <li><span>Basé à</span>Namur</li>
-          <li><span>Zone</span>Namur et Wallonie, en visio ou sur place</li>
-        </ul>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <div>
-      <p><strong style="color:#fff">Assysteo</strong>, Pierre Warmoes</p>
-      <p>Namur, Belgique</p>
+<footer class="pied" data-pied>
+  <div class="wrap pied-grille">
+    <div class="pied-marque">
+      <a class="marque" href="/"><img src="/favicon.svg" alt="" width="30" height="30">Assysteo</a>
+      <p>L'agence IA de proximité des PME namuroises. Pierre Warmoes, Namur.</p>
     </div>
-    <div>
+    <div class="pied-benefices">
+      <p class="pied-titre">Ce que vous gagnez</p>
       <ul>
-        <li><a href="mentions-legales.html">Mentions légales</a></li>
-        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-        <li><a href="mailto:contact@assysteo.be">Contact</a></li>
+        <li><a href="/#repondre">Vous répondez avant vos concurrents</a></li>
+        <li><a href="/#alleger">Plus aucun devis oublié</a></li>
+        <li><a href="/#alleger">Des dossiers complets sans courir après</a></li>
+        <li><a href="/#piloter">Une journée qui commence avec un plan</a></li>
+        <li><a href="/#trouver">De nouveaux clients sans prospecter vous-même</a></li>
       </ul>
-      <p style="margin-top:10px">© 2026 Pierre Warmoes</p>
     </div>
+    <div>
+      <p class="pied-titre">Métiers</p>
+      <ul>
+        <li><a href="/agences-immobilieres.html">Agences immobilières</a></li>
+        <li><a href="/courtiers.html">Courtiers</a></li>
+        <li><a href="/installateurs-energie.html">Installateurs en énergie</a></li>
+        <li><a href="/comptables.html">Cabinets comptables</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="pied-titre">Contact</p>
+      <ul>
+        <li><a href="tel:+32472991485">0472 99 14 85</a></li>
+        <li><a href="mailto:contact@assysteo.be">contact@assysteo.be</a></li>
+        <li class="hors-mobile"><a href="#infos">Tout savoir</a></li>
+        <li class="hors-mobile"><a href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64" data-cfg-href="URL_RESERVATION">Réserver l'audit</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap pied-bas">
+    <span>© 2026 Pierre Warmoes, Namur. Aucun cookie de pistage.</span>
+    <span><a href="/mentions-legales.html">Mentions légales</a> · <a href="/confidentialite.html">Confidentialité</a></span>
   </div>
 </footer>
 
-<!-- Bulle de chat : assistant IA d'Assysteo (voir chat.js) -->
-<script src="chat.js?v=8" defer></script>
-<script src="anim.js?v=5" defer></script>
-<script>
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest && e.target.closest('#essayer-agent');
-    if (!a) return;
-    e.preventDefault();
-    if (window.assysteoOuvrirChat) window.assysteoOuvrirChat();
-    else { var b = document.querySelector('.ac-bouton'); if (b) b.click(); }
-  });
-</script>
+<div class="barre-mobile" data-barre-mobile>
+  <a class="btn btn-accent" href="/#diagnostic">Faire mon diagnostic</a>
+  <a class="barre-ico" href="tel:+32472991485" aria-label="Appeler Pierre au 0472 99 14 85"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
+  <button type="button" class="barre-ico avec-js" data-ouvrir-chat aria-label="Poser une question à l'assistant IA"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></button>
+</div>
+
+<!-- TOUT SAVOIR : les réponses aux questions, rangées dans le menu en haut à droite -->
+<aside class="tiroir" id="infos" aria-labelledby="infos-titre">
+  <div class="tiroir-panneau">
+    <div class="tiroir-tete"><p class="tiroir-titre" id="infos-titre">Tout savoir</p><a class="tiroir-fermer" href="#ferme" aria-label="Fermer">×</a></div>
+    <div class="tiroir-corps">
+      <ul class="raccourcis">
+        <li><a href="#info-methode">Comment ça marche</a></li>
+        <li><a href="#info-faq">Questions</a></li>
+        <li><a href="#info-tarifs">Tarifs</a></li>
+        <li><a href="#info-donnees">Vos données</a></li>
+        <li><a href="#info-pierre">Qui est Pierre</a></li>
+        <li><a href="#info-metiers">Métiers</a></li>
+        <li><a href="#info-contact">Contact</a></li>
+      </ul>
+
+      <details class="info" id="info-methode">
+        <summary><span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>Comment ça se passe</summary>
+        <div class="info-corps">
+          <p>Rien à installer, rien à apprendre : on travaille dans votre boîte mail et votre agenda.</p>
+          <ol class="etapes-liste">
+            <li><b>Diagnostic</b>30 minutes, gratuit, en visio ou sur place. On regarde où partent vos heures et vos demandes.</li>
+            <li><b>Installation en 1 à 2 semaines</b>Votre instance, à votre nom, hébergée dans l'UE. On règle ensemble le ton, les listes de documents et le rythme des relances.</li>
+            <li><b>Démarrage en mode brouillon</b>L'IA prépare, vous relisez, vous envoyez. On ajuste les premières semaines avec vos corrections.</li>
+            <li><b>Autonomie progressive</b>Certaines réponses partent seules, seulement si vous le décidez.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="info" id="info-faq">
+        <summary><span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5h.01"/></svg></span>Questions fréquentes</summary>
+        <div class="info-corps">
+          <details class="question"><summary>L'IA va répondre n'importe quoi&nbsp;?</summary><div><p>Elle peut se tromper : c'est pour ça qu'elle travaille en brouillon. Vous relisez avant l'envoi. Un message sensible, comme une réclamation ou une urgence, vous est signalé au lieu d'être traité seul. Les premières semaines, on ajuste ses consignes à partir de vos corrections.</p></div></details>
+          <details class="question"><summary>Je ne suis pas à l'aise avec la technique.</summary><div><p>Vous n'avez rien à installer ni à apprendre. Vous continuez dans votre boîte mail et votre agenda habituels. L'installation, les réglages et le suivi sont faits pour vous. Il vous faut surtout un rendez-vous d'environ une heure pour valider le ton des réponses et les listes de documents.</p></div></details>
+          <details class="question"><summary>Combien ça coûte vraiment par mois&nbsp;?</summary><div><p>Formule Essentiel : <span data-prix="essentiel_mois">79</span> € HTVA par mois de maintenance. Formule Croissance : <span data-prix="croissance_mois">190</span> € HTVA par mois. S'ajoutent vos frais techniques, payés directement à vos fournisseurs : hébergement de 5 à 25 € par mois et service d'IA, quelques euros par mois pour un volume courant. L'installation se paie une seule fois, et elle est offerte aux 3 entreprises du programme pilote.</p></div></details>
+          <details class="question"><summary>Et mes données, le RGPD&nbsp;?</summary><div><p>Votre instance est à votre nom, hébergée dans l'Union européenne. Vos emails restent dans votre boîte mail. Un contrat de sous-traitance RGPD vous est remis avant la mise en route. Personne ne lit vos emails, sauf à votre demande pour régler un problème. Détails dans la <a href="/confidentialite.html">politique de confidentialité</a>.</p></div></details>
+          <details class="question"><summary>Et si Assysteo s'arrête&nbsp;?</summary><div><p>Vous êtes propriétaire de l'instance et des comptes d'hébergement et d'IA. Tout continue de fonctionner, et un autre prestataire n8n peut reprendre la maintenance. Vos données ne sont jamais bloquées chez Assysteo.</p></div></details>
+          <details class="question"><summary>Ça marche avec Outlook&nbsp;?</summary><div><p>Oui : Gmail, Google Workspace, Outlook, Microsoft 365 et toute boîte mail professionnelle compatible IMAP. Certaines fonctions, comme les rappels dans l'agenda, dépendent de votre agenda : on le vérifie pendant le diagnostic.</p></div></details>
+          <details class="question"><summary>Et en néerlandais&nbsp;?</summary><div><p>La réponse suit la langue du message reçu : français, néerlandais ou anglais.</p></div></details>
+          <details class="question"><summary>Je peux arrêter quand je veux&nbsp;?</summary><div><p>Oui. La maintenance est mensuelle, sans engagement, avec un préavis d'un mois. Si vous arrêtez, vos données restent à vous : elles sont exportées ou supprimées, comme vous préférez.</p></div></details>
+        </div>
+      </details>
+
+      <details class="info" id="info-tarifs">
+        <summary><span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 6.5A6.5 6.5 0 1 0 17 17.5M4 10h9M4 14h9"/></svg></span>Tarifs détaillés</summary>
+        <div class="info-corps">
+          <!-- À VALIDER : diagnostic écrit et formule Croissance (config.js, PRIX) -->
+          <h3>Diagnostic</h3>
+          <p>Découverte de 30 minutes : gratuite. Diagnostic écrit : <span data-prix="diagnostic_ecrit">290</span> € HTVA, déduit si vous installez.</p>
+          <h3>Essentiel : 1 module</h3>
+          <p>Installation à partir de <span data-prix="essentiel_installation">490</span> € HTVA, une seule fois. Maintenance à partir de <span data-prix="essentiel_mois">79</span> € HTVA par mois : surveillance, mises à jour, ajustements des réponses, support par email et par téléphone.</p>
+          <h3>Croissance : 3 modules et le résumé du matin</h3>
+          <p>À partir de <span data-prix="croissance_installation">1 900</span> € HTVA à l'installation, puis <span data-prix="croissance_mois">190</span> € HTVA par mois.</p>
+          <h3>Sur mesure</h3>
+          <p>Plusieurs boîtes mail, connexion à votre logiciel métier, modules sur demande (SMS après un appel manqué, WhatsApp, pré-devis, factures vers la comptabilité, assistant interne, atelier) : sur devis.</p>
+          <h3>Frais techniques</h3>
+          <p>Payés directement par vous à vos fournisseurs, sur vos propres comptes : hébergement de votre instance (environ 5 à 25 € par mois selon la formule) et service d'IA (quelques euros par mois pour un volume courant). Vous restez propriétaire de tout.</p>
+          <h3>Programme pilote</h3>
+          <p>Installation offerte aux <span data-cfg="PLACES_PILOTE_TOTAL">3</span> premières entreprises, en échange d'un retour d'expérience honnête. La maintenance et les frais techniques s'appliquent normalement. Votre retour n'est cité qu'avec votre accord écrit. <span data-pilote-court>Places restantes : <span data-cfg="PLACES_PILOTE_RESTANTES">3</span>.</span></p>
+          <p class="note">Sans engagement, préavis d'un mois. Prix hors TVA. Un devis écrit suit le diagnostic.</p>
+        </div>
+      </details>
+
+      <details class="info" id="info-donnees">
+        <summary><span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>Vos données et la sécurité</summary>
+        <div class="info-corps">
+          <ul class="liste-coches">
+            <li><b>Rien ne part sans vous.</b> Mode brouillon par défaut : l'IA prépare, vous relisez, vous envoyez.</li>
+            <li><b>Hébergé dans l'UE, à votre nom.</b> Une instance séparée pour chaque entreprise.</li>
+            <li><b>Vous restez propriétaire</b> de l'instance, des comptes et des données. Vous pouvez couper l'accès à votre boîte mail à tout moment.</li>
+            <li><b>RGPD par écrit.</b> Un contrat de sous-traitance vous est remis avant la mise en route.</li>
+            <li><b>L'IA dit qu'elle est une IA.</b> Le chat du site le précise dès le premier message.</li>
+            <li><b>Sans cookie de pistage.</b> Ce site n'en dépose aucun, d'où l'absence de bandeau.</li>
+          </ul>
+          <h3>L'exploitation, chaque jour</h3>
+          <ul class="liste-coches">
+            <li>Sauvegarde chiffrée chaque nuit.</li>
+            <li>Test de restauration chaque semaine.</li>
+            <li>Mises à jour de sécurité.</li>
+            <li>Alerte immédiate en cas d'erreur.</li>
+          </ul>
+          <p>Tout le détail dans la <a href="/confidentialite.html">politique de confidentialité</a>.</p>
+        </div>
+      </details>
+
+      <details class="info" id="info-pierre">
+        <summary><span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>Qui est Pierre</summary>
+        <div class="info-corps">
+          <!-- TEXTE À VALIDER par Pierre -->
+          <div class="pierre" style="margin-bottom:12px"><span class="portrait grand" data-portrait aria-hidden="true">PW</span><p><b>Pierre Warmoes</b><br>Fondateur d'Assysteo, à Namur</p></div>
+          <p>Je suis basé à Namur. J'ai créé Assysteo pour que les petites entreprises de la région profitent de l'IA sans y passer leurs soirées.</p>
+          <p>J'installe et je suis moi-même chaque client : vous avez un seul interlocuteur, qui connaît votre configuration.</p>
+          <p>Vous pouvez m'appeler directement au <a href="tel:+32472991485">0472 99 14 85</a>.</p>
+        </div>
+      </details>
+
+      <details class="info" id="info-metiers">
+        <summary><span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>Pour quels métiers</summary>
+        <div class="info-corps">
+          <ul class="cartes-metiers">
+            <li><a href="/agences-immobilieres.html"><b>Agences immobilières</b>Les visites à caser et les pièces de vente qui traînent.</a></li>
+            <li><a href="/courtiers.html"><b>Courtiers crédit et assurance</b>Des dossiers incomplets et des fiches de paie trop anciennes.</a></li>
+            <li><a href="/installateurs-energie.html"><b>Installateurs en énergie</b>La demande de devis du dimanche soir, lue le mardi.</a></li>
+            <li><a href="/comptables.html"><b>Cabinets comptables</b>Les pièces TVA des retardataires, réclamées à la main.</a></li>
+            <li><a href="#diagnostic"><b>Autre PME</b>Commerce, artisan, services : le diagnostic s'adapte à votre métier.</a></li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="info" id="info-contact">
+        <summary><span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span>Contact</summary>
+        <div class="info-corps">
+          <ul class="coord">
+            <li><a href="tel:+32472991485">0472 99 14 85</a></li>
+            <li><a href="mailto:contact@assysteo.be">contact@assysteo.be</a></li>
+            <li>Namur et Wallonie, en visio ou sur place.</li>
+          </ul>
+          <p><a class="btn btn-accent" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64" data-cfg-href="URL_RESERVATION">Réserver l'audit gratuit</a></p>
+        </div>
+      </details>
+
+      <p class="note"><a href="/mentions-legales.html">Mentions légales</a> · <a href="/confidentialite.html">Politique de confidentialité</a></p>
+    </div>
+  </div>
+</aside>
+
+<script src="/config.js?v=1" defer></script>
+<script src="/anim.js?v=6" defer></script>
+<script src="/chat.js?v=8" defer></script>
 </body>
 </html>
