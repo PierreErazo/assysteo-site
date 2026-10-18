@@ -619,6 +619,14 @@ html:not(.js) .scene .s-sans, html:not(.js) .scene .s-avec { display: block; }
 .deux { display: grid; gap: 18px; }
 @media (min-width: 900px) { .deux { grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; } }
 
+.modules-metier { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+.modules-metier a, .modules-metier > li > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding: 14px 16px; border-radius: 16px; border: 1px solid var(--ligne); background: #fff; color: var(--texte); text-decoration: none; font-size: .93rem; line-height: 1.4; transition: border-color var(--rapide), transform var(--rapide) var(--ease), box-shadow var(--rapide); }
+.modules-metier a:hover { border-color: var(--marine); transform: translateY(-2px); box-shadow: 0 12px 26px rgba(21, 32, 43, .08); color: var(--texte); }
+.modules-metier b { color: var(--encre); font-size: 1rem; }
+.modules-metier .badge { grid-column: 2; grid-row: 1; align-self: start; }
+.modules-metier span.d { grid-column: 1 / -1; }
+@media (max-width: 640px) { .modules-metier { margin-top: 10px; gap: 8px; } .modules-metier a, .modules-metier > li > div { padding: 10px 12px; font-size: .88rem; } }
+
 /* ════════ 14. Pages de texte (confidentialité, mentions légales) ════════ */
 .page-texte { padding: 36px 0 64px; }
 .page-texte .wrap { max-width: 840px; }
@@ -700,7 +708,10 @@ dl.id dd { margin: 0; }
   .v-fen { padding: 8px 10px; }
   .v-l { padding: 4px 0; }
   /* Diagnostic */
-  .quiz { min-height: 430px; }
+  .quiz { min-height: 420px; }
+  #diagnostic .chapo { display: none; }
+  .horloge { font-size: 0; }
+  .horloge b { font-size: 1.25rem; }
   /* Fin de page */
   .agents-bande { margin-bottom: 18px; }
   .pilote { padding: 10px 14px; margin-bottom: 4px; gap: 8px 12px; }
