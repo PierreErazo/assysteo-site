@@ -160,7 +160,7 @@
       if (lien) { lien.href = d.lien[0]; lien.firstChild.nodeValue = d.lien[1] + ' '; }
       liste.innerHTML = '';
       var items = evs.map(function (e) { var l = ligne(e); liste.appendChild(l); return l; });
-      bilan.innerHTML = '';
+      bilan.innerHTML = '<span>' + (sans ? 'Les demandes arrivent…' : 'Les agents trient…') + '</span>';   // garde la hauteur pendant l'animation
       if (sans) {
         // Sans agents : les demandes arrivent et s'empilent, de travers
         items.forEach(function (l, i) {

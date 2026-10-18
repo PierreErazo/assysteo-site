@@ -27,7 +27,8 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="/site.css?v=1">
-<link rel="stylesheet" href="/chat.css?v=9">
+<!-- La bulle de chat est ajoutée par chat.js : sa feuille ne bloque pas l'affichage -->
+<link rel="stylesheet" href="/chat.css?v=9" media="print" onload="this.media='all'">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Service","name":"Agents IA pour courtiers en crédit et en assurance","serviceType":"Réponse aux demandes, contrôle des documents reçus, relance des offres et des pièces, prise de rendez-vous","provider":{"@type":"ProfessionalService","@id":"https://assysteo.be/#entreprise","name":"Assysteo","url":"https://assysteo.be/","telephone":"+32 472 99 14 85"},"areaServed":{"@type":"AdministrativeArea","name":"Province de Namur"},"audience":{"@type":"BusinessAudience","audienceType":"Courtiers en crédit hypothécaire et en assurance"},"offers":{"@type":"Offer","priceSpecification":[{"@type":"PriceSpecification","minPrice":"490","priceCurrency":"EUR","valueAddedTaxIncluded":false},{"@type":"UnitPriceSpecification","minPrice":"79","priceCurrency":"EUR","unitText":"mois","valueAddedTaxIncluded":false}]},"url":"https://assysteo.be/courtiers.html"},
