@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agents IA pour les PME de Namur : répondre, relancer, trier | Assysteo</title>
-<meta name="description" content="Des agents IA qui répondent à vos clients, relancent devis et factures et trient vos emails. Pour les PME de Namur et de Wallonie. Rien ne part sans vous, données dans l'UE.">
+<meta name="description" content="Des agents IA qui répondent à vos clients, relancent devis et factures et trient vos emails. Pour les PME de Namur et de Wallonie. Aucun email sans vous.">
 <meta name="author" content="Pierre Warmoes">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="BE-WNA">
@@ -32,15 +32,15 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="stylesheet" href="/site.css?v=1">
+<link rel="stylesheet" href="/site.css?v=2">
 <!-- La bulle de chat est ajoutée par chat.js : sa feuille ne bloque pas l'affichage -->
-<link rel="stylesheet" href="/chat.css?v=9" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/chat.css?v=10" media="print" onload="this.media='all'">
 <!-- Données structurées : prix à garder identiques à config.js (python3 outils/verifier_site.py) -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"ProfessionalService","@id":"https://assysteo.be/#entreprise","name":"Assysteo","description":"Agence IA de proximité des PME namuroises : agents IA et automatisations pour trouver des clients, répondre plus vite, alléger l'administratif et mieux piloter.","url":"https://assysteo.be/","logo":"https://assysteo.be/logo-512.png","image":"https://assysteo.be/og-image.png","email":"contact@assysteo.be","telephone":"+32 472 99 14 85","founder":{"@type":"Person","name":"Pierre Warmoes"},"address":{"@type":"PostalAddress","addressLocality":"Namur","postalCode":"5000","addressRegion":"Wallonie","addressCountry":"BE"},"areaServed":[{"@type":"City","name":"Namur"},{"@type":"AdministrativeArea","name":"Province de Namur"},{"@type":"AdministrativeArea","name":"Wallonie"}],"availableLanguage":["fr","nl","en"],"priceRange":"À partir de 490 € HTVA, puis 79 € HTVA par mois",
   "makesOffer":[
-   {"@type":"Offer","name":"Découverte de 30 minutes","price":"0","priceCurrency":"EUR"},
+   {"@type":"Offer","name":"Audit gratuit de 30 minutes","price":"0","priceCurrency":"EUR"},
    {"@type":"Offer","name":"Diagnostic écrit","priceSpecification":{"@type":"PriceSpecification","price":"290","priceCurrency":"EUR","valueAddedTaxIncluded":false}},
    {"@type":"Offer","name":"Essentiel : 1 module","priceSpecification":[{"@type":"PriceSpecification","minPrice":"490","priceCurrency":"EUR","valueAddedTaxIncluded":false},{"@type":"UnitPriceSpecification","minPrice":"79","priceCurrency":"EUR","unitText":"mois","valueAddedTaxIncluded":false}]},
    {"@type":"Offer","name":"Croissance : 3 modules et le résumé du matin","priceSpecification":[{"@type":"PriceSpecification","minPrice":"1900","priceCurrency":"EUR","valueAddedTaxIncluded":false},{"@type":"UnitPriceSpecification","minPrice":"190","priceCurrency":"EUR","unitText":"mois","valueAddedTaxIncluded":false}]}
@@ -58,10 +58,10 @@
  {"@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"L'IA va répondre n'importe quoi ?","acceptedAnswer":{"@type":"Answer","text":"Elle peut se tromper : c'est pour ça qu'elle travaille en brouillon. Vous relisez avant l'envoi. Un message sensible, comme une réclamation ou une urgence, vous est signalé au lieu d'être traité seul. Les premières semaines, on ajuste ses consignes à partir de vos corrections."}},
   {"@type":"Question","name":"Je ne suis pas à l'aise avec la technique.","acceptedAnswer":{"@type":"Answer","text":"Vous n'avez rien à installer ni à apprendre. Vous continuez dans votre boîte mail et votre agenda habituels. L'installation, les réglages et le suivi sont faits pour vous. Il vous faut surtout un rendez-vous d'environ une heure pour valider le ton des réponses et les listes de documents."}},
-  {"@type":"Question","name":"Combien ça coûte vraiment par mois ?","acceptedAnswer":{"@type":"Answer","text":"Formule Essentiel : 79 euros HTVA par mois de maintenance. Formule Croissance : 190 euros HTVA par mois. S'ajoutent vos frais techniques, payés directement à vos fournisseurs : hébergement de 5 à 25 euros par mois et service d'IA, quelques euros par mois pour un volume courant. L'installation se paie une seule fois, et elle est offerte aux 3 entreprises du programme pilote."}},
-  {"@type":"Question","name":"Et mes données, le RGPD ?","acceptedAnswer":{"@type":"Answer","text":"Votre instance est à votre nom, hébergée dans l'Union européenne. Vos emails restent dans votre boîte mail. Un contrat de sous-traitance RGPD vous est remis avant la mise en route. Personne ne lit vos emails, sauf à votre demande pour régler un problème."}},
-  {"@type":"Question","name":"Et si Assysteo s'arrête ?","acceptedAnswer":{"@type":"Answer","text":"Vous êtes propriétaire de l'instance et des comptes d'hébergement et d'IA. Tout continue de fonctionner, et un autre prestataire n8n peut reprendre la maintenance. Vos données ne sont jamais bloquées chez Assysteo."}},
-  {"@type":"Question","name":"Ça marche avec Outlook ?","acceptedAnswer":{"@type":"Answer","text":"Oui : Gmail, Google Workspace, Outlook, Microsoft 365 et toute boîte mail professionnelle compatible IMAP. Certaines fonctions, comme les rappels dans l'agenda, dépendent de votre agenda : on le vérifie pendant le diagnostic."}},
+  {"@type":"Question","name":"Combien ça coûte vraiment par mois ?","acceptedAnswer":{"@type":"Answer","text":"Formule Essentiel : à partir de 79 euros HTVA par mois de maintenance. Formule Croissance : à partir de 190 euros HTVA par mois. S'ajoutent vos frais techniques, payés directement à vos fournisseurs : hébergement de 5 à 25 euros par mois et service d'IA, quelques euros par mois pour un volume courant. L'installation se paie une seule fois, et elle est offerte aux 3 premières entreprises du programme pilote."}},
+  {"@type":"Question","name":"Et mes données, le RGPD ?","acceptedAnswer":{"@type":"Answer","text":"Votre installation est à votre nom, hébergée dans l'Union européenne. Vos emails restent dans votre boîte mail. Un contrat de sous-traitance RGPD vous est remis avant la mise en route. Personne ne lit vos emails, sauf à votre demande pour régler un problème."}},
+  {"@type":"Question","name":"Et si Assysteo s'arrête ?","acceptedAnswer":{"@type":"Answer","text":"Vous êtes propriétaire de votre installation et des comptes d'hébergement et d'IA. Tout continue de fonctionner, et un autre prestataire peut reprendre la maintenance : l'outil utilisé, n8n, est standard et répandu. Vos données ne sont jamais bloquées chez Assysteo."}},
+  {"@type":"Question","name":"Ça marche avec Outlook ?","acceptedAnswer":{"@type":"Answer","text":"Oui : Gmail, Google Workspace, Outlook, Microsoft 365 et toute boîte mail professionnelle compatible IMAP. Certaines fonctions, comme les rappels dans l'agenda, dépendent de votre agenda : on le vérifie pendant l'audit gratuit."}},
   {"@type":"Question","name":"Et en néerlandais ?","acceptedAnswer":{"@type":"Answer","text":"La réponse suit la langue du message reçu : français, néerlandais ou anglais."}},
   {"@type":"Question","name":"Je peux arrêter quand je veux ?","acceptedAnswer":{"@type":"Answer","text":"Oui. La maintenance est mensuelle, sans engagement, avec un préavis d'un mois. Si vous arrêtez, vos données restent à vous : elles sont exportées ou supprimées, comme vous préférez."}}]}
 ]}
@@ -138,11 +138,11 @@
           <div class="flux-zone">
             <span class="noyau" aria-hidden="true"></span>
             <ol class="flux" aria-label="Ce qui arrive pendant la journée">
-              <li class="ev traite" data-canal="email"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>07:12</time><b>B. De Smet</b></p><p class="ev-objet">Offerte warmtepomp voor ons huis</p></div><span class="ev-etat">Brouillon prêt, en néerlandais</span></li>
+              <li class="ev traite" data-canal="email"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>07:12</time><b>B. De Smet</b></p><p class="ev-objet" lang="nl">Offerte warmtepomp voor ons huis</p></div><span class="ev-etat">Brouillon prêt, en néerlandais</span></li>
               <li class="ev traite" data-canal="devis"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>09:15</time><b>Devis 2026-118</b></p><p class="ev-objet">Panneaux solaires, envoyé il y a 7 jours</p></div><span class="ev-etat">Relance prête</span></li>
               <li class="ev traite" data-canal="facture"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>11:40</time><b>Facture 2026-041</b></p><p class="ev-objet">1 250 €, échue depuis 12 jours</p></div><span class="ev-etat">Rappel poli préparé</span></li>
               <li class="ev traite" data-canal="doc"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="m9 15 2 2 4-4"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>16:05</time><b>Famille Collard</b></p><p class="ev-objet">Photos pour le dossier de prime</p></div><span class="ev-etat">1 pièce redemandée</span></li>
-              <li class="ev traite" data-canal="chat"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>21:40</time><b>Visiteur du site</b></p><p class="ev-objet">Une pompe à chaleur pour 140 m² ?</p></div><span class="ev-etat">Qualifié, rendez-vous proposé</span></li>
+              <li class="ev traite" data-canal="chat"><span class="ev-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><div class="ev-corps"><p class="ev-ligne"><time>21:40</time><b>Visiteur du site</b></p><p class="ev-objet">Une pompe à chaleur pour 140 m² ?</p></div><span class="ev-etat">Rendez-vous proposé</span></li>
             </ol>
           </div>
           <p class="journee-bilan" aria-live="polite"><span class="vert">Tout est traité, en brouillon.</span><span>Vous relisez, vous envoyez.</span></p>
@@ -151,10 +151,10 @@
       </figure>
     </div>
 
-    <ul class="confiance" aria-label="Nos engagements">
+    <ul class="confiance" aria-label="Engagements d'Assysteo">
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Pierre, à Namur</li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Hébergé dans l'UE</li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Rien ne part sans vous</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Installation hébergée dans l'UE</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Aucun email ne part sans vous</li>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Sans engagement</li>
       <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Sans cookie de pistage</li>
     </ul>
@@ -224,14 +224,14 @@
               <div class="module-tete"><h4>Prospection locale</h4><span class="badge dispo">Disponible</span></div>
               <dl class="pas">
                 <div class="pb"><dt>Le problème</dt><dd>Vous n'avez pas le temps de chercher de nouveaux clients.</dd></div>
-                <div class="ag"><dt>L'agent</dt><dd>Repère des entreprises de la province, lit leur site, écrit un premier email personnalisé et relance.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Repère des entreprises de la province, lit leur site et écrit un premier email personnalisé, que vous validez. Puis il prépare la relance.</dd></div>
                 <div class="re"><dt>Résultat</dt><dd>Chaque matin, la liste des personnes à appeler.</dd></div>
               </dl>
             </div>
             <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
               <p class="v-titre">Liste d'appels <span>mardi, 6 h 45</span></p>
               <div class="v-l" style="--i:1">Menuiserie, Gembloux <span class="v-barre" style="--w:90%;--i:1"><i></i></span><span class="d v-tag at">À appeler</span></div>
-              <div class="v-l" style="--i:2">Agence immobilière, Jambes <span class="v-barre" style="--w:70%;--i:2"><i></i></span><span class="d v-tag vi">Email envoyé</span></div>
+              <div class="v-l" style="--i:2">Agence immobilière, Jambes <span class="v-barre" style="--w:70%;--i:2"><i></i></span><span class="d v-tag vi">Email à valider</span></div>
               <div class="v-l" style="--i:3">Garage, Wépion <span class="v-barre" style="--w:55%;--i:3"><i></i></span><span class="d v-tag">Relance J+5</span></div>
               <div class="v-l note" style="--i:4">Adresses générales seulement, désinscription respectée.</div>
             </div></div>
@@ -241,14 +241,14 @@
               <div class="module-tete"><h4>Publication LinkedIn assistée</h4><span class="badge dispo">Disponible</span></div>
               <dl class="pas">
                 <div class="pb"><dt>Le problème</dt><dd>Votre page LinkedIn dort depuis des mois.</dd></div>
-                <div class="ag"><dt>L'agent</dt><dd>Prépare des posts utiles à vos clients, les contrôle, puis les publie au bon rythme.</dd></div>
+                <div class="ag"><dt>L'agent</dt><dd>Prépare des posts utiles à vos clients. Vous les validez, puis ils sont publiés au bon rythme.</dd></div>
                 <div class="re"><dt>Résultat</dt><dd>Une présence régulière, sans y penser.</dd></div>
               </dl>
             </div>
             <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
               <p class="v-titre" style="--i:0">Votre page <span>LinkedIn</span></p>
               <p class="v-txt" style="--i:1"><b>3 questions à poser avant un devis de pompe à chaleur</b><br>Surface, isolation, facture actuelle : ce qui change vraiment le prix…</p>
-              <div class="v-l" style="--i:2"><span class="v-tag ok v-pop" style="--i:2">Relu et contrôlé</span><span class="d v-tag vi v-pop" style="--i:3">Publié mardi, 8 h 30</span></div>
+              <div class="v-l" style="--i:2"><span class="v-tag ok v-pop" style="--i:2">Validé par vous</span><span class="d v-tag vi v-pop" style="--i:3">Publié mardi, 8 h 30</span></div>
             </div></div>
           </article>
           <article class="module sur-demande" id="m-avis">
@@ -285,7 +285,7 @@
             <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
               <p class="v-titre" style="--i:0">Sophie M. <span>08:12</span></p>
               <p class="v-txt" style="--i:0">Visite de la maison à Jambes, samedi possible ?</p>
-              <div class="v-l" style="--i:1"><span class="v-tag vi v-pop" style="--i:1">Lead</span><span class="v-tag v-pop" style="--i:2">Brouillon à relire</span></div>
+              <div class="v-l" style="--i:1"><span class="v-tag vi v-pop" style="--i:1">Nouvelle demande</span><span class="v-tag v-pop" style="--i:2">Brouillon à relire</span></div>
               <p class="v-txt tape" style="--i:2;border-left:3px solid #1d4f73;padding-left:8px;margin:6px 0 0">Bonjour Madame, merci pour votre message. Des visites sont possibles samedi à 10 h ou à 11 h. Quel horaire vous convient ?</p>
               <div class="v-l note" style="--i:3">Gmail, Outlook, IMAP · français, néerlandais, anglais</div>
             </div></div>
@@ -384,6 +384,7 @@
                 <div class="re"><dt>Résultat</dt><dd>Des dossiers complets avant de les traiter.</dd></div>
               </dl>
               <div class="actions"><a class="btn btn-nuit" href="https://n8n.assysteo.be/form/bf5906ae-5a53-52d1-bc58-230468a14867" data-demo-docs>Tester la démo <span class="fl" aria-hidden="true">→</span></a></div>
+              <p class="note" data-demo-docs>N'envoyez pas de vrais documents : utilisez nos exemples (<a href="/demo/1-fiche-de-paie-recente.pdf">fiche de paie récente</a>, <a href="/demo/2-fiche-de-paie-trop-ancienne.pdf">trop ancienne</a>, <a href="/demo/3-extrait-de-compte-page-manquante.pdf">extrait incomplet</a>, <a href="/demo/4-certificat-peb.pdf">certificat PEB</a>).</p>
             </div>
             <div class="visuel" aria-hidden="true"><div class="v-fen v-anim">
               <p class="v-titre" style="--i:0">Dossier crédit <span>3 documents reçus</span></p>
@@ -507,9 +508,9 @@
       <div class="quiz" id="quiz">
         <div class="sans-js">
           <h3>Le diagnostic interactif a besoin de JavaScript.</h3>
-          <p>Répondez au même questionnaire sur notre formulaire, ou réservez directement l'audit gratuit de 30 minutes.</p>
+          <p>Répondez au même questionnaire sur le formulaire en ligne, ou réservez directement l'audit gratuit de 30 minutes.</p>
           <div class="actions">
-            <a class="btn btn-accent" href="https://n8n.assysteo.be/form/41a3e6dd-3005-527a-b055-37d01f474d98">Remplir le questionnaire</a>
+            <a class="btn btn-accent" href="https://n8n.assysteo.be/form/41a3e6dd-3005-527a-b055-37d01f474d98" data-cfg-href="URL_QUESTIONNAIRE">Remplir le questionnaire</a>
             <a class="btn btn-contour" href="https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64" data-cfg-href="URL_RESERVATION">Réserver l'audit gratuit</a>
           </div>
         </div>
@@ -541,8 +542,8 @@
         <article class="offre">
           <h3>Essentiel</h3>
           <p class="offre-pour">1 module, pour commencer</p>
-          <p class="prix"><span data-prix="essentiel_installation">490</span> €</p>
-          <p class="prix-sous">HTVA à l'installation, puis <b><span data-prix="essentiel_mois">79</span> € HTVA par mois</b></p>
+          <p class="prix"><small>dès </small><span data-prix="essentiel_installation">490</span> €</p>
+          <p class="prix-sous">HTVA à l'installation, puis <b>dès <span data-prix="essentiel_mois">79</span> € HTVA par mois</b></p>
           <ul class="liste-coches"><li>Le module qui vous fait gagner le plus</li><li>Démarrage en mode brouillon</li><li>Sans engagement</li></ul>
         </article>
         <article class="offre conseille">
@@ -550,20 +551,20 @@
           <h3>Croissance</h3>
           <p class="offre-pour">3 modules et le résumé du matin</p>
           <!-- À VALIDER : prix de la formule Croissance (config.js, PRIX) -->
-          <p class="prix"><span data-prix="croissance_installation">1 900</span> €</p>
-          <p class="prix-sous">HTVA à l'installation, puis <b><span data-prix="croissance_mois">190</span> € HTVA par mois</b></p>
+          <p class="prix"><small>dès </small><span data-prix="croissance_installation">1 900</span> €</p>
+          <p class="prix-sous">HTVA à l'installation, puis <b>dès <span data-prix="croissance_mois">190</span> € HTVA par mois</b></p>
           <ul class="liste-coches"><li>3 agents choisis avec le diagnostic</li><li>Résumé du matin et tableau de bord</li><li>Un seul interlocuteur : Pierre</li></ul>
         </article>
         <article class="offre">
           <h3>Sur mesure</h3>
           <p class="offre-pour">Plusieurs boîtes, logiciel métier, modules sur demande</p>
           <p class="prix">Sur devis</p>
-          <p class="prix-sous">après le diagnostic</p>
+          <p class="prix-sous">après l'audit gratuit</p>
           <ul class="liste-coches"><li>SMS, WhatsApp, pré-devis</li><li>Connexion à votre logiciel</li><li>Atelier IA pour l'équipe</li></ul>
         </article>
       </div>
       <!-- À VALIDER : prix du diagnostic écrit (config.js, PRIX) -->
-      <p class="offres-notes">Découverte de 30 minutes gratuite. Diagnostic écrit : <span data-prix="diagnostic_ecrit">290</span> € HTVA, déduit si vous installez. Frais techniques en plus, payés directement à vos fournisseurs (hébergement et IA). <a href="#info-tarifs">Tout le détail</a></p>
+      <p class="offres-notes">Audit gratuit de 30 minutes. Diagnostic écrit : <span data-prix="diagnostic_ecrit">290</span> € HTVA, déduit si vous installez. Frais techniques en plus, payés directement à vos fournisseurs (hébergement et IA). <a href="#info-tarifs">Tout le détail</a></p>
       <p class="rappel-cout" id="rappel-cout" hidden>Selon votre calcul, ce qui attend vous coûte environ <b><span data-rappel>0</span> € par mois</b>. Chaque mois d'attente compte.</p>
       <div class="temoignages" id="temoignages" hidden></div>
 
@@ -619,7 +620,7 @@
     </div>
   </div>
   <div class="wrap pied-bas">
-    <span>© 2026 Pierre Warmoes, Namur. Aucun cookie de pistage.</span>
+    <span>© 2026 Pierre Warmoes, Namur<span class="cookie">. Aucun cookie de pistage</span>.</span>
     <span><a href="/mentions-legales.html">Mentions légales</a> · <a href="/confidentialite.html">Confidentialité</a></span>
   </div>
 </footer>
@@ -650,8 +651,8 @@
         <div class="info-corps">
           <p>Rien à installer, rien à apprendre : on travaille dans votre boîte mail et votre agenda.</p>
           <ol class="etapes-liste">
-            <li><b>Diagnostic</b>30 minutes, gratuit, en visio ou sur place. On regarde où partent vos heures et vos demandes.</li>
-            <li><b>Installation en 1 à 2 semaines</b>Votre instance, à votre nom, hébergée dans l'UE. On règle ensemble le ton, les listes de documents et le rythme des relances.</li>
+            <li><b>Audit gratuit</b>30 minutes, en visio ou sur place. On regarde où partent vos heures et vos demandes.</li>
+            <li><b>Installation en 1 à 2 semaines</b>Votre installation, à votre nom, hébergée dans l'UE. On règle ensemble le ton, les listes de documents et le rythme des relances.</li>
             <li><b>Démarrage en mode brouillon</b>L'IA prépare, vous relisez, vous envoyez. On ajuste les premières semaines avec vos corrections.</li>
             <li><b>Autonomie progressive</b>Certaines réponses partent seules, seulement si vous le décidez.</li>
           </ol>
@@ -663,10 +664,10 @@
         <div class="info-corps">
           <details class="question"><summary>L'IA va répondre n'importe quoi&nbsp;?</summary><div><p>Elle peut se tromper : c'est pour ça qu'elle travaille en brouillon. Vous relisez avant l'envoi. Un message sensible, comme une réclamation ou une urgence, vous est signalé au lieu d'être traité seul. Les premières semaines, on ajuste ses consignes à partir de vos corrections.</p></div></details>
           <details class="question"><summary>Je ne suis pas à l'aise avec la technique.</summary><div><p>Vous n'avez rien à installer ni à apprendre. Vous continuez dans votre boîte mail et votre agenda habituels. L'installation, les réglages et le suivi sont faits pour vous. Il vous faut surtout un rendez-vous d'environ une heure pour valider le ton des réponses et les listes de documents.</p></div></details>
-          <details class="question"><summary>Combien ça coûte vraiment par mois&nbsp;?</summary><div><p>Formule Essentiel : <span data-prix="essentiel_mois">79</span> € HTVA par mois de maintenance. Formule Croissance : <span data-prix="croissance_mois">190</span> € HTVA par mois. S'ajoutent vos frais techniques, payés directement à vos fournisseurs : hébergement de 5 à 25 € par mois et service d'IA, quelques euros par mois pour un volume courant. L'installation se paie une seule fois, et elle est offerte aux 3 entreprises du programme pilote.</p></div></details>
-          <details class="question"><summary>Et mes données, le RGPD&nbsp;?</summary><div><p>Votre instance est à votre nom, hébergée dans l'Union européenne. Vos emails restent dans votre boîte mail. Un contrat de sous-traitance RGPD vous est remis avant la mise en route. Personne ne lit vos emails, sauf à votre demande pour régler un problème. Détails dans la <a href="/confidentialite.html">politique de confidentialité</a>.</p></div></details>
-          <details class="question"><summary>Et si Assysteo s'arrête&nbsp;?</summary><div><p>Vous êtes propriétaire de l'instance et des comptes d'hébergement et d'IA. Tout continue de fonctionner, et un autre prestataire n8n peut reprendre la maintenance. Vos données ne sont jamais bloquées chez Assysteo.</p></div></details>
-          <details class="question"><summary>Ça marche avec Outlook&nbsp;?</summary><div><p>Oui : Gmail, Google Workspace, Outlook, Microsoft 365 et toute boîte mail professionnelle compatible IMAP. Certaines fonctions, comme les rappels dans l'agenda, dépendent de votre agenda : on le vérifie pendant le diagnostic.</p></div></details>
+          <details class="question"><summary>Combien ça coûte vraiment par mois&nbsp;?</summary><div><p>Formule Essentiel : à partir de <span data-prix="essentiel_mois">79</span> € HTVA par mois de maintenance. Formule Croissance : à partir de <span data-prix="croissance_mois">190</span> € HTVA par mois. S'ajoutent vos frais techniques, payés directement à vos fournisseurs : hébergement de 5 à 25 € par mois et service d'IA, quelques euros par mois pour un volume courant. L'installation se paie une seule fois, et elle est offerte aux <span data-cfg="PLACES_PILOTE_TOTAL">3</span> premières entreprises du programme pilote.</p></div></details>
+          <details class="question"><summary>Et mes données, le RGPD&nbsp;?</summary><div><p>Votre installation est à votre nom, hébergée dans l'Union européenne. Vos emails restent dans votre boîte mail. Un contrat de sous-traitance RGPD vous est remis avant la mise en route. Personne ne lit vos emails, sauf à votre demande pour régler un problème. Détails dans la <a href="/confidentialite.html">politique de confidentialité</a>.</p></div></details>
+          <details class="question"><summary>Et si Assysteo s'arrête&nbsp;?</summary><div><p>Vous êtes propriétaire de votre installation et des comptes d'hébergement et d'IA. Tout continue de fonctionner, et un autre prestataire peut reprendre la maintenance : l'outil utilisé, n8n, est standard et répandu. Vos données ne sont jamais bloquées chez Assysteo.</p></div></details>
+          <details class="question"><summary>Ça marche avec Outlook&nbsp;?</summary><div><p>Oui : Gmail, Google Workspace, Outlook, Microsoft 365 et toute boîte mail professionnelle compatible IMAP. Certaines fonctions, comme les rappels dans l'agenda, dépendent de votre agenda : on le vérifie pendant l'audit gratuit.</p></div></details>
           <details class="question"><summary>Et en néerlandais&nbsp;?</summary><div><p>La réponse suit la langue du message reçu : français, néerlandais ou anglais.</p></div></details>
           <details class="question"><summary>Je peux arrêter quand je veux&nbsp;?</summary><div><p>Oui. La maintenance est mensuelle, sans engagement, avec un préavis d'un mois. Si vous arrêtez, vos données restent à vous : elles sont exportées ou supprimées, comme vous préférez.</p></div></details>
         </div>
@@ -676,8 +677,8 @@
         <summary><span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 6.5A6.5 6.5 0 1 0 17 17.5M4 10h9M4 14h9"/></svg></span>Tarifs détaillés</summary>
         <div class="info-corps">
           <!-- À VALIDER : diagnostic écrit et formule Croissance (config.js, PRIX) -->
-          <h3>Diagnostic</h3>
-          <p>Découverte de 30 minutes : gratuite. Diagnostic écrit : <span data-prix="diagnostic_ecrit">290</span> € HTVA, déduit si vous installez.</p>
+          <h3>Audit et diagnostic écrit</h3>
+          <p>Audit de 30 minutes : gratuit. Diagnostic écrit : <span data-prix="diagnostic_ecrit">290</span> € HTVA, déduit si vous installez.</p>
           <h3>Essentiel : 1 module</h3>
           <p>Installation à partir de <span data-prix="essentiel_installation">490</span> € HTVA, une seule fois. Maintenance à partir de <span data-prix="essentiel_mois">79</span> € HTVA par mois : surveillance, mises à jour, ajustements des réponses, support par email et par téléphone.</p>
           <h3>Croissance : 3 modules et le résumé du matin</h3>
@@ -685,10 +686,10 @@
           <h3>Sur mesure</h3>
           <p>Plusieurs boîtes mail, connexion à votre logiciel métier, modules sur demande (SMS après un appel manqué, WhatsApp, pré-devis, factures vers la comptabilité, assistant interne, atelier) : sur devis.</p>
           <h3>Frais techniques</h3>
-          <p>Payés directement par vous à vos fournisseurs, sur vos propres comptes : hébergement de votre instance (environ 5 à 25 € par mois selon la formule) et service d'IA (quelques euros par mois pour un volume courant). Vous restez propriétaire de tout.</p>
+          <p>Payés directement par vous à vos fournisseurs, sur vos propres comptes : hébergement de votre installation (environ 5 à 25 € par mois selon la formule) et service d'IA (quelques euros par mois pour un volume courant). Vous restez propriétaire de tout.</p>
           <h3>Programme pilote</h3>
           <p>Installation offerte aux <span data-cfg="PLACES_PILOTE_TOTAL">3</span> premières entreprises, en échange d'un retour d'expérience honnête. La maintenance et les frais techniques s'appliquent normalement. Votre retour n'est cité qu'avec votre accord écrit. <span data-pilote-court>Places restantes : <span data-cfg="PLACES_PILOTE_RESTANTES">3</span>.</span></p>
-          <p class="note">Sans engagement, préavis d'un mois. Prix hors TVA. Un devis écrit suit le diagnostic.</p>
+          <p class="note">Sans engagement, préavis d'un mois. Prix hors TVA. Un devis écrit suit l'audit gratuit.</p>
         </div>
       </details>
 
@@ -696,9 +697,9 @@
         <summary><span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>Vos données et la sécurité</summary>
         <div class="info-corps">
           <ul class="liste-coches">
-            <li><b>Rien ne part sans vous.</b> Mode brouillon par défaut : l'IA prépare, vous relisez, vous envoyez.</li>
-            <li><b>Hébergé dans l'UE, à votre nom.</b> Une instance séparée pour chaque entreprise.</li>
-            <li><b>Vous restez propriétaire</b> de l'instance, des comptes et des données. Vous pouvez couper l'accès à votre boîte mail à tout moment.</li>
+            <li><b>Aucun email ne part sans vous.</b> Mode brouillon par défaut : l'IA prépare, vous relisez, vous envoyez. Seul l'agent d'accueil de votre site répond en direct, en disant qu'il est une IA.</li>
+            <li><b>Votre installation est hébergée dans l'UE, à votre nom</b>, séparée de celles des autres entreprises. Les formulaires et le chat de ce site-ci passent, eux, par le serveur d'Assysteo aux États-Unis, avec les garanties du RGPD.</li>
+            <li><b>Vous restez propriétaire</b> de l'installation, des comptes et des données. Vous pouvez couper l'accès à votre boîte mail à tout moment.</li>
             <li><b>RGPD par écrit.</b> Un contrat de sous-traitance vous est remis avant la mise en route.</li>
             <li><b>L'IA dit qu'elle est une IA.</b> Le chat du site le précise dès le premier message.</li>
             <li><b>Sans cookie de pistage.</b> Ce site n'en dépose aucun, d'où l'absence de bandeau.</li>
@@ -720,7 +721,7 @@
           <!-- TEXTE À VALIDER par Pierre -->
           <div class="pierre" style="margin-bottom:12px"><span class="portrait grand" data-portrait aria-hidden="true">PW</span><p><b>Pierre Warmoes</b><br>Fondateur d'Assysteo, à Namur</p></div>
           <p>Je suis basé à Namur. J'ai créé Assysteo pour que les petites entreprises de la région profitent de l'IA sans y passer leurs soirées.</p>
-          <p>J'installe et je suis moi-même chaque client : vous avez un seul interlocuteur, qui connaît votre configuration.</p>
+          <p>J'installe et je suis moi-même chaque entreprise que j'accompagne : vous aurez un seul interlocuteur, qui connaîtra votre configuration.</p>
           <p>Vous pouvez m'appeler directement au <a href="tel:+32472991485">0472 99 14 85</a>.</p>
         </div>
       </details>
@@ -756,8 +757,8 @@
 </aside>
 
 <script src="/config.js?v=1" defer></script>
-<script src="/anim.js?v=6" defer></script>
-<script src="/diagnostic.js?v=1" defer></script>
-<script src="/chat.js?v=8" defer></script>
+<script src="/anim.js?v=7" defer onerror="document.documentElement.classList.remove('js')"></script>
+<script src="/diagnostic.js?v=2" defer onerror="document.documentElement.classList.add('diag-ko')"></script>
+<script src="/chat.js?v=9" defer></script>
 </body>
 </html>

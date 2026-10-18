@@ -72,7 +72,7 @@
   panneau.setAttribute('role', 'dialog');
   panneau.setAttribute('aria-label', "Chat avec l'assistant IA d'Assysteo");
   panneau.innerHTML =
-    '<div class="ac-entete"><img class="ac-logo" src="favicon.svg" alt="" width="34" height="34"><div class="ac-entete-texte">' +
+    '<div class="ac-entete"><img class="ac-logo" src="/favicon.svg" alt="" width="34" height="34"><div class="ac-entete-texte">' +
       '<p class="ac-titre">Assistant Assysteo</p>' +
       '<p class="ac-sous-titre">Intelligence artificielle · peut se tromper</p></div>' +
       '<button type="button" class="ac-fermer" aria-label="Fermer le chat">×</button></div>' +
@@ -82,7 +82,7 @@
       '<textarea id="ac-saisie" class="ac-saisie" rows="1" maxlength="' + LONGUEUR_MAX + '" placeholder="Votre question…"></textarea>' +
       '<button type="submit" class="ac-envoyer" aria-label="Envoyer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></button>' +
     '</form>' +
-    '<p class="ac-pied">Réponses générées par une IA (OpenAI). N\'indiquez pas de données sensibles. <a href="confidentialite.html#chat">Confidentialité</a></p>';
+    '<p class="ac-pied">Réponses générées par une IA (OpenAI). N\'indiquez pas de données sensibles. <a href="/confidentialite.html#chat">Confidentialité</a></p>';
 
   // Invitation : petite bulle au-dessus du bouton, une seule fois par visite
   var invitation = document.createElement('div');

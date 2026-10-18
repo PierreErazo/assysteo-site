@@ -1,6 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════════
    Réglages du site Assysteo : le SEUL fichier à modifier pour changer
    les places pilotes, les prix, les adresses des formulaires et les compteurs.
+   (Seule l'adresse du chat reste dans chat.js, variable ADRESSE.)
 
    Les pages gardent aussi une valeur « de secours » dans le HTML (pour Google
    et pour les visiteurs sans JavaScript). Après une modification, lancez :
@@ -26,6 +27,9 @@ var URL_DEMO_DOCUMENTS = 'https://n8n.assysteo.be/form/bf5906ae-5a53-52d1-bc58-2
 
 /* ── Réservation de l'audit gratuit (formulaire n8n, lien de secours) ────── */
 var URL_RESERVATION = 'https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64';
+
+/* ── Questionnaire de diagnostic n8n (proposé aux visiteurs sans JavaScript) ── */
+var URL_QUESTIONNAIRE = 'https://n8n.assysteo.be/form/41a3e6dd-3005-527a-b055-37d01f474d98';
 
 /* ── Photo de Pierre ──────────────────────────────────────────────────────
    Mettez 'img/pierre.webp' quand le fichier est dans le dossier img/

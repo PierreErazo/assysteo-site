@@ -13,8 +13,14 @@
   function nombre(n) { return Math.round(n).toLocaleString('fr-BE'); }
   function lire(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
   function ecrire(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { /* sans effet */ } }
-  var PRIX = window.PRIX || { essentiel_installation: 490, essentiel_mois: 79, croissance_installation: 1900, croissance_mois: 190 };
-  var CALCUL = window.CALCUL || { jours_par_semaine: 5, semaines_par_an: 46, devis_recuperes_par_relance: .1 };
+  // Chaque réglage est lu à part : une valeur absente de config.js reprend sa valeur par défaut
+  function val(o, k, d) { var v = o && o[k]; return typeof v === 'number' && isFinite(v) ? v : d; }
+  var P = window.PRIX, C = window.CALCUL;
+  var PRIX = { essentiel_installation: val(P, 'essentiel_installation', 490), essentiel_mois: val(P, 'essentiel_mois', 79),
+    croissance_installation: val(P, 'croissance_installation', 1900), croissance_mois: val(P, 'croissance_mois', 190) };
+  var CALCUL = { jours_par_semaine: val(C, 'jours_par_semaine', 5), semaines_par_an: val(C, 'semaines_par_an', 46),
+    devis_recuperes_par_relance: val(C, 'devis_recuperes_par_relance', .1) };
+  var PLACES = Math.max(0, Math.min(val(window, 'PLACES_PILOTE_RESTANTES', 0), val(window, 'PLACES_PILOTE_TOTAL', Infinity)));
   var RESERVATION = window.URL_RESERVATION || 'https://n8n.assysteo.be/form/9b2f6c1e-4d7a-4e3b-8a51-3c0d2e7f9a64';
 
   /* ── Les questions : [valeur, libellé, précision facultative] ── */
@@ -105,7 +111,7 @@
   }
 
   /* ── État et affichage ── */
-  var reponses = {}, etape = 0, resultat = null, estimation = null;
+  var reponses = {}, etape = 0, resultat = null, estimation = null, attente = 0;
   // Réponses préremplies (à confirmer) : métier choisi dans la page, chiffres du calculateur
   var metier = lire('assysteo-metier');
   if (metier) reponses.metier = metier;
@@ -121,12 +127,14 @@
     var q = QUESTIONS.filter(function (x) { return x.id === id; })[0], o = q && q.o.filter(function (x) { return x[0] === val; })[0];
     return o ? o[1] + (o[2] ? ' (' + o[2] + ')' : '') : '';
   }
-  function focusSiClavier(el) {
-    // On ne déplace le focus que si l'utilisateur était déjà dans le diagnostic (clavier, lecteur d'écran)
-    if (el && zone.contains(doc.activeElement)) el.focus({ preventScroll: true });
-  }
-  function vue(html) {
+  // Redessine la zone ; si le focus y était (clavier, lecteur d'écran), il va sur le nouveau titre.
+  // Le haut du diagnostic est ramené à l'écran s'il est passé au-dessus.
+  function vue(html, cibleFocus) {
+    var dedans = zone.contains(doc.activeElement);
     zone.innerHTML = '<div class="quiz-vue">' + html + '</div>';
+    if (zone.getBoundingClientRect().top < 60) zone.scrollIntoView({ block: 'start', behavior: calme ? 'auto' : 'smooth' });
+    var el = doc.getElementById(cibleFocus || 'quiz-q');
+    if (el && (dedans || cibleFocus)) el.focus({ preventScroll: true });
   }
 
   function question() {
@@ -147,8 +155,12 @@
   }
 
   function avancer() {
-    if (etape < QUESTIONS.length - 1) { etape++; question(); focusSiClavier(doc.getElementById('quiz-q')); }
-    else montrerResultat();
+    clearTimeout(attente);
+    if (!reponses[QUESTIONS[etape].id]) return;          // pas de réponse : on reste sur la question
+    if (etape < QUESTIONS.length - 1) { etape++; question(); return; }
+    // Toutes les questions doivent avoir une réponse avant le résultat
+    for (var i = 0; i < QUESTIONS.length; i++) if (!reponses[QUESTIONS[i].id]) { etape = i; return question(); }
+    montrerResultat();
   }
 
   function montrerResultat() {
@@ -156,10 +168,10 @@
     estimation = estimer(reponses);
     ecrire('assysteo-diagnostic', JSON.stringify({ reponses: reponses, resultat: resultat, estimation: estimation }));
     var f = resultat.formule === 'croissance'
-      ? '<p><b>Formule conseillée : Croissance</b><br>' + nombre(PRIX.croissance_installation) + ' € HTVA, puis ' + nombre(PRIX.croissance_mois) + ' € HTVA par mois</p>'
-      : '<p><b>Formule conseillée : Essentiel</b><br>' + nombre(PRIX.essentiel_installation) + ' € HTVA, puis ' + nombre(PRIX.essentiel_mois) + ' € HTVA par mois</p>';
-    var pilote = typeof window.PLACES_PILOTE_RESTANTES === 'number' && window.PLACES_PILOTE_RESTANTES > 0
-      ? '<span class="badge dispo">Installation offerte : ' + window.PLACES_PILOTE_RESTANTES + ' place' + (window.PLACES_PILOTE_RESTANTES > 1 ? 's' : '') + ' pilote' + (window.PLACES_PILOTE_RESTANTES > 1 ? 's' : '') + '</span>' : '';
+      ? '<p><b>Formule conseillée : Croissance</b><br>À partir de ' + nombre(PRIX.croissance_installation) + ' € HTVA, puis ' + nombre(PRIX.croissance_mois) + ' € HTVA par mois</p>'
+      : '<p><b>Formule conseillée : Essentiel</b><br>À partir de ' + nombre(PRIX.essentiel_installation) + ' € HTVA, puis ' + nombre(PRIX.essentiel_mois) + ' € HTVA par mois</p>';
+    var pilote = PLACES > 0
+      ? '<span class="badge dispo">Installation offerte : ' + PLACES + ' place' + (PLACES > 1 ? 's' : '') + ' pilote' + (PLACES > 1 ? 's' : '') + '</span>' : '';
     var gain = '<div class="gain"><div><b>' + nombre(estimation.heures) + ' h</b>par mois passées sur vos emails</div>' +
       (estimation.devis_euros > 0
         ? '<div><b>' + nombre(estimation.devis_euros) + ' €</b>par mois de devis en jeu</div>'
@@ -177,7 +189,6 @@
       (page ? ' <a href="' + page[0] + '">' + page[1] + '</a>.' : '') + '</p>' +
       '<div class="quiz-nav"><button type="button" class="lien-btn" data-refaire>Recommencer</button>' +
       '<button type="button" class="btn btn-accent" data-vers-formulaire>Recevoir ce résultat <span class="fl" aria-hidden="true">→</span></button></div>');
-    focusSiClavier(doc.getElementById('quiz-q'));
     // Le rappel du coût en bas de page reprend cette estimation si le calculateur n'a pas servi
     doc.querySelectorAll('#rappel-cout, [data-rappel-bloc]').forEach(function (rap) {
       if (!rap.hidden) return;
@@ -191,14 +202,14 @@
       '<h3 class="quiz-q" id="quiz-q" tabindex="-1">Pierre vous recontacte pour en parler</h3>' +
       '<form class="formulaire" novalidate>' +
         '<div class="deux-col"><div class="champ"><label for="d-nom">Votre nom</label><input id="d-nom" name="nom" autocomplete="name" required></div>' +
-        '<div class="champ"><label for="d-entreprise">Entreprise</label><input id="d-entreprise" name="entreprise" autocomplete="organization"></div></div>' +
+        '<div class="champ"><label for="d-entreprise">Entreprise (facultatif)</label><input id="d-entreprise" name="entreprise" autocomplete="organization"></div></div>' +
         '<div class="champ"><label for="d-contact">Email ou téléphone</label><input id="d-contact" name="contact" autocomplete="email" required></div>' +
         '<label class="consent"><input type="checkbox" name="accord" required><span>J\'accepte qu\'Assysteo utilise ces informations pour me recontacter au sujet de ce diagnostic. Pas de newsletter. <a href="/confidentialite.html#diagnostic">Confidentialité</a></span></label>' +
-        '<p class="erreur-msg" role="alert" hidden></p>' +
+        '<p class="erreur-msg" id="d-erreur" role="alert"></p>' +
         '<div class="quiz-nav"><button type="button" class="lien-btn" data-retour-resultat>Revenir au résultat</button>' +
         '<button type="submit" class="btn btn-accent">Envoyer à Pierre</button></div>' +
       '</form>');
-    doc.getElementById('d-nom').focus({ preventScroll: true });
+    doc.getElementById('d-nom').focus({ preventScroll: true });   // le formulaire est demandé : le focus y va
   }
 
   function verifier(form) {
@@ -245,8 +256,7 @@
         ? '<p>Pierre a bien reçu votre diagnostic et vous recontacte rapidement.</p>'
         : '<p>Votre logiciel d\'email s\'est ouvert avec le diagnostic prérempli : il ne reste qu\'à l\'envoyer. Rien ne s\'est ouvert ? Écrivez à <a href="mailto:contact@assysteo.be">contact@assysteo.be</a> ou appelez le ' + tel + '.</p>') +
       '<p>Pour aller plus vite, choisissez dès maintenant un créneau pour l\'audit gratuit de 30 minutes.</p>' +
-      '<div class="actions"><a class="btn btn-accent" href="' + esc(RESERVATION) + '">Réserver l\'audit gratuit <span class="fl" aria-hidden="true">→</span></a></div>');
-    var h = doc.getElementById('quiz-q'); if (h) h.focus({ preventScroll: true });
+      '<div class="actions"><a class="btn btn-accent" href="' + esc(RESERVATION) + '">Réserver l\'audit gratuit <span class="fl" aria-hidden="true">→</span></a></div>', 'quiz-q');
   }
 
   function envoyer(form) {
@@ -275,20 +285,30 @@
       reponses[QUESTIONS[etape].id] = t.getAttribute('data-val');
       zone.querySelectorAll('.quiz-opt').forEach(function (b) { b.setAttribute('aria-pressed', b === t ? 'true' : 'false'); });
       var suivant = zone.querySelector('[data-suivant]'); if (suivant) suivant.disabled = false;
-      setTimeout(avancer, calme ? 0 : 260);
+      clearTimeout(attente);
+      var e0 = etape;
+      attente = setTimeout(function () { if (etape === e0) avancer(); }, calme ? 0 : 260);
       return;
     }
     if (t.hasAttribute('data-suivant')) return avancer();
-    if (t.hasAttribute('data-precedent')) { if (etape > 0) { etape--; question(); focusSiClavier(doc.getElementById('quiz-q')); } return; }
-    if (t.hasAttribute('data-refaire')) { etape = 0; question(); return; }
+    if (t.hasAttribute('data-precedent')) { clearTimeout(attente); if (etape > 0) { etape--; question(); } return; }
+    if (t.hasAttribute('data-refaire')) { clearTimeout(attente); etape = 0; question(); return; }
     if (t.hasAttribute('data-vers-formulaire')) return formulaire();
     if (t.hasAttribute('data-retour-resultat')) return montrerResultat();
   });
   zone.addEventListener('submit', function (e) {
     e.preventDefault();
     var form = e.target, err = verifier(form), msg = form.querySelector('.erreur-msg');
-    if (err) { msg.textContent = err[0]; msg.hidden = false; err[1].focus(); return; }
-    msg.hidden = true;
+    [form.nom, form.contact, form.accord].forEach(function (c) { c.removeAttribute('aria-invalid'); c.removeAttribute('aria-describedby'); });
+    if (err) {
+      msg.textContent = '';
+      setTimeout(function () { msg.textContent = err[0]; }, 30);   // vidé puis rempli : la même erreur est annoncée à nouveau
+      err[1].setAttribute('aria-invalid', 'true'); err[1].setAttribute('aria-describedby', 'd-erreur'); err[1].focus();
+      return;
+    }
+    msg.textContent = '';
+    if (form.dataset.envoi) return;                        // pas de double envoi
+    form.dataset.envoi = '1';
     envoyer(form);
   });
 

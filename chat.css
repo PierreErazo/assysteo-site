@@ -56,7 +56,8 @@
   flex: none; width: 36px; height: 36px; border: 0; border-radius: 10px;
   background: transparent; color: #fff; cursor: pointer; font-size: 22px; line-height: 1;
 }
-.ac-fermer:hover, .ac-fermer:focus-visible { background: rgba(255, 255, 255, .15); outline: none; }
+.ac-fermer:hover, .ac-fermer:focus-visible { background: rgba(255, 255, 255, .15); }
+.ac-fermer:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
 
 .ac-messages {
   flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px;
